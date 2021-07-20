@@ -7,20 +7,17 @@ import { Grid } from '@material-ui/core';
 import MarketShare from './MarketShare';
 import SocialNetwork from './SocialNetwork';
 import TotalRevenue from './TotalRevenue';
-
-//-----------------------|| DEFAULT DASHBOARD ||-----------------------//
+import OderReceive from './OrderReceive';
 
 const Analytics = () => {
-    // const [isLoading, setLoading] = useState(true);
-    // useEffect(() => {
-    //     setLoading(false);
-    // }, []);
-
     return (
         <Grid container spacing={3}>
-            <Grid item xs={8} direction="column">
+            <Grid item xs={8}>
                 <Grid item>
                     <MarketShare />
+                </Grid>
+                <Grid item>
+                    <OderReceive />
                 </Grid>
             </Grid>
             <Grid item xs={4}>
