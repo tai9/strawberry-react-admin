@@ -7,6 +7,7 @@ import Loadable from '../ui-component/Loadable';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
+const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/Analytics')));
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
@@ -27,6 +28,7 @@ const MainRoutes = () => {
         <Route
             path={[
                 '/dashboard/default',
+                '/dashboard/analytics',
 
                 '/utils/util-typography',
                 '/utils/util-color',
@@ -40,6 +42,7 @@ const MainRoutes = () => {
             <MainLayout>
                 <Switch location={location} key={location.pathname}>
                     <Route path="/dashboard/default" component={DashboardDefault} />
+                    <Route path="/dashboard/analytics" component={DashBoardAnalytics} />
 
                     <Route path="/utils/util-typography" component={UtilsTypography} />
                     <Route path="/utils/util-color" component={UtilsColor} />
