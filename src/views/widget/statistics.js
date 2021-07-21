@@ -3,8 +3,12 @@ import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import HeaderStatistics from '../../ui-component/statistics/headerStatistics';
-import { box } from '../../ui-component/statistics/data';
+import { boxOne, boxThere } from '../../ui-component/statistics/data';
 import BoxOne from '../../ui-component/statistics/boxOne';
+import BoxRevenue from '../../ui-component/statistics/boxRevenue';
+import BoxReceived from '../../ui-component/statistics/boxReceived';
+import BoxSale from '../../ui-component/statistics/boxSale';
+import BoxThere from '../../ui-component/statistics/boxThere';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,7 +30,7 @@ export default function Statistics() {
                         <HeaderStatistics />
                     </Paper>
                 </Grid>
-                {box.map((result) => (
+                {boxOne.map((result) => (
                     <Grid item xs={12} sm={3}>
                         <Paper className={classes.paper}>
                             <BoxOne key={result.id} res={result} />
@@ -34,12 +38,28 @@ export default function Statistics() {
                     </Grid>
                 ))}
 
-                <Grid item xs={12} sm={6}>
-                    <Paper className={classes.paper}>xs=12 sm=6</Paper>
+                <Grid item xs={12} sm={4}>
+                    <Paper style={{ backgroundColor: 'rgb(103, 58, 183)' }} className={classes.paper}>
+                        <BoxRevenue />
+                    </Paper>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                    <Paper className={classes.paper}>xs=12 sm=6</Paper>
+                <Grid item xs={12} sm={4}>
+                    <Paper style={{ backgroundColor: 'rgb(30, 136, 229)' }} className={classes.paper}>
+                        <BoxReceived />
+                    </Paper>
                 </Grid>
+                <Grid item xs={12} sm={4}>
+                    <Paper style={{ backgroundColor: 'rgb(216, 67, 21)' }} className={classes.paper}>
+                        <BoxSale />
+                    </Paper>
+                </Grid>
+                {boxThere.map((result) => (
+                    <Grid item xs={12} sm={3}>
+                        <Paper className={classes.paper}>
+                            <BoxThere key={result.id} res={result} />
+                        </Paper>
+                    </Grid>
+                ))}
             </Grid>
         </div>
     );
