@@ -1,7 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 const useStyles = makeStyles((theme) => ({
     root: {
+        color: 'white',
         boxSizing: 'border-box',
         display: 'flex',
         flexWrap: 'wrap',
@@ -12,31 +14,30 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center'
     },
     content: {
-        margin: 10,
         display: 'inline-block'
     },
     data: {
         fontSize: 21,
         fontWeight: 500,
-        color: 'black',
-        marginBottom: '5px'
+        margin: '8px 0'
     },
     title: {
-        fontSize: 15,
-        fontWeight: 450
+        fontSize: 14,
+        fontWeight: 400
     }
 }));
-
-export default function BoxThere({ res }) {
+export default function BoxSocialFb() {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
             <div className={classes.content}>
-                <div>{res.img}</div>
-                <div className={classes.title}>{res.title}</div>
+                <div className={classes.data}>998 +</div>
+                <div className={classes.title}>Linked In Users</div>
             </div>
-            <div className={classes.data}>{res.data}</div>
+            <div>
+                <LinkedInIcon style={{ fontSize: 40, opacity: 0.4 }} />
+            </div>
         </div>
     );
 }
