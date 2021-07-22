@@ -8,6 +8,8 @@ import MarketShare from './MarketShare';
 import SocialNetwork from './SocialNetwork';
 import TotalRevenue from './TotalRevenue';
 import OderReceive from './OrderReceive';
+import BasicTable from './LatestCustomer';
+import DailyComponent from './DailyComponent';
 
 const Analytics = () => {
     return (
@@ -19,13 +21,19 @@ const Analytics = () => {
                 <Grid item>
                     <OderReceive />
                 </Grid>
+                <Grid item>
+                    <BasicTable />
+                </Grid>
             </Grid>
             <Grid item xs={4}>
-                <Grid item>
+                <Grid item xs={12}>
                     <SocialNetwork />
                 </Grid>
-                <Grid item>
+                <Grid item xs={12}>
                     <TotalRevenue />
+                </Grid>
+                <Grid item xs={12} style={{ paddingTop: 20 }}>
+                    <DailyComponent />
                 </Grid>
             </Grid>
         </Grid>

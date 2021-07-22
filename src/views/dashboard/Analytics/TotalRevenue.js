@@ -9,6 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,9 +17,8 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         backgroundColor: '#ffffff',
         position: 'relative',
-        overflow: 'auto',
-        maxHeight: 460,
-        borderRadius: '3%'
+        borderRadius: '15px',
+        overflow: 'auto'
     },
     header: {
         fontSize: '20px',
@@ -39,6 +39,14 @@ const useStyles = makeStyles((theme) => ({
         color: '#f44336 !important',
         float: 'right !important',
         paddingRight: '10px'
+    },
+    ScrollHeight: {
+        height: 'calc(100vh - 600px)',
+        paddingLeft: '16px',
+        paddingRight: '16px',
+        [theme.breakpoints.down('sm')]: {
+            height: 'calc(100vh - 506px)'
+        }
     }
 }));
 
@@ -91,9 +99,11 @@ const TotalRevenue = (theme) => {
 
     return (
         <List className={classes.root} subheader={<ListSubheader className={classes.header}>Total Revenue</ListSubheader>}>
-            <Revenue />
-            <Revenue />
-            <Revenue />
+            <PerfectScrollbar component="div" className={classes.ScrollHeight}>
+                <Revenue />
+                <Revenue />
+                <Revenue />
+            </PerfectScrollbar>
         </List>
     );
 };

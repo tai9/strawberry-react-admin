@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
         width: '120px',
         height: '120px',
         float: 'right',
-        color: '#ffffff'
+        color: '#ffffff',
+        opacity: 0.5
     },
     text: {
         color: '#ffffff',

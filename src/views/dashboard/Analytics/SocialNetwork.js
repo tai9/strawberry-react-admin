@@ -12,7 +12,9 @@ import LogoOrder from '../../../assets/images/dashboard/logo-order';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        padding: '2%'
+        padding: '2% 0 2% 1%',
+        borderRadius: '10px !important'
+        // backgroundColor: 'red'
     },
     LogoIcons: {
         padding: '12px',
@@ -25,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
     GridItem: {
         backgroundColor: '#ffffff',
-        borderRadius: '10px !important',
+        // borderRadius: '10px !important',
         border: '1px solid #eeeeee',
         width: '100%'
     },
@@ -39,39 +41,72 @@ const useStyles = makeStyles((theme) => ({
 const SocialNetwork = (theme) => {
     const classes = useStyles();
     return (
-        <>
-            <Grid container spacing={1} className={classes.root}>
-                <Grid item xs={6} className={classes.GridItem}>
-                    <Box flexDirection="row" p={1} m={1}>
-                        <Box display="flex" alignItems="center">
-                            <div className={classes.LogoIcons}>
-                                <LogoShare />
-                            </div>
-                            <Box>
-                                <Typography variant="h4" align="center" color="inherit">
-                                    1000
-                                </Typography>
-                                <span className={classes.textSocial}>SHARES</span>
-                            </Box>
+        // <>
+        <Grid container spacing={1} className={classes.root}>
+            {/* <Grid item xs={12} style={{ display: 'flex', borderRadius: '10px' }}> */}
+            <Grid item xs={6} className={classes.GridItem}>
+                <Box flexDirection="row" p={1} m={1}>
+                    <Box display="flex" alignItems="center">
+                        <div className={classes.LogoIcons}>
+                            <LogoShare />
+                        </div>
+                        <Box>
+                            <Typography variant="h4" align="center" color="inherit">
+                                1000
+                            </Typography>
+                            <span className={classes.textSocial}>SHARES</span>
                         </Box>
                     </Box>
-                </Grid>
-                <Grid item xs={6} className={classes.GridItem}>
-                    <Box flexDirection="row" p={1} m={1}>
-                        <Box display="flex" alignItems="center">
-                            <div className={classes.LogoIcons}>
-                                <LogoNetwork />
-                            </div>
-                            <Box>
-                                <Typography variant="h4" align="center" color="inherit">
-                                    600
-                                </Typography>
-                                <span className={classes.textSocial}>NETWORK</span>
-                            </Box>
+                </Box>
+            </Grid>
+            <Grid item xs={6} className={classes.GridItem}>
+                <Box flexDirection="row" p={1} m={1}>
+                    <Box display="flex" alignItems="center">
+                        <div className={classes.LogoIcons}>
+                            <LogoNetwork />
+                        </div>
+                        <Box>
+                            <Typography variant="h4" align="center" color="inherit">
+                                600
+                            </Typography>
+                            <span className={classes.textSocial}>NETWORK</span>
                         </Box>
                     </Box>
-                </Grid>
-                <Grid item xs={6} className={classes.GridItem}>
+                </Box>
+            </Grid>
+            <Grid item xs={6} className={classes.GridItem}>
+                <Box flexDirection="row" p={1} m={1}>
+                    <Box display="flex" alignItems="center">
+                        <div className={classes.LogoIcons}>
+                            <LogoReturn />
+                        </div>
+                        <Box>
+                            <Typography variant="h4" align="center" color="inherit">
+                                3560
+                            </Typography>
+                            <span className={classes.textSocial}>RETURN</span>
+                        </Box>
+                    </Box>
+                </Box>
+            </Grid>
+            <Grid item xs={6} className={classes.GridItem}>
+                <Box flexDirection="row" p={1} m={1}>
+                    <Box display="flex" alignItems="center">
+                        <div className={classes.LogoIcons}>
+                            <LogoOrder />
+                        </div>
+                        <Box>
+                            <Typography variant="h4" align="center" color="inherit">
+                                100%
+                            </Typography>
+                            <span className={classes.textSocial}>ORDER</span>
+                        </Box>
+                    </Box>
+                </Box>
+            </Grid>
+            {/* </Grid> */}
+
+            {/* <Grid item xs={6} className={classes.GridItem}>
                     <Box flexDirection="row" p={1} m={1}>
                         <Box display="flex" alignItems="center">
                             <div className={classes.LogoIcons}>
@@ -100,9 +135,10 @@ const SocialNetwork = (theme) => {
                             </Box>
                         </Box>
                     </Box>
-                </Grid>
-            </Grid>
-        </>
+                </Grid> */}
+            {/* </Grid> */}
+        </Grid>
+        // </>
     );
 };
 

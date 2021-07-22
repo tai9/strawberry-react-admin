@@ -1,6 +1,6 @@
 const MarketShareChart = {
     type: 'area',
-    height: 250,
+    height: 200,
     options: {
         chart: {
             sparkline: {
@@ -10,7 +10,7 @@ const MarketShareChart = {
         dataLabels: {
             enabled: false
         },
-        colors: [ '#3399FF', '#0033CC', '#FF3300' ],
+        colors: ['#3399FF', '#0033CC', '#FF3300'],
         stroke: {
             curve: 'smooth',
             width: 2
@@ -20,14 +20,14 @@ const MarketShareChart = {
             max: 130
         },
         fill: {
-            type: "gradient",
+            type: 'gradient',
             gradient: {
-              shadeIntensity: 1,
-              opacityFrom: 0.3,
-              opacityTo: 0.5,
-              stops: [0]
+                shadeIntensity: 1,
+                opacityFrom: 0.3,
+                opacityTo: 0.5,
+                stops: [0]
             }
-          },
+        }
     },
     series: [
         {
@@ -43,6 +43,6 @@ const MarketShareChart = {
             data: [54, 60, 32, 99, 125, 50, 3, 44]
         }
     ]
-}
+};
 
 export default MarketShareChart;
