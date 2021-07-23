@@ -5,15 +5,26 @@ import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography, Paper, CardContent } from '@material-ui/core';
 
 //project
-// import LogoDailyUser from '../../../assets/images/dashboard/logo-daily-user';
-// import LogoDailyPage from '../../../assets/images/dashboard/logo-daily-page';
+// import { LogoDailyPage } from '../../../assets/images/dashboard/daily-page.svg';
+// import DefaultLogo from '../../../assets/images/dashboard/'
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
+    dailyUser: {
         background: 'rgb(103, 58, 183)',
         color: '#fff',
-        position: 'relative'
+        position: 'relative',
+        overflow: 'hidden',
+        padding: 10
+    },
+    dailyPage: {
+        background: 'rgb(33, 150, 243)',
+        color: '#fff',
+        position: 'relative',
+        overflow: 'hidden',
+        marginTop: 20,
+        padding: 10
     },
     icon: {
         width: '100px',
@@ -38,24 +49,45 @@ const useStyles = makeStyles((theme) => ({
 const DailyComponent = (theme) => {
     const classes = useStyles();
     return (
-        <Paper classes=".MuiPaper-root" className={classes.root}>
-            <CardContent>
-                <Typography variant="subtitle2" className={classes.positionIcon}>
-                    <AccountCircleIcon className={classes.icon} />
-                </Typography>
+        <>
+            <Paper classes=".MuiPaper-root" className={classes.dailyUser}>
+                <CardContent>
+                    <Typography variant="subtitle2" className={classes.positionIcon}>
+                        <AccountCircleIcon className={classes.icon} />
+                    </Typography>
 
-                <Grid container className={classes.text}>
-                    <Grid item sm={12}>
-                        <Typography variant="h2" className={classes.textColor}>
-                            1,658
-                        </Typography>
+                    <Grid container className={classes.text}>
+                        <Grid item sm={12}>
+                            <Typography variant="h2" className={classes.textColor}>
+                                1,658
+                            </Typography>
+                        </Grid>
+                        <Grid item sm={12}>
+                            <Typography variant="body1">Daily user</Typography>
+                        </Grid>
                     </Grid>
-                    <Grid item sm={12}>
-                        <Typography variant="body1">Daily user</Typography>
+                </CardContent>
+            </Paper>
+            {/* <br /> */}
+            <Paper classes=".MuiPaper-root" className={classes.dailyPage}>
+                <CardContent>
+                    <Typography variant="subtitle2" className={classes.positionIcon}>
+                        <FileCopyOutlinedIcon className={classes.icon} />
+                    </Typography>
+
+                    <Grid container className={classes.text}>
+                        <Grid item sm={12}>
+                            <Typography variant="h2" className={classes.textColor}>
+                                1K
+                            </Typography>
+                        </Grid>
+                        <Grid item sm={12}>
+                            <Typography variant="body1">Daily page view</Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </CardContent>
-        </Paper>
+                </CardContent>
+            </Paper>
+        </>
     );
 };
 
