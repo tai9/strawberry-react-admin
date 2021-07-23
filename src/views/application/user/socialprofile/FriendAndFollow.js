@@ -1,5 +1,4 @@
 import React from 'react'
-import { Grid } from '@material-ui/core';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
@@ -18,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
     },
     friAndFolContent: {
         width: '100%',
-        // backgroundColor: 'yellow'
     },
     avataFriend: {
         display: 'flex'

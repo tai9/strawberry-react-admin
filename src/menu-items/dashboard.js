@@ -1,6 +1,6 @@
 // assets
 import { IconDashboard, IconDeviceAnalytics } from '@tabler/icons';
-
+    
 // constant
 const icons = {
     IconDashboard: IconDashboard,

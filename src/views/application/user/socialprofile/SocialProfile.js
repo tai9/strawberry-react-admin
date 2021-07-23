@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import imageCover from '../../../assets/images/Application/User/SocialProfile/img-profile-bg.2b15e931.png';
-import avatar from '../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
+import imageCover from '../../../../assets/images/Application/User/SocialProfile/img-profile-bg.2b15e931.png';
+import avatar from '../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
