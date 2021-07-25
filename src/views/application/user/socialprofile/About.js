@@ -68,6 +68,10 @@ const useStyles = makeStyles((theme) => ({
     tagA: {
         color: "black",
         width: "100%",
+        textDecoration: "none",
+        "&:hover": {
+            color: "#2196f3"
+        }
     }
     
 }));
