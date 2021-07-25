@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import MonetizationOnOutlinedIcon from '@material-ui/icons/MonetizationOnOutlined';
+import Paper from '@material-ui/core/Paper';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         color: 'white',
@@ -11,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
         webkitBoxPack: 'justify',
         justifyContent: 'space-between',
         webkitBoxAlign: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: '20px'
     },
     content: {
         display: 'inline-block'
@@ -24,22 +26,31 @@ const useStyles = makeStyles((theme) => ({
     title: {
         fontSize: 14,
         fontWeight: 400
+    },
+    bgPuple: {
+        backgroundColor: 'rgb(103, 58, 183)'
+    },
+    bgBlue: {
+        backgroundColor: 'rgb(30, 136, 229)'
+    },
+    bgRed: {
+        backgroundColor: 'rgb(216, 67, 21)'
     }
 }));
 
-export default function BoxRevenue() {
+export default function BoxRevenue({ data }) {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <div className={classes.content}>
-                <div className={classes.title}>Revenue</div>
-                <div className={classes.data}>$42,562</div>
-                <div className={classes.title}>$50,032 Last Month</div>
+        <Paper className={classes[data.background]}>
+            <div className={classes.root}>
+                <div className={classes.content}>
+                    <div className={classes.title}>{data.title}</div>
+                    <div className={classes.data}>{data.data}</div>
+                    <div className={classes.title}>{data.statistics}</div>
+                </div>
+                <div>{data.img}</div>
             </div>
-            <div>
-                <MonetizationOnOutlinedIcon style={{ fontSize: 95, opacity: 0.4 }} />
-            </div>
-        </div>
+        </Paper>
     );
 }

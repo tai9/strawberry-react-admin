@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
+import WbSunnyOutlinedIcon from '@material-ui/icons/WbSunnyOutlined';
 const useStyles = makeStyles((theme) => ({
     root: {
         boxSizing: 'border-box',
@@ -16,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden'
     },
     content: {
-        margin: '0 15px'
+        margin: '0 15px',
+        textAlign: 'center'
     },
     data: {
         fontSize: 21,
@@ -33,48 +35,26 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: 'white'
     },
-
-    bgPuple: {
-        backgroundColor: 'rgb(103, 58, 183)'
-    },
     bgBlue: {
         backgroundColor: 'rgb(30, 136, 229)'
-    },
-    bgRed: {
-        backgroundColor: 'rgb(216, 67, 21)'
-    },
-    bgGreen: {
-        backgroundColor: 'rgb(0, 200, 83)'
-    },
-    puple: {
-        color: 'rgb(103, 58, 183)'
-    },
-    blue: {
-        color: 'rgb(30, 136, 229)'
-    },
-    red: {
-        color: 'rgb(216, 67, 21)'
-    },
-    green: {
-        color: 'rgb(0, 200, 83)'
     }
 }));
 
-export default function BoxUser({ data }) {
+export default function WeatherCard() {
     const classes = useStyles();
 
     return (
         <Grid container>
             <div className={classes.root}>
-                <Grid item xs={4} className={classes[data.bgColor]}>
-                    <div className={classes.img}>{data.img}</div>
+                <Grid item xs={6} className={classes.bgBlue}>
+                    <div className={classes.img}>
+                        <WbSunnyOutlinedIcon fontSize="large" /> <div className={classes.title}>New York , NY</div>
+                    </div>
                 </Grid>
-                <Grid item xs={8}>
+                <Grid item xs={6}>
                     <div className={classes.content}>
-                        <div className={classes.data}>{data.data}</div>
-                        <div className={classes.title}>
-                            {data.title} <span className={classes[data.color]}>{data.statistics}</span>{' '}
-                        </div>
+                        <div className={classes.data}>19&#176;</div>
+                        <div className={classes.title}>Sunny</div>
                     </div>
                 </Grid>
             </div>

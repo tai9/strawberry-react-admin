@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import FacebookIcon from '@material-ui/icons/Facebook';
+import Paper from '@material-ui/core/Paper';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         color: 'white',
@@ -11,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
         webkitBoxPack: 'justify',
         justifyContent: 'space-between',
         webkitBoxAlign: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: '17px'
     },
     content: {
         display: 'inline-block'
@@ -24,20 +26,40 @@ const useStyles = makeStyles((theme) => ({
     title: {
         fontSize: 14,
         fontWeight: 400
+    },
+    img: {
+        fontSize: 40,
+        opacity: 0.4,
+        '&:hover': {
+            opacity: 1,
+            transform: ' scale(1.1)'
+        }
+    },
+    bgPuple: {
+        backgroundColor: 'rgb(103, 58, 183)'
+    },
+    bgBlue: {
+        backgroundColor: 'rgb(30, 136, 229)'
+    },
+    bgRed: {
+        backgroundColor: 'rgb(216, 67, 21)'
+    },
+    bgBlack: {
+        backgroundColor: 'rgb(41, 49, 79)'
     }
 }));
-export default function BoxSocialFb() {
+export default function BoxSocialFb({ data }) {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <div className={classes.content}>
-                <div className={classes.data}>1165 +</div>
-                <div className={classes.title}>Facebook Users</div>
+        <Paper className={classes[data.bgColor]}>
+            <div className={classes.root}>
+                <div className={classes.content}>
+                    <div className={classes.data}>{data.data}</div>
+                    <div className={classes.title}>{data.title}</div>
+                </div>
+                <div className={classes.img}>{data.img}</div>
             </div>
-            <div>
-                <FacebookIcon style={{ fontSize: 40, opacity: 0.4 }} />
-            </div>
-        </div>
+        </Paper>
     );
 }
