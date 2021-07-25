@@ -22,6 +22,7 @@ import ImpressionsCard from '../../ui-component/statistics/impressionsCard';
 import DailyCard from '../../ui-component/statistics/dailyCard';
 import BoxUser from '../../ui-component/statistics/boxUser';
 import WeatherCard from '../../ui-component/statistics/weatherCard';
+import NetworkCard from '../../ui-component/statistics/networkCard';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -119,6 +120,10 @@ export default function Statistics() {
                 ))}
                 <Grid item xs={12} sm={12} lg={4}>
                     <WeatherCard />
+                </Grid>
+
+                <Grid item xs={12} sm={12} lg={4}>
+                    <NetworkCard />
                 </Grid>
             </Grid>
         </div>
