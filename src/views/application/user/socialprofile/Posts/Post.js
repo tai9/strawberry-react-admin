@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '24px'
     },
     postContent: {
-        background: 'white',
+        background: '#fff',
         padding: '24px',
         borderRadius: '12px'
     },
