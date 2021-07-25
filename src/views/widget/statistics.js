@@ -23,6 +23,8 @@ import DailyCard from '../../ui-component/statistics/dailyCard';
 import BoxUser from '../../ui-component/statistics/boxUser';
 import WeatherCard from '../../ui-component/statistics/weatherCard';
 import NetworkCard from '../../ui-component/statistics/networkCard';
+import TaskCard from '../../ui-component/statistics/taskCard';
+import CustomerCard from '../../ui-component/statistics/customer';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -89,22 +91,7 @@ export default function Statistics() {
                 ))}
 
                 <Grid item xs={12}>
-                    <Paper className={classes.paper}>
-                        <Grid container>
-                            <Grid item xs={12} lg={3} sm={6}>
-                                1234
-                            </Grid>
-                            <Grid item xs={12} lg={3} sm={6}>
-                                1234
-                            </Grid>
-                            <Grid item xs={12} lg={3} sm={6}>
-                                1234
-                            </Grid>
-                            <Grid item xs={12} lg={3} sm={6}>
-                                1234
-                            </Grid>
-                        </Grid>
-                    </Paper>
+                    <TaskCard />
                 </Grid>
 
                 {dataDaily.map((item) => (
@@ -124,6 +111,9 @@ export default function Statistics() {
 
                 <Grid item xs={12} sm={12} lg={4}>
                     <NetworkCard />
+                </Grid>
+                <Grid item xs={12} sm={12} lg={4}>
+                    <CustomerCard />
                 </Grid>
             </Grid>
         </div>

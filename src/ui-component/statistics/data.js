@@ -21,6 +21,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
+import EmojiEventsOutlinedIcon from '@material-ui/icons/EmojiEventsOutlined';
 
 import { deepPurple, green, pink, lightBlue, orange, red, yellow } from '@material-ui/core/colors';
 
@@ -251,7 +252,7 @@ export const dataDaily = [
         id: 1,
         title: 'Last month visitor',
         data: '5,678',
-        img: <AccountCircleTwoToneIcon style={{ fontSize: '90px', opacity: '0.3' }} />,
+        img: <EmojiEventsOutlinedIcon style={{ fontSize: '90px', opacity: '0.3' }} />,
         bgColor: 'bgGreen'
     }
 ];

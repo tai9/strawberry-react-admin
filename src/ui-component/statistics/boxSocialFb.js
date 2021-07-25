@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     img: {
         fontSize: 40,
         opacity: 0.4,
+        transition: 'all 1s',
         '&:hover': {
             opacity: 1,
             transform: ' scale(1.1)'
