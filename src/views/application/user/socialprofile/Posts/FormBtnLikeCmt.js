@@ -82,14 +82,20 @@ const FormBtnLikeCmt = () => {
     const [checked, setChecked] = React.useState(true);
 
     const [like, setLike] = React.useState(false);
+    const [score, setScore] = React.useState(10);
 
     const handleClick = () => {
         setChecked((prev) => !prev);
     };
 
-    const handleClickToLike = () => {
-        setLike((prev) => !prev);
-        console.log(like)
+    const handleClickToLike = async () => {
+        await setLike((prev) => !prev);
+        if(like){
+            setScore(score - 1)
+        }
+        else{
+            setScore(score + 1)
+        }
     };
 
 
@@ -98,9 +104,9 @@ const FormBtnLikeCmt = () => {
             {/* like and comment */}
             <div className={classes.borderLikeCmt}>
                 <div className={classes.likecmt} onClick={handleClickToLike}>
-                    {like ? <><ThumbUpAltTwoToneIcon className={classes.onClickIconLike} /> 10 Likes</>:
+                    {like ? <><ThumbUpAltTwoToneIcon className={classes.onClickIconLike} /> {score} Likes</>:
                     <>
-                        <ThumbUpAltTwoToneIcon className={classes.iconLike} /> 10 Likes
+                        <ThumbUpAltTwoToneIcon className={classes.iconLike} /> {score} Likes
                     </>
                     }
                 </div>
