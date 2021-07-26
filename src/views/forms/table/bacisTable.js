@@ -1,10 +1,12 @@
-// material-ui
-import { Grid } from '@material-ui/core';
+import Basic from '../../../ui-component/form/table/basic';
+import DataGridDemo from '../../../ui-component/form/table/dataGrid';
 
-// project imports
-
-const BacisTable = () => {
-    return <div>1234</div>;
-};
-
-export default BacisTable;
+export default function BasicTable() {
+    return (
+        <div>
+            <Basic />
+            <br />
+            <DataGridDemo />
+        </div>
+    );
+}
