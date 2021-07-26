@@ -8,6 +8,9 @@ import Loadable from '../ui-component/Loadable';
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
 
+// application routing
+const ApplicationContactCard = Loadable(lazy(() => import('../views/application/contact/Card')));
+
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
 const UtilsColor = Loadable(lazy(() => import('../views/utilities/Color')));
@@ -28,6 +31,9 @@ const MainRoutes = () => {
             path={[
                 '/dashboard/default',
 
+                '/application/contact/cards',
+                '/application/contact/list',
+
                 '/utils/util-typography',
                 '/utils/util-color',
                 '/utils/util-shadow',
@@ -40,6 +46,9 @@ const MainRoutes = () => {
             <MainLayout>
                 <Switch location={location} key={location.pathname}>
                     <Route path="/dashboard/default" component={DashboardDefault} />
+
+                    <Route path="/application/contact/cards" component={ApplicationContactCard} />
+                    <Route path="/application/contact/list" component={DashboardDefault} />
 
                     <Route path="/utils/util-typography" component={UtilsTypography} />
                     <Route path="/utils/util-color" component={UtilsColor} />
