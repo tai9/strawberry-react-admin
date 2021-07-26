@@ -1,19 +1,10 @@
 import React from 'react';
-import ChatBubbleTwoToneIcon from '@material-ui/icons/ChatBubbleTwoTone';
+import ReplyTwoToneIcon from '@material-ui/icons/ReplyTwoTone';
 import ThumbUpAltTwoToneIcon from '@material-ui/icons/ThumbUpAltTwoTone';
 import Button from '@material-ui/core/Button';
 
 import { makeStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
-
-import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
-import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
-import ChatOutlinedIcon from '@material-ui/icons/ChatOutlined';
-import ContentCopyTwoToneIcon from '@material-ui/icons/ContentCopyTwoTone';
-
-// simple menu
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 
 import avatar from '../../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
 import { Avatar } from '@material-ui/core';
@@ -26,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '18px',
         marginRight: '8px'
     },
-    iconCmt: {
+    iconReply: {
         fontSize: '18px',
         marginRight: '8px',
-        color: '#673ab7'
+        color: 'rgb(33, 150, 243)'
     },
     likecmt: {
         display: 'inline-flex',
@@ -40,17 +31,17 @@ const useStyles = makeStyles((theme) => ({
         cursor: 'pointer',
         fontWeight: '700',
         fontSize: '12px',
-        padding:'4px 5px',
+        padding: '4px 5px',
         transition: 'all .5s',
-        borderRadius: "5px",
+        borderRadius: '5px',
         '&:hover': {
             textDecoration: 'none',
-            backgroundColor: 'rgba(97, 97, 97, 0.04)',
+            backgroundColor: 'rgba(97, 97, 97, 0.04)'
         }
     },
     borderLikeCmt: {
         display: 'flex',
-        marginTop: '38px',
+        marginTop: '8px',
         marginBottom: '13px',
         justifyContent: 'space-between',
         alignItems: 'center'
@@ -109,10 +100,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const FormBtnLikeCmt = () => {
+const FormBtnLikeReply = () => {
     const classes = useStyles();
 
-    const [checked, setChecked] = React.useState(true);
+    const [checked, setChecked] = React.useState(false);
 
     const [like, setLike] = React.useState(false);
     const [score, setScore] = React.useState(10);
@@ -128,17 +119,6 @@ const FormBtnLikeCmt = () => {
         } else {
             setScore(score + 1);
         }
-    };
-
-    // simple menu
-    const [anchorEl, setAnchorEl] = React.useState(null);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
     };
 
     return (
@@ -159,29 +139,8 @@ const FormBtnLikeCmt = () => {
                         )}
                     </div>
                     <div className={classes.likecmt} onClick={handleClickCmt}>
-                        <ChatBubbleTwoToneIcon className={classes.iconCmt} /> 10 Comments
+                        <ReplyTwoToneIcon className={classes.iconReply} /> 10 Reply
                     </div>
-                </div>
-
-                {/* button share */}
-                <div className={classes.btnCover}>
-                    <div className={classes.btnEditDelete} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                        <ShareOutlinedIcon className={classes.btnThereDots} />
-                    </div>
-                    <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-                        <MenuItem onClick={handleClose}>
-                            <ShareOutlinedIcon className={classes.iconsFromBtnShare} /> Share Now
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <PeopleAltOutlinedIcon className={classes.iconsFromBtnShare} /> Share to Friends
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <ChatOutlinedIcon className={classes.iconsFromBtnShare} /> Send in Messanger
-                        </MenuItem>
-                        <MenuItem onClick={handleClose}>
-                            <ContentCopyTwoToneIcon className={classes.iconsFromBtnShare} /> Copy Link
-                        </MenuItem>
-                    </Menu>
                 </div>
             </div>
 
@@ -205,16 +164,17 @@ const FormBtnLikeCmt = () => {
                                 </div>
                                 <div className={classes.btnComment}>
                                     <Button variant="contained" color="secondary">
-                                        Comment
+                                        Reply
                                     </Button>
                                 </div>
                             </div>
                         </div>
                     </Collapse>
+                
                 </div>
             </div>
         </>
     );
 };
 
-export default FormBtnLikeCmt;
+export default FormBtnLikeReply;

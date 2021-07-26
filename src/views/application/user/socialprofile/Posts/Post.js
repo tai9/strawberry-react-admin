@@ -4,6 +4,7 @@ import HeaderInfo from './HeaderInfo';
 import { makeStyles } from '@material-ui/styles';
 import ContentPost from './ContentPost';
 import FormBtnLikeCmt from './FormBtnLikeCmt';
+import Comment from './Comment';
 
 
 // style constant
@@ -45,8 +46,7 @@ const Post = () => {
                     <HeaderInfo />
                     <ContentPost />
                     <FormBtnLikeCmt/>
-                    
-
+                    <Comment/>
                 </div>
             </div>
         </React.Fragment>
