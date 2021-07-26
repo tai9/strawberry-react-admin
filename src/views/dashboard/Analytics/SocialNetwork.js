@@ -2,38 +2,48 @@ import React from 'react';
 
 //material-ui
 import { makeStyles } from '@material-ui/styles';
-import { Grid, Box, Typography } from '@material-ui/core';
+import { Grid, Typography, Paper } from '@material-ui/core';
 
 //import project
 import LogoShare from '../../../assets/images/dashboard/logo-shares';
 import LogoNetwork from '../../../assets/images/dashboard/logo-network';
 import LogoReturn from '../../../assets/images/dashboard/logo-return';
 import LogoOrder from '../../../assets/images/dashboard/logo-order';
+import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        padding: '2% 0 2% 1%',
-        borderRadius: '10px !important'
-        // backgroundColor: 'red'
+    gridItem: {
+        borderLeft: '1px solid',
+        borderBottom: '1px solid',
+        borderLeftColor: '#eeeeee',
+        borderBottomColor: '#eeeeee',
+        padding: 20
     },
-    LogoIcons: {
-        padding: '12px',
-        borderRadius: '30%',
+    gridText: {
+        paddingTop: 8
+    },
+    gridIcons: {
+        padding: 10,
+        borderRadius: '14px',
         width: '50px',
         height: '50px',
-        backgroundColor: 'rgb(227 242 253)',
-        color: 'rgb(103, 58, 183)',
-        marginRight: '20%'
+        backgroundColor: '#e3f2fd',
+        color: '#673ab7'
     },
-    GridItem: {
-        backgroundColor: '#ffffff',
-        // borderRadius: '10px !important',
-        border: '1px solid #eeeeee',
-        width: '100%'
+    textNumber: {
+        fontWeight: 500,
+        fontSize: '0.875rem',
+        lineHeight: '1.334',
+        color: 'rgb(33, 33, 33)',
+        textAlign: 'center'
     },
     textSocial: {
         fontSize: '13px',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: '#9e9e9e'
+    },
+    cardContent: {
+        padding: '0px !important'
     }
 }));
 
@@ -41,104 +51,74 @@ const useStyles = makeStyles((theme) => ({
 const SocialNetwork = (theme) => {
     const classes = useStyles();
     return (
-        // <>
-        <Grid container spacing={1} className={classes.root}>
-            {/* <Grid item xs={12} style={{ display: 'flex', borderRadius: '10px' }}> */}
-            <Grid item xs={6} className={classes.GridItem}>
-                <Box flexDirection="row" p={1} m={1}>
-                    <Box display="flex" alignItems="center">
-                        <div className={classes.LogoIcons}>
-                            <LogoShare />
-                        </div>
-                        <Box>
-                            <Typography variant="h4" align="center" color="inherit">
-                                1000
-                            </Typography>
-                            <span className={classes.textSocial}>SHARES</span>
-                        </Box>
-                    </Box>
-                </Box>
-            </Grid>
-            <Grid item xs={6} className={classes.GridItem}>
-                <Box flexDirection="row" p={1} m={1}>
-                    <Box display="flex" alignItems="center">
-                        <div className={classes.LogoIcons}>
-                            <LogoNetwork />
-                        </div>
-                        <Box>
-                            <Typography variant="h4" align="center" color="inherit">
-                                600
-                            </Typography>
-                            <span className={classes.textSocial}>NETWORK</span>
-                        </Box>
-                    </Box>
-                </Box>
-            </Grid>
-            <Grid item xs={6} className={classes.GridItem}>
-                <Box flexDirection="row" p={1} m={1}>
-                    <Box display="flex" alignItems="center">
-                        <div className={classes.LogoIcons}>
-                            <LogoReturn />
-                        </div>
-                        <Box>
-                            <Typography variant="h4" align="center" color="inherit">
-                                3560
-                            </Typography>
-                            <span className={classes.textSocial}>RETURN</span>
-                        </Box>
-                    </Box>
-                </Box>
-            </Grid>
-            <Grid item xs={6} className={classes.GridItem}>
-                <Box flexDirection="row" p={1} m={1}>
-                    <Box display="flex" alignItems="center">
-                        <div className={classes.LogoIcons}>
-                            <LogoOrder />
-                        </div>
-                        <Box>
-                            <Typography variant="h4" align="center" color="inherit">
-                                100%
-                            </Typography>
-                            <span className={classes.textSocial}>ORDER</span>
-                        </Box>
-                    </Box>
-                </Box>
-            </Grid>
-            {/* </Grid> */}
-
-            {/* <Grid item xs={6} className={classes.GridItem}>
-                    <Box flexDirection="row" p={1} m={1}>
-                        <Box display="flex" alignItems="center">
-                            <div className={classes.LogoIcons}>
-                                <LogoReturn />
-                            </div>
-                            <Box>
-                                <Typography variant="h4" align="center" color="inherit">
-                                    3560
+        <Paper>
+            <CardContent className={classes.cardContent}>
+                <Grid container>
+                    <Grid item xs={12} sm={6} className={classes.gridItem}>
+                        <Grid container>
+                            <Grid item className={classes.gridIcons}>
+                                <LogoShare />
+                            </Grid>
+                            <Grid item xs={9} className={classes.gridText}>
+                                <Typography variant="h5" className={classes.textNumber}>
+                                    1000
                                 </Typography>
-                                <span className={classes.textSocial}>RETURN</span>
-                            </Box>
-                        </Box>
-                    </Box>
+                                <Typography variant="h6" className={classes.textSocial}>
+                                    SHARES
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12} sm={6} className={classes.gridItem}>
+                        <Grid container>
+                            <Grid item className={classes.gridIcons}>
+                                <LogoNetwork />
+                            </Grid>
+                            <Grid item xs={9}>
+                                <Typography variant="h5" className={classes.textNumber}>
+                                    600
+                                </Typography>
+                                <Typography variant="h6" className={classes.textSocial}>
+                                    NETWORK
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <Grid item xs={6} className={classes.GridItem}>
-                    <Box flexDirection="row" p={1} m={1}>
-                        <Box display="flex" alignItems="center">
-                            <div className={classes.LogoIcons}>
+                <Grid container>
+                    <Grid item xs={12} sm={6} className={classes.gridItem}>
+                        <Grid container>
+                            <Grid item className={classes.gridIcons}>
+                                <LogoReturn />
+                            </Grid>
+                            <Grid item xs={9}>
+                                <Typography variant="h5" className={classes.textNumber}>
+                                    3550
+                                </Typography>
+                                <Typography variant="h6" className={classes.textSocial}>
+                                    RETURNS
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={12} sm={6} className={classes.gridItem}>
+                        <Grid container>
+                            <Grid item className={classes.gridIcons}>
                                 <LogoOrder />
-                            </div>
-                            <Box>
-                                <Typography variant="h4" align="center" color="inherit">
+                            </Grid>
+                            <Grid item xs={9}>
+                                <Typography variant="h5" className={classes.textNumber}>
                                     100%
                                 </Typography>
-                                <span className={classes.textSocial}>ORDER</span>
-                            </Box>
-                        </Box>
-                    </Box>
-                </Grid> */}
-            {/* </Grid> */}
-        </Grid>
-        // </>
+                                <Typography variant="h6" className={classes.textSocial}>
+                                    ORDER
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </CardContent>
+        </Paper>
     );
 };
 

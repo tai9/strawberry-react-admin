@@ -2,7 +2,7 @@ import React from 'react';
 
 //material-ui
 import { makeStyles } from '@material-ui/styles';
-import ListSubheader from '@material-ui/core/ListSubheader';
+import { Paper, Divider } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -10,15 +10,14 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import PerfectScrollbar from 'react-perfect-scrollbar';
+import CardHeader from '@material-ui/core/CardHeader';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         marginTop: '20px',
-        width: '100%',
         backgroundColor: '#ffffff',
         position: 'relative',
-        borderRadius: '15px',
-        overflow: 'auto'
+        borderRadius: '15px'
     },
     header: {
         fontSize: '20px',
@@ -41,12 +40,9 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '10px'
     },
     ScrollHeight: {
-        height: 'calc(100vh - 600px)',
+        height: '450px',
         paddingLeft: '16px',
-        paddingRight: '16px',
-        [theme.breakpoints.down('sm')]: {
-            height: 'calc(100vh - 506px)'
-        }
+        paddingRight: '16px'
     }
 }));
 
@@ -98,13 +94,17 @@ const TotalRevenue = (theme) => {
     const classes = useStyles();
 
     return (
-        <List className={classes.root} subheader={<ListSubheader className={classes.header}>Total Revenue</ListSubheader>}>
-            <PerfectScrollbar component="div" className={classes.ScrollHeight}>
-                <Revenue />
-                <Revenue />
-                <Revenue />
-            </PerfectScrollbar>
-        </List>
+        <Paper className={classes.root}>
+            <CardHeader title="Total Revenue"></CardHeader>
+            <Divider />
+            <List>
+                <PerfectScrollbar component="div" className={classes.ScrollHeight}>
+                    <Revenue />
+                    <Revenue />
+                    <Revenue />
+                </PerfectScrollbar>
+            </List>
+        </Paper>
     );
 };
 

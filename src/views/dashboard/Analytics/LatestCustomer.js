@@ -1,22 +1,17 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { Typography } from '@material-ui/core';
-import Table from '@material-ui/core/Table';
+import { CardActions, Paper, CardHeader, Table, Divider, Button } from '@material-ui/core';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 const useStyles = makeStyles((theme) => ({
     ScrollHeight: {
-        height: 'calc(100vh - 488px)',
+        height: '400px',
         paddingLeft: '16px',
         paddingRight: '16px',
-        [theme.breakpoints.down('sm')]: {
-            height: 'calc(100vh - 56px)'
-        }
     },
     root: {
         position: 'relative'
@@ -26,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     },
     header: {
         fontWeight: 'bold'
+    },
+    button:{
+        justifyContent: 'flex-end'
     }
 }));
 
@@ -50,38 +48,45 @@ export default function BasicTable() {
     const classes = useStyles();
 
     return (
-        <TableContainer component={Paper}>
-            <PerfectScrollbar component="div" className={classes.ScrollHeight}>
-                <Typography variant="h3" style={{ padding: 20 }}>
-                    Latest Customers
-                </Typography>
-                <Table className={classes.table} aria-label="simple table">
-                    <TableRow>
-                        <TableCell className={classes.header}>#</TableCell>
-                        <TableCell className={classes.header} align="center">
-                            Country
-                        </TableCell>
-                        <TableCell className={classes.header} align="center">
-                            Name
-                        </TableCell>
-                        <TableCell className={classes.header} align="center">
-                            Average
-                        </TableCell>
-                    </TableRow>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <TableRow key={row.name}>
-                                <TableCell component="th" scope="row">
-                                    <img src={row.nation} alt={row.country} />
-                                </TableCell>
-                                <TableCell align="center">{row.country}</TableCell>
-                                <TableCell align="center">{row.name}</TableCell>
-                                <TableCell align="center">{row.average}</TableCell>
-                            </TableRow>
-                        ))}
-                    </TableBody>
-                </Table>
-            </PerfectScrollbar>
-        </TableContainer>
+        <Paper>
+            <CardHeader title="Latest Customers"></CardHeader>
+            <Divider />
+            <TableContainer>
+                <PerfectScrollbar component="div" className={classes.ScrollHeight}>
+                    <Table className={classes.table} aria-label="simple table">
+                        <TableRow>
+                            <TableCell className={classes.header}>#</TableCell>
+                            <TableCell className={classes.header} align="center">
+                                Country
+                            </TableCell>
+                            <TableCell className={classes.header} align="center">
+                                Name
+                            </TableCell>
+                            <TableCell className={classes.header} align="center">
+                                Average
+                            </TableCell>
+                        </TableRow>
+                        <TableBody>
+                            {rows.map((row) => (
+                                <TableRow key={row.name}>
+                                    <TableCell component="th" scope="row">
+                                        <img src={row.nation} alt={row.country} />
+                                    </TableCell>
+                                    <TableCell align="center">{row.country}</TableCell>
+                                    <TableCell align="center">{row.name}</TableCell>
+                                    <TableCell align="center">{row.average}</TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </PerfectScrollbar>
+            </TableContainer>
+            <Divider />
+            <CardActions>
+                <Button color="primary" className={classes.button}>
+                    View all Latest Customers
+                </Button>
+            </CardActions>
+        </Paper>
     );
 }
