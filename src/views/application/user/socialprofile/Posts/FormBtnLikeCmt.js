@@ -9,7 +9,7 @@ import TextField from '@material-ui/core/TextField';
 import avatar from '../../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
 import { Avatar } from '@material-ui/core';
 
-// Collapse
+// Transitions Collapse
 import Collapse from '@material-ui/core/Collapse';
 
 const useStyles = makeStyles((theme) => ({
