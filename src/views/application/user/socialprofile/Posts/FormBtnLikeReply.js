@@ -170,7 +170,6 @@ const FormBtnLikeReply = () => {
                             </div>
                         </div>
                     </Collapse>
-                
                 </div>
             </div>
         </>

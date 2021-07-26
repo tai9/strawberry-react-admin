@@ -143,18 +143,6 @@ const Comment = () => {
         }
     };
 
-    const [values, setValues] = React.useState({
-        amount: '',
-        password: '',
-        weight: '',
-        weightRange: '',
-        showPassword: false
-    });
-
-    const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-    };
-
     return (
         <React.Fragment>
             <div className={classes.comment}>
