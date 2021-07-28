@@ -22,6 +22,9 @@ const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIc
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
+// application routing // eltr
+const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
+
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
 const MainRoutes = () => {
@@ -40,7 +43,8 @@ const MainRoutes = () => {
                 '/icons/tabler-icons',
                 '/icons/material-icons',
 
-                '/sample-page'
+                '/sample-page',
+                '/user/social-profile/posts', // eltr
             ]}
         >
             <MainLayout>
@@ -56,6 +60,9 @@ const MainRoutes = () => {
                     <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
 
                     <Route path="/sample-page" component={SamplePage} />
+
+                    {/* eltr */}
+                    <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
                 </Switch>
             </MainLayout>
         </Route>
