@@ -51,10 +51,10 @@ const userReducer = (state = initialState, action) => {
             //     post[action.data.idpost].comment[idcmt].reply.push(reply);
             // }
 
-            console.log('action.data.idpost');
-            console.log(action.data.idpost);
-            console.log('action.data.idCmt');
-            console.log(action.data.idCmt);
+            // console.log('action.data.idpost');
+            // console.log(action.data.idpost);
+            // console.log('action.data.idCmt');
+            // console.log(action.data.idCmt);
             post[action.data.idpost].comment[action.data.idCmt].reply.push(reply);
 
             state.arrPost = post;
