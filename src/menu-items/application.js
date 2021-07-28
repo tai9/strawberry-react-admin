@@ -1,9 +1,10 @@
 // assets
-import { IconNfc } from '@tabler/icons';
+import { IconNfc, IconUserCheck } from '@tabler/icons';
 
 // constant
 const icons = {
-    IconNfc: IconNfc
+    IconNfc: IconNfc,
+    IconUserCheck: IconUserCheck
 };
 
 //-----------------------|| EXTRA PAGES MENU ITEMS ||-----------------------//
@@ -33,6 +34,28 @@ export const application = {
                     url: '/application/contact/list',
                     breadcrumbs: false
                 }
+            ]
+        },
+        {
+            id: 'users',
+            title: 'Users',
+            type: 'collapse',
+            icon: icons['IconUserCheck'],
+            children: [
+                {
+                    id: 'socialprofile',
+                    title: 'Social Profile',
+                    type: 'item',
+                    url: '/user/social-profile/posts',
+                    target: false
+                }
+                // {
+                //     id: 'register3',
+                //     title: 'Register',
+                //     type: 'item',
+                //     url: '/pages/register/register3',
+                //     target: true
+                // }
             ]
         }
     ]
