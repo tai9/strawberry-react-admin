@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
 
 // material-ui
@@ -11,20 +12,21 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: '400',
         lineHeight: '1.334em',
         marginBottom: '0'
+    },
+    imagepost: {
+        width: '100%',
+        marginTop: '15px'
     }
 }));
 
-const ContentPost = () => {
+const ContentPost = (post) => {
     const classes = useStyles();
 
     return (
         <React.Fragment>
             <div>
-                <p className={classes.content}>Laboris non ad et aute sint aliquip mollit voluptate velit dolore magna fugiat ex.</p>
-                <p className={classes.content}>
-                    Commodo amet veniam nostrud mollit quis sint qui nulla elit esse excepteur ullamco esse magna. Nisi duis aute est in
-                    mollit irure enim tempor in.
-                </p>
+                <p className={classes.content}>{post.contentPost}</p>
+                {post.imagePost.length > 0 ? <img alt="image-post" src={post.imagePost} className={classes.imagepost} /> : ''}
             </div>
         </React.Fragment>
     );

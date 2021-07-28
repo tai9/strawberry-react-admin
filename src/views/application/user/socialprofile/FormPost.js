@@ -32,12 +32,12 @@ const useStyles = makeStyles((theme) => ({
         resize: 'none',
         color: 'rgb(33, 33, 33)',
         borderWadius: '12px',
-        
     },
     postContent: {
         padding: '24px',
         backgroundColor: 'white',
-        borderRadius: '12px'
+        borderRadius: '12px',
+        border: "1px solid rgba(144, 202, 249, 0.46)",
     },
     iconLayer: {
         display: 'inline-flex',

@@ -1,6 +1,7 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
-import avatar from '../../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
+
+// icons MoreVertSharp
 import MoreVertSharpIcon from '@material-ui/icons/MoreVertSharp';
 
 // simple menu
@@ -9,7 +10,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
-
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '10px'
     },
     btnEditDelete: {
-        cursor: 'pointer',
+        cursor: 'pointer'
     },
     btnThereDots: {
         backgroundColor: '#ede7f6',
@@ -71,12 +71,11 @@ const useStyles = makeStyles((theme) => ({
     btnCover: {
         display: 'inline-flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     }
-
 }));
 
-const HeaderInfo = () => {
+const HeaderInfo = (post) => {
     const classes = useStyles();
 
     // simple menu
@@ -97,7 +96,7 @@ const HeaderInfo = () => {
                     {/* avatar, name, time, editButton */}
                     <div className={classes.avataNameEdit}>
                         <div className={classes.avataName}>
-                            <Avatar alt="avatar" src={avatar} />
+                            <Avatar alt="avatar" src={post.avatar} />
                             <div className={classes.nameStatus}>
                                 <div className={classes.name}>John Doe</div>
                                 <div>

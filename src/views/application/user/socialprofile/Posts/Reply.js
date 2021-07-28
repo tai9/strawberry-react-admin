@@ -10,6 +10,7 @@ import HeaderCmt from './HeaderCmt';
 // Transitions Collapse
 import Collapse from '@material-ui/core/Collapse';
 
+import avatar from '../../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
 import { Avatar } from '@material-ui/core';
 
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -18,7 +19,6 @@ import clsx from 'clsx';
 import TextField from '@material-ui/core/TextField';
 import AttachmentIcon from '@material-ui/icons/Attachment';
 
-import { useDispatch } from 'react-redux';
 import { PostReplyCommentAction } from '../../../../../store/actions';
 
 // style constant
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '16px 16px 8px',
         background: '#fafafa',
         marginTop: '15px',
-        marginLeft: '15px',
+        marginLeft: '50px',
         borderRadius: '12px'
     },
     contentCmt: {
@@ -120,14 +120,13 @@ const useStyles = makeStyles((theme) => ({
     },
     margin: {
         margin: theme.spacing(1)
-    },
-    replyCmt: {
-        marginLeft: '50px'
     }
 }));
 
-const Comment = (cmt) => {
+const Reply = (reply) => {
     const classes = useStyles();
+
+    console.log(reply);
 
     const [checked, setChecked] = React.useState(false);
 
@@ -147,28 +146,28 @@ const Comment = (cmt) => {
         }
     };
 
-    const dispatch = useDispatch();
-
-    const [dataReplyCmt, setDataReplyCmt] = useState();
+    const [dataReply, setDataReply] = useState();
 
     const handleChange = (e) => {
         const { value } = e.target;
-        setDataReplyCmt(value);
+        setDataReply(value);
     };
-    const PostComment = async () => {
-        const newValues = { dataPost: dataReplyCmt, idCmt: cmt.id, idpost: cmt.idpost };
-        console.log(cmt);
-        dispatch(await PostReplyCommentAction(newValues));
-        setChecked((prev) => !prev);
+
+    const replyComment = async () => {
+        // console.log(idPost);
+        // const newValues = { dataReply: dataReply, idPost: post.id };
+        // dispatch(await UserCommentAction(newValues));
+        // console.log(newValues);
+        // setChecked((prev) => !prev);
     };
 
     return (
-        <React.Fragment>
-            {cmt.contentComment ? (
-                <>
+        <>
+            {reply.contentReply ? (
+                <React.Fragment>
                     <div className={classes.comment}>
-                        <HeaderCmt {...cmt} />
-                        <div className={classes.contentCmt}>{cmt.contentComment}</div>
+                        <HeaderCmt />
+                        <div className={classes.contentCmt}>{reply.contentReply}</div>
                         <div className={classes.borderLikeCmt}>
                             {/* button like and reply */}
                             <div>
@@ -184,46 +183,12 @@ const Comment = (cmt) => {
                                     )}
                                 </div>
                                 <div className={classes.likecmt} onClick={handleClickCmt}>
-                                    <ReplyTwoToneIcon className={classes.iconReply} />
-                                    {cmt.reply.length} Reply
+                                    <ReplyTwoToneIcon className={classes.iconReply} /> Reply
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/* like and reply */}
-                    {cmt.reply
-                        ? cmt.reply.map((reply) => (
-                              <div className={classes.replyCmt}>
-                                  {reply.contentReply ? (
-                                      <div className={classes.comment}>
-                                          <HeaderCmt {...cmt} />
-                                          <div className={classes.contentCmt}>{reply.contentReply}</div>
-                                          <div className={classes.borderLikeCmt}>
-                                              {/* button like and reply */}
-                                              <div>
-                                                  <div className={classes.likecmt} onClick={handleClickToLike}>
-                                                      {like ? (
-                                                          <>
-                                                              <ThumbUpAltTwoToneIcon className={classes.onClickIconLike} /> {score} Likes
-                                                          </>
-                                                      ) : (
-                                                          <>
-                                                              <ThumbUpAltTwoToneIcon className={classes.iconLike} /> {score} Likes
-                                                          </>
-                                                      )}
-                                                  </div>
-                                                  <div className={classes.likecmt} onClick={handleClickCmt}>
-                                                      <ReplyTwoToneIcon className={classes.iconReply} /> Reply
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  ) : (
-                                      ''
-                                  )}
-                              </div>
-                          ))
-                        : ''}
 
                     <div className={classes.root}>
                         {/* <FormControlLabel control={<Switch checked={checked} onChange={handleChange} />} label="Show" /> */}
@@ -232,7 +197,7 @@ const Comment = (cmt) => {
                                 <div>
                                     <div className={classes.borderLikeCmtHindden}>
                                         <div className={classes.borderAvatar}>
-                                            <Avatar className={classes.avatar} src={cmt.avatar.avatar} alt="avatar" />
+                                            <Avatar className={classes.avatar} src={avatar} alt="avatar" />
                                         </div>
 
                                         <div className={classes.borderTextField}>
@@ -252,8 +217,8 @@ const Comment = (cmt) => {
                                             />
                                         </div>
                                         <div className={classes.btnComment}>
-                                            <Button variant="contained" color="secondary" onClick={PostComment}>
-                                                Replydd
+                                            <Button variant="contained" color="secondary" onClick={replyComment}>
+                                                Reply
                                             </Button>
                                         </div>
                                     </div>
@@ -261,12 +226,12 @@ const Comment = (cmt) => {
                             </Collapse>
                         </div>
                     </div>
-                </>
+                </React.Fragment>
             ) : (
                 ''
             )}
-        </React.Fragment>
+        </>
     );
 };
 
-export default Comment;
+export default Reply;

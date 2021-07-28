@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'white',
         padding: '24px',
         borderRadius: '12px',
-        marginTop: '24px'
+        marginTop: '24px',
+        border: "1px solid rgba(144, 202, 249, 0.46)",
     },
     headerAbout: {
         margin: '0px',

@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         padding: '24px',
         backgroundColor: 'white',
         marginTop: '24px',
-        borderRadius: '12px'
+        borderRadius: '12px',
+        border: "1px solid rgba(144, 202, 249, 0.46)",
     },
     friAndFolContent: {
         width: '100%',

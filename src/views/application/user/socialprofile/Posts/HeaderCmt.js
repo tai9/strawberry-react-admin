@@ -1,6 +1,5 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
-import avatar from '../../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
 import MoreVertSharpIcon from '@material-ui/icons/MoreVertSharp';
 
 // simple menu
@@ -9,7 +8,6 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
-
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -54,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '10px'
     },
     btnEditDelete: {
-        cursor: 'pointer',
+        cursor: 'pointer'
     },
     btnThereDots: {
         backgroundColor: '#ede7f6',
@@ -71,16 +69,15 @@ const useStyles = makeStyles((theme) => ({
     btnCover: {
         display: 'inline-flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     small: {
         width: theme.spacing(3),
-        height: theme.spacing(3),
-      },
-
+        height: theme.spacing(3)
+    }
 }));
 
-const HeaderCmt = () => {
+const HeaderCmt = (cmt) => {
     const classes = useStyles();
 
     // simple menu
@@ -93,7 +90,6 @@ const HeaderCmt = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
     return (
         <React.Fragment>
             <div className={classes.post}>
@@ -101,7 +97,8 @@ const HeaderCmt = () => {
                     {/* avatar, name, time, editButton */}
                     <div className={classes.avataNameEdit}>
                         <div className={classes.avataName}>
-                            <Avatar className={classes.small} alt="avatar" src={avatar} />
+                            {cmt.avatar ? <Avatar className={classes.small} alt="avatar" src={cmt.avatar.avatar} /> : ''}
+
                             <div className={classes.nameStatus}>
                                 <div className={classes.name}>John Doe</div>
                                 <div>
