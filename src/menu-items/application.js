@@ -15,28 +15,6 @@ export const application = {
     type: 'group',
     children: [
         {
-            id: 'contact',
-            title: 'Contact',
-            type: 'collapse',
-            icon: icons['IconNfc'],
-            children: [
-                {
-                    id: 'cards',
-                    title: 'Cards',
-                    type: 'item',
-                    url: '/application/contact/cards',
-                    breadcrumbs: false
-                },
-                {
-                    id: 'list',
-                    title: 'List',
-                    type: 'item',
-                    url: '/application/contact/list',
-                    breadcrumbs: false
-                }
-            ]
-        },
-        {
             id: 'users',
             title: 'Users',
             type: 'collapse',
@@ -56,6 +34,28 @@ export const application = {
                 //     url: '/pages/register/register3',
                 //     target: true
                 // }
+            ]
+        },
+        {
+            id: 'contact',
+            title: 'Contact',
+            type: 'collapse',
+            icon: icons['IconNfc'],
+            children: [
+                {
+                    id: 'cards',
+                    title: 'Cards',
+                    type: 'item',
+                    url: '/application/contact/cards',
+                    breadcrumbs: false
+                },
+                {
+                    id: 'list',
+                    title: 'List',
+                    type: 'item',
+                    url: '/application/contact/list',
+                    breadcrumbs: false
+                }
             ]
         }
     ]

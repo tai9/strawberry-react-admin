@@ -2,40 +2,32 @@ import React from 'react';
 
 // material-ui
 import { makeStyles, useTheme } from '@material-ui/styles';
-import { Grid, Paper, Avatar } from '@material-ui/core';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FormControl from '@material-ui/core/FormControl';
-import Button from '@material-ui/core/Button';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import SearchIcon from '@material-ui/icons/Search';
-import MuiTypography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import ChatBubbleTwoToneIcon from '@material-ui/icons/ChatBubbleTwoTone';
-import CallTwoToneIcon from '@material-ui/icons/CallTwoTone';
-import PublishTwoToneIcon from '@material-ui/icons/PublishTwoTone';
-import IconButton from '@material-ui/core/IconButton';
-import CancelTwoToneIcon from '@material-ui/icons/CancelTwoTone';
-import TextField from '@material-ui/core/TextField';
+import {
+    Avatar,
+    Button,
+    Divider,
+    FormControl,
+    Grid,
+    IconButton,
+    InputAdornment,
+    Typography,
+    OutlinedInput,
+    Paper,
+    TextField
+} from '@material-ui/core';
 
 // third-party
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project imports
-import SubCard from './../../../ui-component/cards/SubCard';
-import MainCard from './../../../ui-component/cards/MainCard';
-import SecondaryAction from './../../../ui-component/cards/CardSecondaryAction';
 import { gridSpacing } from './../../../store/constant';
-import man1 from './../../../assets/images/avatars/man1.png';
+import MainCard from './../../../ui-component/cards/MainCard';
 import MenuCustom from './Menu';
 
-import InputCustom from './InputCustom';
-
 // assets
-import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
-import BusinessTwoToneIcon from '@material-ui/icons/BusinessTwoTone';
-//==============================|| CONTACT CARD ||==============================//
+import { IconSearch } from '@tabler/icons';
+import { AddCircleOutline, BusinessTwoTone, CallTwoTone, CancelTwoTone, ChatBubbleTwoTone, PublishTwoTone } from '@material-ui/icons';
+import man1 from './../../../assets/images/avatars/man1.png';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -75,6 +67,8 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
+//==============================|| CONTACT CARD ||==============================//
+
 const Card = () => {
     const classes = useStyles();
     const theme = useTheme();
@@ -101,7 +95,7 @@ const Card = () => {
                             />
                         </Grid>
                         <Grid item>
-                            <Button variant="contained" color="primary" size="large" startIcon={<AddCircleOutlineIcon />}>
+                            <Button variant="contained" color="primary" size="large" startIcon={<AddCircleOutline />}>
                                 Add
                             </Button>
                         </Grid>
@@ -113,14 +107,14 @@ const Card = () => {
                                     borderColor: theme.palette.primary.light
                                 }}
                             />
-                            <MuiTypography
+                            <Typography
                                 sx={{
                                     color: theme.palette.primary.main
                                 }}
                                 variant="h4"
                             >
                                 A
-                            </MuiTypography>
+                            </Typography>
                             <Divider
                                 sx={{
                                     margin: '15px 0px 5px',
@@ -143,34 +137,34 @@ const Card = () => {
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <MuiTypography variant="h3">Alene</MuiTypography>
-                                        <MuiTypography variant="caption">Sr. Customer Manager</MuiTypography>
+                                        <Typography variant="h3">Alene</Typography>
+                                        <Typography variant="caption">Sr. Customer Manager</Typography>
                                     </Grid>
                                     <Grid item xs={12}>
-                                        <MuiTypography variant="caption">Email</MuiTypography>
-                                        <MuiTypography variant="h6">alene_work@company.com</MuiTypography>
+                                        <Typography variant="caption">Email</Typography>
+                                        <Typography variant="h6">alene_work@company.com</Typography>
                                     </Grid>
                                     <Grid item xs={12}>
                                         <Grid item xs={12} sm container>
                                             <Grid item xs={6}>
-                                                <MuiTypography variant="caption">Phone</MuiTypography>
-                                                <MuiTypography variant="h6">380-293-0177</MuiTypography>
+                                                <Typography variant="caption">Phone</Typography>
+                                                <Typography variant="h6">380-293-0177</Typography>
                                             </Grid>
                                             <Grid item xs={6}>
-                                                <MuiTypography variant="caption">Location</MuiTypography>
-                                                <MuiTypography variant="h6">Port Narcos</MuiTypography>
+                                                <Typography variant="caption">Location</Typography>
+                                                <Typography variant="h6">Port Narcos</Typography>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <Grid item xs={12}>
                                         <Grid xs={12} sm container spacing={gridSpacing}>
                                             <Grid item xs={6}>
-                                                <Button variant="outlined" color="primary" fullWidth startIcon={<ChatBubbleTwoToneIcon />}>
+                                                <Button variant="outlined" color="primary" fullWidth startIcon={<ChatBubbleTwoTone />}>
                                                     Message
                                                 </Button>
                                             </Grid>
                                             <Grid item xs={6}>
-                                                <Button variant="outlined" color="secondary" fullWidth startIcon={<CallTwoToneIcon />}>
+                                                <Button variant="outlined" color="secondary" fullWidth startIcon={<CallTwoTone />}>
                                                     Call
                                                 </Button>
                                             </Grid>
@@ -214,19 +208,19 @@ const Card = () => {
                                                             variant="outlined"
                                                             color="primary"
                                                             size="small"
-                                                            startIcon={<PublishTwoToneIcon />}
+                                                            startIcon={<PublishTwoTone />}
                                                         >
                                                             Upload
                                                         </Button>
                                                     </Grid>
                                                     <Grid item xs={12}>
-                                                        <MuiTypography variant="caption">Image size should be 125kb Max.</MuiTypography>
+                                                        <Typography variant="caption">Image size should be 125kb Max.</Typography>
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
                                             <Grid item>
                                                 <IconButton component="span">
-                                                    <CancelTwoToneIcon />
+                                                    <CancelTwoTone />
                                                 </IconButton>
                                             </Grid>
                                         </Grid>
@@ -240,7 +234,7 @@ const Card = () => {
                                                 InputProps={{
                                                     startAdornment: (
                                                         <InputAdornment position="start">
-                                                            <BusinessTwoToneIcon
+                                                            <BusinessTwoTone
                                                                 stroke={1.5}
                                                                 size="1.3rem"
                                                                 className={classes.startAdornment}
@@ -252,24 +246,24 @@ const Card = () => {
                                         </FormControl>
                                     </Grid>
                                     <Grid item>
-                                        <MuiTypography variant="h3" gutterBottom>
+                                        <Typography variant="h3" gutterBottom>
                                             h3. Heading
-                                        </MuiTypography>
+                                        </Typography>
                                     </Grid>
                                     <Grid item>
-                                        <MuiTypography variant="h4" gutterBottom>
+                                        <Typography variant="h4" gutterBottom>
                                             h4. Heading
-                                        </MuiTypography>
+                                        </Typography>
                                     </Grid>
                                     <Grid item>
-                                        <MuiTypography variant="h5" gutterBottom>
+                                        <Typography variant="h5" gutterBottom>
                                             h5. Heading
-                                        </MuiTypography>
+                                        </Typography>
                                     </Grid>
                                     <Grid item>
-                                        <MuiTypography variant="h6" gutterBottom>
+                                        <Typography variant="h6" gutterBottom>
                                             h6. Heading
-                                        </MuiTypography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </PerfectScrollbar>
