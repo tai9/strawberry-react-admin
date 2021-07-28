@@ -52,7 +52,7 @@ const Post = () => {
                               <HeaderInfo {...post} />
                               <ContentPost {...post} />
                               <FormBtnLikeCmt {...post} />
-                              {post.comment ? post.comment.map((cmt) => <Comment {...cmt} />) : ''}
+                              {post.comment ? post.comment.map((cmt) => <Comment key={cmt.id} {...cmt} />) : ''}
                           </div>
                       </div>
                   ))

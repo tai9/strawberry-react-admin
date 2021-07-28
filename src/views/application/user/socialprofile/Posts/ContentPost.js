@@ -11,22 +11,78 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: " 'Roboto', sans-serif",
         fontWeight: '400',
         lineHeight: '1.334em',
-        marginBottom: '0'
+        marginBottom: '0',
+        marginBottom: '15px'
     },
     imagepost: {
         width: '100%',
-        marginTop: '15px'
+        height: '100%',
+        objectFit: 'cover',
+        borderRadius: '12px'
+    },
+    boderImg: {
+        display: 'flex',
+        gridTemplateClumns: 'repeat(2, 1fr)',
+        gap: '8px'
+    },
+    imgmot: {
+        width: '50%',
+        position: 'relative'
+    },
+    imghai: {
+        width: '50%',
+        position: 'relative'
+    },
+    contentImage1: {
+        color: 'rgb(255, 255, 255)',
+        width: '100%',
+        padding: '12px 16px',
+        background: 'linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%)',
+        position: 'absolute',
+        borderRadius: '12px',
+        top: '0px',
+        left: '0px',
+        fontSize: '1rem',
+        lineHeight: '24px'
+    },
+    contentImage2: {
+        color: 'rgb(255, 255, 255)',
+        width: '100%',
+        padding: '12px 16px',
+        background: 'linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0) 100%)',
+        position: 'absolute',
+        borderRadius: '12px',
+        top: '0px',
+        left: '0px',
+        fontSize: '1rem',
+        lineHeight: '24px'
     }
 }));
 
 const ContentPost = (post) => {
     const classes = useStyles();
-
+    console.log(post);
     return (
         <React.Fragment>
             <div>
                 <p className={classes.content}>{post.contentPost}</p>
-                {post.imagePost.length > 0 ? <img alt="image-post" src={post.imagePost} className={classes.imagepost} /> : ''}
+                {post.imagePost.length === 1 ? <img alt="image-post" src={post.imagePost} className={classes.imagepost} /> : ''}
+                {post.imagePost.length === 2 ? (
+                    <div>
+                        <div className={classes.boderImg}>
+                            <div className={classes.imgmot}>
+                                <div className={classes.contentImage1}>Image Title</div>
+                                <img alt="image-post" src={post.imagePost[1]} className={classes.imagepost} />
+                            </div>
+                            <div className={classes.imghai}>
+                                <div className={classes.contentImage2}>Painter</div>
+                                <img alt="image-post" src={post.imagePost[0]} className={classes.imagepost} />
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    ''
+                )}
             </div>
         </React.Fragment>
     );

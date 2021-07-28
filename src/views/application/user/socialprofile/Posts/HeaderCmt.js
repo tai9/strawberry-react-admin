@@ -97,7 +97,13 @@ const HeaderCmt = (cmt) => {
                     {/* avatar, name, time, editButton */}
                     <div className={classes.avataNameEdit}>
                         <div className={classes.avataName}>
-                            {cmt.avatar ? <Avatar className={classes.small} alt="avatar" src={cmt.avatar.avatar} /> : ''}
+                            {cmt.imageCmt ? (
+                                <Avatar className={classes.small} alt="avatar" src={cmt.imageCmt} />
+                            ) : cmt.avatar ? (
+                                <Avatar className={classes.small} alt="avatar" src={cmt.avatar} />
+                            ) : (
+                                ''
+                            )}
 
                             <div className={classes.nameStatus}>
                                 <div className={classes.name}>John Doe</div>
