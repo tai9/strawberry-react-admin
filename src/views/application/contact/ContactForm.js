@@ -9,9 +9,19 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 
 // project imports
 import { gridSpacing } from './../../../store/constant';
+import MultipleSelect from './MultipleSelect';
 
 // assets
-import { BusinessTwoTone, CancelTwoTone, PublishTwoTone } from '@material-ui/icons';
+import {
+    AddCircleOutline,
+    BusinessTwoTone,
+    CancelTwoTone,
+    EmailTwoTone,
+    TodayTwoTone,
+    PhoneTwoTone,
+    PublishTwoTone,
+    WorkTwoTone
+} from '@material-ui/icons';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -35,17 +45,19 @@ const useStyles = makeStyles((theme) => ({
     },
     startAdornment: {
         color: theme.palette.grey[500]
-    },
-    margin: {
-        margin: theme.spacing(1)
     }
 }));
 
 //==============================|| CONTACT FORM CARD ||==============================//
 
-const ContactForm = () => {
+const ContactForm = ({ onToggleForm }) => {
     const classes = useStyles();
     const theme = useTheme();
+
+    const handleToggleForm = () => {
+        onToggleForm();
+    };
+
     return (
         <div className={classes.info} style={{ width: 318 }}>
             <Paper
@@ -85,7 +97,7 @@ const ContactForm = () => {
                                     </Grid>
                                 </Grid>
                                 <Grid item>
-                                    <IconButton component="span">
+                                    <IconButton component="span" onClick={handleToggleForm}>
                                         <CancelTwoTone />
                                     </IconButton>
                                 </Grid>
@@ -93,7 +105,7 @@ const ContactForm = () => {
                         </Grid>
                         <Divider className={classes.divider} />
                         <Grid item xs={12}>
-                            <FormControl fullWidth className={classes.margin}>
+                            <FormControl fullWidth>
                                 <TextField
                                     label="Name"
                                     id="standard-start-adornment"
@@ -107,25 +119,161 @@ const ContactForm = () => {
                                 />
                             </FormControl>
                         </Grid>
-                        <Grid item>
-                            <Typography variant="h3" gutterBottom>
-                                h3. Heading
-                            </Typography>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField
+                                    label="Company"
+                                    id="standard-start-adornment"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <BusinessTwoTone stroke={1.5} size="1.3rem" className={classes.startAdornment} />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </FormControl>
                         </Grid>
-                        <Grid item>
-                            <Typography variant="h4" gutterBottom>
-                                h4. Heading
-                            </Typography>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField
+                                    label="Job Title"
+                                    id="standard-start-adornment"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <WorkTwoTone stroke={1.5} size="1.3rem" className={classes.startAdornment} />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </FormControl>
                         </Grid>
-                        <Grid item>
-                            <Typography variant="h5" gutterBottom>
-                                h5. Heading
-                            </Typography>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <MultipleSelect defaultValue={0} />
+                            </FormControl>
                         </Grid>
-                        <Grid item>
-                            <Typography variant="h6" gutterBottom>
-                                h6. Heading
-                            </Typography>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField
+                                    label="Email"
+                                    id="standard-start-adornment"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <EmailTwoTone stroke={1.5} size="1.3rem" className={classes.startAdornment} />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <MultipleSelect defaultValue={1} />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField
+                                    label="Email"
+                                    id="standard-start-adornment"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <EmailTwoTone stroke={1.5} size="1.3rem" className={classes.startAdornment} />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button color="primary" startIcon={<AddCircleOutline />}>
+                                Add New Email
+                            </Button>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <MultipleSelect defaultValue={0} />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField
+                                    label="Phone Number"
+                                    id="standard-start-adornment"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <PhoneTwoTone stroke={1.5} size="1.3rem" className={classes.startAdornment} />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <MultipleSelect defaultValue={1} />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField
+                                    label="Phone Number"
+                                    id="standard-start-adornment"
+                                    InputProps={{
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <PhoneTwoTone stroke={1.5} size="1.3rem" className={classes.startAdornment} />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button color="primary" startIcon={<AddCircleOutline />}>
+                                Add New Phone
+                            </Button>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField
+                                    id="outlined-birthday-input"
+                                    label="Birthday"
+                                    variant="outlined"
+                                    fullWidth
+                                    InputProps={{
+                                        endAdornment: (
+                                            <InputAdornment position="end">
+                                                <TodayTwoTone />
+                                            </InputAdornment>
+                                        )
+                                    }}
+                                />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <FormControl fullWidth>
+                                <TextField id="outlined-bio-input" label="Bio" variant="outlined" fullWidth multiline minRows={3} />
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Grid item xs={12} container spacing={gridSpacing}>
+                                <Grid item xs={6}>
+                                    <Button variant="contained" color="primary" fullWidth>
+                                        Save
+                                    </Button>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <Button variant="outlined" color="primary" fullWidth>
+                                        Cancel
+                                    </Button>
+                                </Grid>
+                            </Grid>
                         </Grid>
                     </Grid>
                 </PerfectScrollbar>

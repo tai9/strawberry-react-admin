@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // material-ui
 import { makeStyles, useTheme } from '@material-ui/styles';
@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
 const Card = () => {
     const classes = useStyles();
     const theme = useTheme();
+
+    const [showContactForm, setShowContactForm] = useState(false);
+
     return (
         <MainCard title="Contact Cards">
             <Grid container spacing={gridSpacing}>
@@ -48,7 +51,13 @@ const Card = () => {
                             />
                         </Grid>
                         <Grid item>
-                            <Button variant="contained" color="primary" size="large" startIcon={<AddCircleOutline />}>
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                size="large"
+                                startIcon={<AddCircleOutline />}
+                                onClick={() => setShowContactForm(true)}
+                            >
                                 Add
                             </Button>
                         </Grid>
@@ -81,9 +90,11 @@ const Card = () => {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item>
-                    <ContactForm />
-                </Grid>
+                {showContactForm && (
+                    <Grid item>
+                        <ContactForm onToggleForm={() => setShowContactForm(!showContactForm)} />
+                    </Grid>
+                )}
             </Grid>
         </MainCard>
     );

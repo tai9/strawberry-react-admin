@@ -34,7 +34,7 @@ const ContactInfo = () => {
     const classes = useStyles();
     return (
         <Paper className={classes.paper} elevation={0}>
-            <Grid container xs={12} rowSpacing={gridSpacing}>
+            <Grid container item xs={12} rowSpacing={gridSpacing}>
                 <Grid item xs={12}>
                     <Grid item xs={12} sm container>
                         <Grid item xs style={{ cursor: 'pointer' }}>
@@ -54,7 +54,7 @@ const ContactInfo = () => {
                     <Typography variant="h6">alene_work@company.com</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                    <Grid item xs={12} sm container>
+                    <Grid item xs={12} container>
                         <Grid item xs={6}>
                             <Typography variant="caption">Phone</Typography>
                             <Typography variant="h6">380-293-0177</Typography>
@@ -66,7 +66,7 @@ const ContactInfo = () => {
                     </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                    <Grid xs={12} sm container spacing={gridSpacing}>
+                    <Grid item xs={12} container spacing={gridSpacing}>
                         <Grid item xs={6}>
                             <Button variant="outlined" color="primary" fullWidth startIcon={<ChatBubbleTwoTone />}>
                                 Message
