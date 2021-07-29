@@ -1,14 +1,10 @@
 // assets
-import { IconKey, IconReceipt2, IconBug, IconBellRinging, IconPhoneCall, IconUserCheck } from '@tabler/icons';
+import { IconNfc, IconUserCheck } from '@tabler/icons';
 
 // constant
 const icons = {
-    IconUserCheck : IconUserCheck, //eltr
-    IconKey: IconKey,
-    IconReceipt2: IconReceipt2,
-    IconBug: IconBug,
-    IconBellRinging: IconBellRinging,
-    IconPhoneCall: IconPhoneCall
+    IconNfc: IconNfc,
+    IconUserCheck: IconUserCheck
 };
 
 //-----------------------|| EXTRA PAGES MENU ITEMS ||-----------------------//
@@ -30,7 +26,7 @@ export const application = {
                     type: 'item',
                     url: '/user/social-profile/posts',
                     target: false
-                },
+                }
                 // {
                 //     id: 'register3',
                 //     title: 'Register',
@@ -38,6 +34,28 @@ export const application = {
                 //     url: '/pages/register/register3',
                 //     target: true
                 // }
+            ]
+        },
+        {
+            id: 'contact',
+            title: 'Contact',
+            type: 'collapse',
+            icon: icons['IconNfc'],
+            children: [
+                {
+                    id: 'cards',
+                    title: 'Cards',
+                    type: 'item',
+                    url: '/application/contact/cards',
+                    breadcrumbs: false
+                },
+                {
+                    id: 'list',
+                    title: 'List',
+                    type: 'item',
+                    url: '/application/contact/list',
+                    breadcrumbs: false
+                }
             ]
         }
     ]
