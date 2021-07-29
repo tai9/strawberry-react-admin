@@ -49,9 +49,6 @@ const useStyles = makeStyles((theme) => ({
     avtLarge: {
         width: theme.spacing(8),
         height: theme.spacing(8)
-    },
-    startAdornment: {
-        color: theme.palette.grey[500]
     }
 }));
 
@@ -126,7 +123,7 @@ const ContactInfoForm = ({ onToggleForm }) => {
                         <Grid item xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <BusinessTwoTone stroke={1.5} fontSize="small" className={classes.startAdornment} />
+                                    <BusinessTwoTone stroke={1.5} fontSize="small" />
                                 </Grid>
                                 <Grid item xs>
                                     <Typography variant="body2">ABC Pvt Ltd</Typography>
@@ -136,7 +133,7 @@ const ContactInfoForm = ({ onToggleForm }) => {
                         <Grid item xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <WorkTwoTone stroke={1.5} fontSize="small" className={classes.startAdornment} />
+                                    <WorkTwoTone stroke={1.5} fontSize="small" />
                                 </Grid>
                                 <Grid item xs>
                                     <Typography variant="body2">Specialist</Typography>
@@ -146,7 +143,7 @@ const ContactInfoForm = ({ onToggleForm }) => {
                         <Grid item xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <EmailTwoTone stroke={1.5} fontSize="small" className={classes.startAdornment} />
+                                    <EmailTwoTone stroke={1.5} fontSize="small" />
                                 </Grid>
                                 <Grid item xs>
                                     <Typography variant="body2">
@@ -169,7 +166,7 @@ const ContactInfoForm = ({ onToggleForm }) => {
                         <Grid item xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <PhoneTwoTone stroke={1.5} fontSize="small" className={classes.startAdornment} />
+                                    <PhoneTwoTone stroke={1.5} fontSize="small" />
                                 </Grid>
                                 <Grid item xs>
                                     <Typography variant="body2">
@@ -192,7 +189,7 @@ const ContactInfoForm = ({ onToggleForm }) => {
                         <Grid item xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <PinDropTwoTone stroke={1.5} fontSize="small" className={classes.startAdornment} />
+                                    <PinDropTwoTone stroke={1.5} fontSize="small" />
                                 </Grid>
                                 <Grid item xs>
                                     <Typography variant="body2">Antigua and Barbuda</Typography>
@@ -202,7 +199,7 @@ const ContactInfoForm = ({ onToggleForm }) => {
                         <Grid item xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <CakeTwoTone stroke={1.5} fontSize="small" className={classes.startAdornment} />
+                                    <CakeTwoTone stroke={1.5} fontSize="small" />
                                 </Grid>
                                 <Grid item xs>
                                     <Typography variant="body2">November 30, 1997</Typography>
@@ -212,7 +209,7 @@ const ContactInfoForm = ({ onToggleForm }) => {
                         <Grid item xs={12}>
                             <Grid container spacing={1}>
                                 <Grid item>
-                                    <InfoTwoTone stroke={1.5} fontSize="small" className={classes.startAdornment} />
+                                    <InfoTwoTone stroke={1.5} fontSize="small" />
                                 </Grid>
                                 <Grid item xs>
                                     <Typography variant="body2">happy Birthday Agilulf</Typography>
