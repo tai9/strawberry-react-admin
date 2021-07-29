@@ -1,6 +1,5 @@
 import { React, useState } from 'react';
 import PropTypes from 'prop-types';
-// import clsx from 'clsx';
 import { makeStyles } from '@material-ui/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -11,7 +10,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import TableSortLabel from '@material-ui/core/TableSortLabel';
 import Toolbar from '@material-ui/core/Toolbar';
-import { InputAdornment, OutlinedInput, Typography, Grid, Divider, Chip } from '@material-ui/core';
+import { InputAdornment, OutlinedInput, Typography, Grid, Divider } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
@@ -21,30 +20,33 @@ import FilterListIcon from '@material-ui/icons/FilterList';
 import PrintTwoToneIcon from '@material-ui/icons/PrintTwoTone';
 import FileCopyTwoToneIcon from '@material-ui/icons/FileCopyTwoTone';
 import { IconSearch } from '@tabler/icons';
-import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
-import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 
-function createData(name, email, location, order, registered, status, action) {
-    return { name, email, location, order, registered, status, action };
+function createData(id, name, category, price, date, quantity) {
+    return { id, name, category, price, date, quantity };
 }
 
 const rows = [
-    createData('Joseph William 1', 'Joseph@mail.com', 'Hong Kong, China', 263, '12.07.2018', 'Complete'),
-    createData('Ashy Handgun 2', 'Akshay@mail.com', 'New York, USA', 750, '12.07.2018', 'Processing'),
-    createData('Larry Doe 3', 'larry@mail.com', 'Hong Kong, China', 1120, '12.07.2018', 'Processing'),
-    createData('Sara Soudan 4', 'Sara@mail.com', 'New York, USA', 975, '12.07.2018', 'Confirm'),
-    createData('Joseph William 5', 'Joseph@mail.com', 'Hong Kong, China', 263, '12.07.2018', 'Complete'),
-    createData('Ashy Handgun 6', 'Akshay@mail.com', 'New York, USA', 750, '12.07.2018', 'Processing'),
-    createData('Larry Doe 7', 'larry@mail.com', 'Hong Kong, China', 1120, '12.07.2018', 'Processing'),
-    createData('Sara Soudan 8', 'Sara@mail.com', 'New York, USA', 975, '12.07.2018', 'Confirm'),
-    createData('Joseph William 9', 'Joseph@mail.com', 'Hong Kong, China', 263, '12.07.2018', 'Complete'),
-    createData('Ashy Handgun 10', 'Akshay@mail.com', 'New York, USA', 750, '12.07.2018', 'Processing'),
-    createData('Larry Doe 11', 'larry@mail.com', 'Hong Kong, China', 1120, '12.07.2018', 'Processing'),
-    createData('Sara Soudan 12', 'Sara@mail.com', 'New York, USA', 975, '12.07.2018', 'Confirm'),
-    createData('Joseph William 13', 'Joseph@mail.com', 'Hong Kong, China', 263, '12.07.2018', 'Complete'),
-    createData('Ashy Handgun 14', 'Akshay@mail.com', 'New York, USA', 750, '12.07.2018', 'Processing'),
-    createData('Larry Doe 15', 'larry@mail.com', 'Hong Kong, China', 1120, '12.07.2018', 'Processing'),
-    createData('Sara Soudan 16', 'Sara@mail.com', 'New York, USA', 975, '12.07.2018', 'Confirm')
+    createData(790841, 'Samsung TV 32” LED Retina', 'Television', 2500, '12.07.2018', 17),
+    createData(790842, 'Iphone 11 Pro Max', 'Television', 750, '12.07.2018', 8),
+    createData(798699, 'Samsung TV 34” LED Retina', 'Television', 5000, '12.07.2018', 7),
+    createData(790752, 'Iphone 12 Pro Max', 'Television', 2500, '12.07.2018', 10),
+    createData(790955, 'Samsung TV 36” LED Retina', 'Television', 263, '12.07.2018', 7),
+    createData(790785, 'Iphone 13 Pro Max', 'Television', 2500, '12.07.2018', 7),
+    createData(800837, 'Samsung TV 38” LED Retina', 'Television', 1120, '12.07.2018', 7),
+    createData(810365, 'Iphone 14 Pro Max', 'Television', 2500, '12.07.2018', 7),
+    createData(810814, 'Samsung TV 40” LED Retina', 'Television', 263, '12.07.2018', 7),
+    createData(820385, 'Iphone 15 Pro Max', 'Television', 750, '12.07.2018', 7),
+    createData(820885, 'Samsung TV 42” LED Retina', 'Television', 2500, '12.07.2018', 7),
+    createData(830390, 'Iphone 16 Pro Max', 'Television', 975, '12.07.2018', 7),
+    createData(830879, 'Samsung TV 44” LED Retina', 'Television', 2500, '12.07.2018', 12),
+    createData(900111, 'Iphone 17 Pro Max', 'Television', 750, '12.07.2018', 7),
+    createData(900836, 'Samsung TV 46” LED Retina', 'Television', 1120, '12.07.2018', 7),
+    createData(900112, 'Iphone 18 Pro Max', 'Television', 975, '12.07.2018', 7),
+    createData(900871, 'Samsung TV 48” LED Retina', 'Television', 975, '12.07.2018', 9),
+    createData(910232, 'Iphone 19 Pro Max', 'Television', 1120, '12.07.2018', 3),
+    createData(910886, 'Samsung TV 50” LED Retina', 'Television', 1120, '12.07.2018', 100),
+    createData(910232, 'Iphone 20 Pro Max', 'Television', 1120, '12.07.2018', 5)
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -71,12 +73,31 @@ function stableSort(array, comparator) {
     return stabilizedThis.map((el) => el[0]);
 }
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%'
+    },
+    paper: {
+        width: '100%',
+        marginBottom: theme.spacing(2)
+    },
+    table: {
+        minWidth: 750
+    },
+    visuallyHidden: {
+        clip: 'rect(0 0 0 0)',
+        overflow: 'hidden',
+        position: 'absolute'
+    }
+}));
+
 const headCells = [
-    { id: 'name', align: true, numeric: false, disablePadding: false, label: 'Customer Name' },
-    { id: 'location', align: false, numeric: false, disablePadding: false, label: 'Location' },
-    { id: 'order', align: false, numeric: true, disablePadding: false, label: 'Orders' },
-    { id: 'registered', align: false, numeric: false, disablePadding: false, label: 'Registered' },
-    { id: 'status', align: false, numeric: false, disablePadding: false, label: 'Status' },
+    { id: 'id', align: false, numeric: false, disablePadding: false, label: 'ID' },
+    { id: 'name', align: true, numeric: false, disablePadding: false, label: 'Product Name' },
+    { id: 'category', align: true, numeric: false, disablePadding: false, label: 'Category' },
+    { id: 'price', align: true, numeric: true, disablePadding: false, label: 'Price' },
+    { id: 'date', align: false, numeric: false, disablePadding: false, label: 'Date' },
+    { id: 'quantity', align: false, numeric: true, disablePadding: false, label: 'QTY' },
     { id: 'action', align: false, numeric: false, disablePadding: false, label: 'Action' }
 ];
 
@@ -100,15 +121,10 @@ const EnhancedTableHead = (props) => {
                     </TableCell>
                     {numSelected > 0 ? (
                         <>
-                        <TableCell>
-                            <Typography variant="h4">
-                                {numSelected} selected
-                            </Typography>
-                        </TableCell>
-                        {/* <Tooltip style={{float: 'right'}}>
-                            <DeleteIcon/>
-                        </Tooltip> */}
-                    </>
+                            <TableCell>
+                                <Typography variant="h4">{numSelected} selected</Typography>
+                            </TableCell>
+                        </>
                     ) : (
                         headCells.map((headCell) => (
                             <TableCell
@@ -152,12 +168,9 @@ const useToolbarStyles = makeStyles((theme) => ({
         paddingLeft: theme.spacing(2),
         paddingRight: theme.spacing(1)
     },
-
-    title: {
-        flex: '1 1 100%'
-    },
     searchInput: {
-        height: 40
+        height: 40,
+        marginTop: 10
     },
     tooltipHeader: {
         float: 'right',
@@ -172,12 +185,11 @@ const useToolbarStyles = makeStyles((theme) => ({
 
 const EnhancedTableToolbar = (props) => {
     const classes = useToolbarStyles();
-    // const { numSelected } = props;
 
     return (
         <>
             <Typography variant="h4" className={classes.header}>
-                Customer List
+                Product List
             </Typography>
             <Divider />
 
@@ -186,7 +198,7 @@ const EnhancedTableToolbar = (props) => {
                     <OutlinedInput
                         className={classes.searchInput}
                         id="input-search-header"
-                        placeholder="Search customer"
+                        placeholder="Search Product"
                         startAdornment={
                             <InputAdornment position="start">
                                 <IconSearch stroke={1.5} size="1rem" className={classes.startAdornment} />
@@ -223,70 +235,13 @@ EnhancedTableToolbar.propTypes = {
     numSelected: PropTypes.number.isRequired
 };
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%'
-    },
-    paper: {
-        width: '100%',
-        marginBottom: theme.spacing(2)
-    },
-    table: {
-        minWidth: 750
-    },
-    visuallyHidden: {
-        border: 0,
-        clip: 'rect(0 0 0 0)',
-        height: 1,
-        margin: -1,
-        overflow: 'hidden',
-        padding: 0,
-        position: 'absolute',
-        top: 20,
-        width: 1
-    },
-    visibleAction: {
-        color: 'rgb(33, 150, 243)',
-        padding: 12
-    },
-    editAction: {
-        color: 'rgb(103, 58, 183)',
-        padding: 12
-    },
-    stComplete: {
-        color: '#00c853',
-        background: '#b9f6ca60',
-        '&:hover': {
-            background: '#00c853',
-            color: '#ffffff'
-        }
-    },
-    stProcessing: {
-        background: '#fbe9e7',
-        color: '#d84315',
-        '&:hover': {
-            background: '#d84315',
-            color: '#ffffff'
-        }
-    },
-    stConfirm: {
-        background: '#e3f2fd',
-        color: '#2196f3',
-        '&:hover': {
-            background: '#2196f3',
-            color: '#ffffff'
-        }
-    }
-}));
-
-const CustomerList = (props) => {
+const Product = () => {
     const classes = useStyles();
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('calories');
     const [selected, setSelected] = useState([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
-    // const { numSelected } = props;
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -353,6 +308,7 @@ const CustomerList = (props) => {
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
+
                                     return (
                                         <TableRow
                                             hover
@@ -369,28 +325,19 @@ const CustomerList = (props) => {
                                             >
                                                 <Checkbox checked={isItemSelected} />
                                             </TableCell>
+                                            <TableCell align="center" onClick={(event) => handleClick(event, row.name)}>
+                                                <Typography variant="h5">#{row.id}</Typography>
+                                            </TableCell>
                                             <TableCell padding="normal" onClick={(event) => handleClick(event, row.name)}>
                                                 <Typography variant="h5">{row.name}</Typography>
-                                                <Typography variant="subtitle2">{row.email}</Typography>
                                             </TableCell>
-                                            <TableCell align="center">{row.location}</TableCell>
-                                            <TableCell align="center">{row.order}</TableCell>
-                                            <TableCell align="center">{row.registered}</TableCell>
-                                            <TableCell align="center">
-                                                {row.status === 'Complete' ? (
-                                                    <Chip label={row.status} className={classes.stComplete} />
-                                                ) : row.status === 'Processing' ? (
-                                                    <Chip label={row.status} className={classes.stProcessing} />
-                                                ) : (
-                                                    <Chip label={row.status} className={classes.stConfirm} />
-                                                )}
-                                            </TableCell>
+                                            <TableCell align="left">{row.category}</TableCell>
+                                            <TableCell align="left">{row.price}</TableCell>
+                                            <TableCell align="center">{row.date}</TableCell>
+                                            <TableCell align="center">{row.quantity}</TableCell>
                                             <TableCell align="center">
                                                 <IconButton aria-label="visible" className={classes.visibleAction}>
-                                                    <VisibilityOutlinedIcon />
-                                                </IconButton>
-                                                <IconButton aria-label="edit" className={classes.editAction}>
-                                                    <EditOutlinedIcon />
+                                                    <MoreHorizIcon />
                                                 </IconButton>
                                             </TableCell>
                                         </TableRow>
@@ -418,8 +365,4 @@ const CustomerList = (props) => {
     );
 };
 
-CustomerList.propTypes = {
-    numSelected: PropTypes.number.isRequired
-};
-
-export default CustomerList;
+export default Product;

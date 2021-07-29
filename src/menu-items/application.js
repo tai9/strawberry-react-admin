@@ -28,6 +28,20 @@ export const application = {
                     type: 'item',
                     url: '/customer/customer-list',
                     breadcrumbs: false
+                },
+                {
+                    id: 'order-list',
+                    title: 'Order List',
+                    type: 'item',
+                    url: '/customer/order-list',
+                    breadcrumbs: false
+                },
+                {
+                    id: 'product',
+                    title: 'Product',
+                    type: 'item',
+                    url: '/customer/product',
+                    breadcrumbs: false
                 }
             ]
         }
