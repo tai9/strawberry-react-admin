@@ -1,14 +1,19 @@
-// assets
-import { IconDashboard } from '@tabler/icons';
+//-----------------------|| DASHBOARD MENU ITEMS ||-----------------------//
+import { IconKey, IconReceipt2, IconBug, IconBellRinging, IconPhoneCall, IconUserCheck } from '@tabler/icons';
 import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutlined';
 
 // constant
 const icons = {
-    IconDashboard: IconDashboard,
-    ShoppingBasketOutlinedIcon
+    IconUserCheck : IconUserCheck, //eltr
+    IconKey: IconKey,
+    IconReceipt2: IconReceipt2,
+    IconBug: IconBug,
+    IconBellRinging: IconBellRinging,
+    IconPhoneCall: IconPhoneCall,
+    ShoppingBasketOutlinedIcon: ShoppingBasketOutlinedIcon,
 };
 
-//-----------------------|| DASHBOARD MENU ITEMS ||-----------------------//
+//-----------------------|| EXTRA PAGES MENU ITEMS ||-----------------------//
 
 export const application = {
     id: 'application',
@@ -43,6 +48,28 @@ export const application = {
                     url: '/customer/product',
                     breadcrumbs: false
                 }
+            ],
+        },
+        {
+            id: 'users',
+            title: 'Users',
+            type: 'collapse',
+            icon: icons['IconUserCheck'],
+            children: [
+                {
+                    id: 'socialprofile',
+                    title: 'Social Profile',
+                    type: 'item',
+                    url: '/user/social-profile/posts',
+                    target: false
+                },
+                // {
+                //     id: 'register3',
+                //     title: 'Register',
+                //     type: 'item',
+                //     url: '/pages/register/register3',
+                //     target: true
+                // }
             ]
         }
     ]

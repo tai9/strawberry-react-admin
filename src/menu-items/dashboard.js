@@ -1,6 +1,6 @@
 // assets
 import { IconDashboard, IconDeviceAnalytics } from '@tabler/icons';
-
+    
 // constant
 const icons = {
     IconDashboard: IconDashboard,
@@ -20,6 +20,14 @@ export const dashboard = {
             type: 'item',
             url: '/dashboard/default',
             icon: icons['IconDashboard'],
+            breadcrumbs: false
+        },
+        {
+            id: 'analytics',
+            title: 'Analytics',
+            type: 'item',
+            url: '/dashboard/analytics',
+            icon: icons['IconDeviceAnalytics'],
             breadcrumbs: false
         }
     ]

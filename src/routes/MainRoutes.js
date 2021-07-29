@@ -12,6 +12,10 @@ const OrderList = Loadable(lazy(() => import('../views/application/Customer/Orde
 const ProductList = Loadable(lazy(() => import('../views/application/Customer/Product')));
 
 
+const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/Analytics')));
+
+// widget routing
+const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
@@ -22,6 +26,9 @@ const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIc
 
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
+
+// application routing // eltr
+const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -35,25 +42,30 @@ const MainRoutes = () => {
                 '/customer/customer-list',
                 '/customer/order-list',
                 '/customer/product',
+                '/dashboard/analytics',
 
+                '/widget/statistics',
                 '/utils/util-typography',
                 '/utils/util-color',
                 '/utils/util-shadow',
                 '/icons/tabler-icons',
                 '/icons/material-icons',
 
-                '/sample-page'
+                '/sample-page',
+                '/user/social-profile/posts', // eltr
             ]}
         >
             <MainLayout>
                 <Switch location={location} key={location.pathname}>
                     <Route path="/dashboard/default" component={DashboardDefault} />
+                    <Route path="/dashboard/analytics" component={DashBoardAnalytics} />
 
                     <Route path="/customer/customer-list" component={CustomerList} />
                     <Route path="/customer/order-list" component={OrderList} />
                     <Route path="/customer/product" component={ProductList} />
 
 
+                    <Route path="/widget/statistics" component={Statistics} />
                     <Route path="/utils/util-typography" component={UtilsTypography} />
                     <Route path="/utils/util-color" component={UtilsColor} />
                     <Route path="/utils/util-shadow" component={UtilsShadow} />
@@ -61,6 +73,9 @@ const MainRoutes = () => {
                     <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
 
                     <Route path="/sample-page" component={SamplePage} />
+
+                    {/* eltr */}
+                    <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
                 </Switch>
             </MainLayout>
         </Route>
