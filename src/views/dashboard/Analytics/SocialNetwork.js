@@ -20,10 +20,11 @@ const useStyles = makeStyles((theme) => ({
         padding: 20
     },
     gridText: {
-        paddingTop: 8
+        paddingTop: 8,
+        flexGrow: 1
     },
     gridIcons: {
-        padding: 10,
+        padding: 12,
         borderRadius: '14px',
         width: '50px',
         height: '50px',
@@ -55,11 +56,11 @@ const SocialNetwork = (theme) => {
             <CardContent className={classes.cardContent}>
                 <Grid container>
                     <Grid item xs={12} sm={6} className={classes.gridItem}>
-                        <Grid container>
+                        <Grid container xs={12} sm={12}>
                             <Grid item className={classes.gridIcons}>
                                 <LogoShare />
                             </Grid>
-                            <Grid item xs={9} className={classes.gridText}>
+                            <Grid item className={classes.gridText}>
                                 <Typography variant="h5" className={classes.textNumber}>
                                     1000
                                 </Typography>
@@ -70,11 +71,11 @@ const SocialNetwork = (theme) => {
                         </Grid>
                     </Grid>
                     <Grid item xs={12} sm={6} className={classes.gridItem}>
-                        <Grid container>
+                        <Grid container xs={12} sm={12}>
                             <Grid item className={classes.gridIcons}>
                                 <LogoNetwork />
                             </Grid>
-                            <Grid item xs={9}>
+                            <Grid item className={classes.gridText}>
                                 <Typography variant="h5" className={classes.textNumber}>
                                     600
                                 </Typography>
@@ -87,11 +88,11 @@ const SocialNetwork = (theme) => {
                 </Grid>
                 <Grid container>
                     <Grid item xs={12} sm={6} className={classes.gridItem}>
-                        <Grid container>
+                        <Grid container xs={12} sm={12}>
                             <Grid item className={classes.gridIcons}>
                                 <LogoReturn />
                             </Grid>
-                            <Grid item xs={9}>
+                            <Grid item className={classes.gridText}>
                                 <Typography variant="h5" className={classes.textNumber}>
                                     3550
                                 </Typography>
@@ -102,11 +103,11 @@ const SocialNetwork = (theme) => {
                         </Grid>
                     </Grid>
                     <Grid item xs={12} sm={6} className={classes.gridItem}>
-                        <Grid container>
+                        <Grid container xs={12} sm={12}>
                             <Grid item className={classes.gridIcons}>
                                 <LogoOrder />
                             </Grid>
-                            <Grid item xs={9}>
+                            <Grid item className={classes.gridText}>
                                 <Typography variant="h5" className={classes.textNumber}>
                                     100%
                                 </Typography>
