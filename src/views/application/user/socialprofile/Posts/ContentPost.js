@@ -11,8 +11,8 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: " 'Roboto', sans-serif",
         fontWeight: '400',
         lineHeight: '1.334em',
-        marginBottom: '0',
-        marginBottom: '15px'
+        marginBottom: '15px',
+        whiteSpace: 'pre-line'
     },
     imagepost: {
         width: '100%',
@@ -56,12 +56,19 @@ const useStyles = makeStyles((theme) => ({
         left: '0px',
         fontSize: '1rem',
         lineHeight: '24px'
+    },
+    video: {
+        display: 'Block',
+        backgroundSize: 'coverBlock',
+        backgroundRepeat: 'no-repeatBlock',
+        backgroundPosition: 'center centerBlock',
+        width: '100%Block',
+        borderRadius: '12pxBlock !important'
     }
 }));
 
 const ContentPost = (post) => {
     const classes = useStyles();
-    console.log(post);
     return (
         <React.Fragment>
             <div>
@@ -80,6 +87,20 @@ const ContentPost = (post) => {
                             </div>
                         </div>
                     </div>
+                ) : (
+                    ''
+                )}
+                {post.urlVideo ? (
+                    <iframe
+                        className={classes.video}
+                        width="100%"
+                        height="315"
+                        src={`https://www.youtube.com/embed/${post.urlVideo}`}
+                        title="videoyoutube"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
                 ) : (
                     ''
                 )}

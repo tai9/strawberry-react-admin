@@ -27,7 +27,6 @@ const userReducer = (state = initialState, action) => {
             };
             post[action.data.idPost].comment.unshift(newCmt);
             state.arrPost = post;
-
             return { ...state };
         }
         case 'POST_REPLY_COMMENT': {

@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         padding: '24px',
         borderRadius: '12px',
         marginTop: '24px',
-        border: "1px solid rgba(144, 202, 249, 0.46)",
+        border: '1px solid rgba(144, 202, 249, 0.46)'
     },
     headerAbout: {
         margin: '0px',
@@ -40,41 +40,40 @@ const useStyles = makeStyles((theme) => ({
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
         overflow: 'hidden',
-        marginBottom: "15px"
+        marginBottom: '15px'
     },
     iconWeb: {
-        marginRight: "10px",
-        verticalAlign: "bottom",
-        fontSize: "1.5rem",
-        color: "rgb(103, 58, 183)",
+        marginRight: '10px',
+        verticalAlign: 'bottom',
+        fontSize: '1.5rem',
+        color: 'rgb(103, 58, 183)'
     },
     iconIg: {
-        marginRight: "10px",
-        verticalAlign: "bottom",
-        fontSize: "1.5rem",
-        color: "rgb(216, 67, 21)"
+        marginRight: '10px',
+        verticalAlign: 'bottom',
+        fontSize: '1.5rem',
+        color: 'rgb(216, 67, 21)'
     },
     iconFb: {
-        marginRight: "10px",
-        verticalAlign: "bottom",
-        fontSize: "1.5rem",
-        color: "rgb(33, 150, 243)",
+        marginRight: '10px',
+        verticalAlign: 'bottom',
+        fontSize: '1.5rem',
+        color: 'rgb(33, 150, 243)'
     },
     iconLinkin: {
-        marginRight: "10px",
-        verticalAlign: "bottom",
-        fontSize: "1.5rem",
-        color: "color: rgb(33, 33, 33)",
+        marginRight: '10px',
+        verticalAlign: 'bottom',
+        fontSize: '1.5rem',
+        color: 'color: rgb(33, 33, 33)'
     },
     tagA: {
-        color: "black",
-        width: "100%",
-        textDecoration: "none",
-        "&:hover": {
-            color: "#2196f3"
+        color: 'black',
+        width: '100%',
+        textDecoration: 'none',
+        '&:hover': {
+            color: '#2196f3'
         }
     }
-    
 }));
 
 const About = () => {
@@ -90,25 +89,25 @@ const About = () => {
                 <hr style={{ marginTop: '16px', marginBottom: '16px', borderWidth: '0px 0px thin' }}></hr>
                 <div>
                     <div className={classes.infolink}>
-                        <PublicIcon className={classes.iconWeb}/>
+                        <PublicIcon className={classes.iconWeb} />
                         <a className={classes.tagA} target="blank" href="https://codedthemes.com/">
                             https://codedthemes.com/
                         </a>
                     </div>
                     <div className={classes.infolink}>
-                        <InstagramIcon className={classes.iconIg}/>
+                        <InstagramIcon className={classes.iconIg} />
                         <a className={classes.tagA} target="blank" href="https://www.instagram.com/codedthemes/">
                             https://www.instagram.com/codedthemes/
                         </a>
                     </div>
                     <div className={classes.infolink}>
-                        <FacebookIcon className={classes.iconFb}/>
+                        <FacebookIcon className={classes.iconFb} />
                         <a className={classes.tagA} target="blank" href="https://www.facebook.com/codedthemes">
                             https://www.facebook.com/codedthemes
                         </a>
                     </div>
                     <div className={classes.infolink}>
-                        <LinkedInIcon className={classes.iconLinkin}/>
+                        <LinkedInIcon className={classes.iconLinkin} />
                         <a className={classes.tagA} target="blank" href="https://www.linkedin.com/company/codedthemes/">
                             https://www.linkedin.com/company/codedthemes/
                         </a>

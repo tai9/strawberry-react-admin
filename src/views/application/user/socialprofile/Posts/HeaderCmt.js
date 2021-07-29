@@ -1,7 +1,7 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
 import MoreVertSharpIcon from '@material-ui/icons/MoreVertSharp';
-
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 // simple menu
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -20,13 +20,16 @@ const useStyles = makeStyles((theme) => ({
         // borderRadius: '12px'
     },
     dots: {
-        fontSize: '20px',
-        margin: '0px',
-        padding: '0px',
-        fontFamily: 'Roboto, sans-serif',
-        fontWeight: '400',
-        color: 'rgb(158, 158, 158)',
-        textAlign: 'left'
+        userSelect: 'none',
+        display: 'inline-block',
+        fill: 'currentcolor',
+        flexShrink: 0,
+        transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        fontSize: '1.5rem',
+        width: '10px',
+        height: '10px',
+        opacity: '0.5',
+        margin: '0px 5px'
     },
     nameStatus: {
         display: 'flex'
@@ -74,6 +77,19 @@ const useStyles = makeStyles((theme) => ({
     small: {
         width: theme.spacing(3),
         height: theme.spacing(3)
+    },
+    timePost: {
+        margin: '0px',
+        fontfamily: 'Roboto, sans-serif',
+        fontweight: '400',
+        fontsize: '0.75rem',
+        lineheight: '1.66',
+        color: 'rgb(158, 158, 158)',
+        textalign: 'left',
+        paddingLeft: '8px',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 }));
 
@@ -107,8 +123,8 @@ const HeaderCmt = (cmt) => {
 
                             <div className={classes.nameStatus}>
                                 <div className={classes.name}>John Doe</div>
-                                <div>
-                                    <span className={classes.dots}>.</span>
+                                <div className={classes.timePost}>
+                                    <FiberManualRecordIcon className={classes.dots} />
                                     <span>now</span>
                                 </div>
                             </div>

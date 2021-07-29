@@ -119,18 +119,23 @@ const FormBtnLikeCmt = (post) => {
 
     const [checked, setChecked] = React.useState(true);
 
-    const [like, setLike] = React.useState(false);
+    const [like, setLike] = React.useState(post.likePost);
     const [score, setScore] = React.useState(post.numberOfLike);
 
     const handleClickCmt = () => {
         setChecked((prev) => !prev);
     };
 
-    const handleClickToLike = async () => {
-        await setLike((prev) => !prev);
-        if (like) {
+    const handleClickToLike = () => {
+        // setLike((prev) => !prev);
+
+        console.log(like);
+        if (like === 'true') {
+            setLike('false');
             setScore(score - 1);
         } else {
+            console.log(like);
+            setLike('true');
             setScore(score + 1);
         }
     };
@@ -146,7 +151,7 @@ const FormBtnLikeCmt = (post) => {
         setAnchorEl(null);
     };
 
-    const [dataPost, setDataPost] = useState();
+    const [dataPost, setDataPost] = useState('');
 
     const handleChange = (e) => {
         const { value } = e.target;
@@ -157,6 +162,7 @@ const FormBtnLikeCmt = (post) => {
         const newValues = { dataPost: dataPost, idPost: post.id };
         dispatch(await UserCommentAction(newValues));
         setChecked((prev) => !prev);
+        setDataPost('');
     };
 
     return (
@@ -166,7 +172,7 @@ const FormBtnLikeCmt = (post) => {
                 {/* button like and comment */}
                 <div>
                     <div className={classes.likecmt} onClick={handleClickToLike}>
-                        {like ? (
+                        {like === 'true' ? (
                             <>
                                 <ThumbUpAltTwoToneIcon className={classes.onClickIconLike} /> {score} Likes
                             </>
@@ -220,6 +226,7 @@ const FormBtnLikeCmt = (post) => {
                                         label="Write a comment..."
                                         variant="outlined"
                                         onChange={handleChange}
+                                        value={dataPost}
                                     />
                                 </div>
                                 <div className={classes.btnComment}>

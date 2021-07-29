@@ -125,13 +125,12 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '50px'
     }
 }));
-
 const Comment = (cmt) => {
     const classes = useStyles();
 
     const [checked, setChecked] = React.useState(false);
 
-    const [like, setLike] = React.useState(false);
+    const [like, setLike] = React.useState(cmt.like);
     const [likeReply, setLikereply] = React.useState(false);
     const [score, setScore] = React.useState(cmt.numberOfLike);
     const [scoreReply, setScoreReply] = React.useState(0);
@@ -160,7 +159,7 @@ const Comment = (cmt) => {
 
     const dispatch = useDispatch();
 
-    const [dataReplyCmt, setDataReplyCmt] = useState();
+    const [dataReplyCmt, setDataReplyCmt] = useState('');
 
     const handleChange = (e) => {
         const { value } = e.target;
@@ -170,6 +169,7 @@ const Comment = (cmt) => {
         const newValues = { dataPost: dataReplyCmt, idCmt: cmt.id, idpost: cmt.idpost };
         dispatch(await PostReplyCommentAction(newValues));
         setChecked((prev) => !prev);
+        setDataReplyCmt('');
     };
 
     return (
@@ -264,6 +264,7 @@ const Comment = (cmt) => {
                                                 }}
                                                 variant="outlined"
                                                 onChange={handleChange}
+                                                value={dataReplyCmt}
                                             />
                                         </div>
                                         <div className={classes.btnComment}>

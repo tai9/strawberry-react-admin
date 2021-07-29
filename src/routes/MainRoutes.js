@@ -44,7 +44,7 @@ const MainRoutes = () => {
                 '/icons/material-icons',
 
                 '/sample-page',
-                '/user/social-profile/posts', // eltr
+                '/user/social-profile/posts'
             ]}
         >
             <MainLayout>
