@@ -12,7 +12,6 @@ import MenuCustom from './Menu';
 
 // assets
 import { CallTwoTone, ChatBubbleTwoTone } from '@material-ui/icons';
-import man1 from './../../../assets/images/avatars/man1.png';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 //==============================|| CONTACT INFO CARD ||==============================//
 
-const ContactInfo = ({ handleShowInfo }) => {
+const ContactInfo = ({ data, handleShowInfo }) => {
     const classes = useStyles();
     return (
         <Paper className={classes.paper} elevation={0}>
@@ -39,7 +38,7 @@ const ContactInfo = ({ handleShowInfo }) => {
                 <Grid item xs={12}>
                     <Grid item xs={12} sm container>
                         <Grid item xs>
-                            <Avatar className={classes.avatar} alt="Remy Sharp" src={man1} onClick={handleShowInfo} />
+                            <Avatar className={classes.avatar} alt="Remy Sharp" src={data.avatar} onClick={handleShowInfo} />
                         </Grid>
                         <Grid item>
                             <MenuCustom />
@@ -47,22 +46,22 @@ const ContactInfo = ({ handleShowInfo }) => {
                     </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                    <Typography variant="h3">Alene</Typography>
-                    <Typography variant="caption">Sr. Customer Manager</Typography>
+                    <Typography variant="h3">{data.name}</Typography>
+                    <Typography variant="caption">{data.jobTitle}</Typography>
                 </Grid>
                 <Grid item xs={12}>
                     <Typography variant="caption">Email</Typography>
-                    <Typography variant="h6">alene_work@company.com</Typography>
+                    <Typography variant="h6">{data.email}</Typography>
                 </Grid>
                 <Grid item xs={12}>
                     <Grid item xs={12} container>
                         <Grid item xs={6}>
                             <Typography variant="caption">Phone</Typography>
-                            <Typography variant="h6">380-293-0177</Typography>
+                            <Typography variant="h6">{data.phoneNumber}</Typography>
                         </Grid>
                         <Grid item xs={6}>
                             <Typography variant="caption">Location</Typography>
-                            <Typography variant="h6">Port Narcos</Typography>
+                            <Typography variant="h6">{data.location}</Typography>
                         </Grid>
                     </Grid>
                 </Grid>

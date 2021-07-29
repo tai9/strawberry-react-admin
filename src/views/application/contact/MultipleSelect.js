@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import Autocomplete from '@material-ui/core/Autocomplete';
 import TextField from '@material-ui/core/TextField';
 
 const jobsData = [
