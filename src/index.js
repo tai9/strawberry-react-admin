@@ -16,6 +16,8 @@ import './assets/scss/style.scss';
 
 //-----------------------|| REACT DOM RENDER  ||-----------------------//
 
+// const store = createStore(rootReducer, applyMiddleware(reduxThunk));
+
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter basename={config.basename}>
