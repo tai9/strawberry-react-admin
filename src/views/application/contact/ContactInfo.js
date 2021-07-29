@@ -22,23 +22,24 @@ const useStyles = makeStyles((theme) => ({
         background: '#fafafa',
         borderColor: '#f5f5f5'
     },
-    img: {
+    avatar: {
         width: 72,
-        height: 72
+        height: 72,
+        cursor: 'pointer'
     }
 }));
 
 //==============================|| CONTACT INFO CARD ||==============================//
 
-const ContactInfo = () => {
+const ContactInfo = ({ handleShowInfo }) => {
     const classes = useStyles();
     return (
         <Paper className={classes.paper} elevation={0}>
             <Grid container item xs={12} rowSpacing={gridSpacing}>
                 <Grid item xs={12}>
                     <Grid item xs={12} sm container>
-                        <Grid item xs style={{ cursor: 'pointer' }}>
-                            <Avatar className={classes.img} alt="Remy Sharp" src={man1} />
+                        <Grid item xs>
+                            <Avatar className={classes.avatar} alt="Remy Sharp" src={man1} onClick={handleShowInfo} />
                         </Grid>
                         <Grid item>
                             <MenuCustom />
@@ -66,7 +67,7 @@ const ContactInfo = () => {
                     </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                    <Grid item xs={12} container spacing={gridSpacing}>
+                    <Grid item xs={12} container spacing={1}>
                         <Grid item xs={6}>
                             <Button variant="outlined" color="primary" fullWidth startIcon={<ChatBubbleTwoTone />}>
                                 Message

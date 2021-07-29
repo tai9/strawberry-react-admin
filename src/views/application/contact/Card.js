@@ -9,6 +9,7 @@ import { gridSpacing } from './../../../store/constant';
 import MainCard from './../../../ui-component/cards/MainCard';
 import ContactInfo from './ContactInfo';
 import ContactForm from './ContactForm';
+import ContactInfoForm from './ContactInfoForm';
 
 // assets
 import { IconSearch } from '@tabler/icons';
@@ -28,6 +29,16 @@ const Card = () => {
     const theme = useTheme();
 
     const [showContactForm, setShowContactForm] = useState(false);
+    const [showContactInfoForm, setShowContactInfoForm] = useState(false);
+
+    const handleShowInfoForm = () => {
+        setShowContactInfoForm(true);
+        setShowContactForm(false);
+    };
+    const handleShowContactForm = () => {
+        setShowContactInfoForm(false);
+        setShowContactForm(true);
+    };
 
     return (
         <MainCard title="Contact Cards">
@@ -56,7 +67,7 @@ const Card = () => {
                                 color="primary"
                                 size="large"
                                 startIcon={<AddCircleOutline />}
-                                onClick={() => setShowContactForm(true)}
+                                onClick={handleShowContactForm}
                             >
                                 Add
                             </Button>
@@ -86,13 +97,18 @@ const Card = () => {
                             />
                         </Grid>
                         <Grid item xs={12} sm={12}>
-                            <ContactInfo />
+                            <ContactInfo handleShowInfo={handleShowInfoForm} />
                         </Grid>
                     </Grid>
                 </Grid>
                 {showContactForm && (
                     <Grid item>
                         <ContactForm onToggleForm={() => setShowContactForm(!showContactForm)} />
+                    </Grid>
+                )}
+                {showContactInfoForm && (
+                    <Grid item>
+                        <ContactInfoForm onToggleForm={() => setShowContactInfoForm(!showContactInfoForm)} />
                     </Grid>
                 )}
             </Grid>
