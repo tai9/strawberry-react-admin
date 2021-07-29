@@ -47,7 +47,14 @@ export const application = {
                     type: 'item',
                     url: '/customer/product',
                     breadcrumbs: false
-                }
+                },
+                {
+                    id: 'productReview',
+                    title: 'Product Review',
+                    type: 'item',
+                    url: '/customer/product-review',
+                    breadcrumbs: false
+                },
             ],
         },
         {

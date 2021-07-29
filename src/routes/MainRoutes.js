@@ -10,6 +10,8 @@ const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default'
 const CustomerList = Loadable(lazy(() => import('../views/application/Customer/CustomerList')));
 const OrderList = Loadable(lazy(() => import('../views/application/Customer/OrderList')));
 const ProductList = Loadable(lazy(() => import('../views/application/Customer/Product')));
+const ProductReview = Loadable(lazy(() => import('../views/application/Customer/ProductReview')));
+
 
 
 const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/Analytics')));
@@ -43,6 +45,7 @@ const MainRoutes = () => {
                 '/customer/order-list',
                 '/customer/product',
                 '/dashboard/analytics',
+                '/customer/product-review',
 
                 '/widget/statistics',
                 '/utils/util-typography',
@@ -62,8 +65,8 @@ const MainRoutes = () => {
 
                     <Route path="/customer/customer-list" component={CustomerList} />
                     <Route path="/customer/order-list" component={OrderList} />
-                    <Route path="/customer/product" component={ProductList} />
-
+                    <Route path="/customer/product" component={ProductList} />ProductReview
+                    <Route path="/customer/product-review" component={ProductReview} />
 
                     <Route path="/widget/statistics" component={Statistics} />
                     <Route path="/utils/util-typography" component={UtilsTypography} />

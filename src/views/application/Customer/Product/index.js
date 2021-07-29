@@ -21,33 +21,7 @@ import PrintTwoToneIcon from '@material-ui/icons/PrintTwoTone';
 import FileCopyTwoToneIcon from '@material-ui/icons/FileCopyTwoTone';
 import { IconSearch } from '@tabler/icons';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
-
-function createData(id, name, category, price, date, quantity) {
-    return { id, name, category, price, date, quantity };
-}
-
-const rows = [
-    createData(790841, 'Samsung TV 32” LED Retina', 'Television', 2500, '12.07.2018', 17),
-    createData(790842, 'Iphone 11 Pro Max', 'Television', 750, '12.07.2018', 8),
-    createData(798699, 'Samsung TV 34” LED Retina', 'Television', 5000, '12.07.2018', 7),
-    createData(790752, 'Iphone 12 Pro Max', 'Television', 2500, '12.07.2018', 10),
-    createData(790955, 'Samsung TV 36” LED Retina', 'Television', 263, '12.07.2018', 7),
-    createData(790785, 'Iphone 13 Pro Max', 'Television', 2500, '12.07.2018', 7),
-    createData(800837, 'Samsung TV 38” LED Retina', 'Television', 1120, '12.07.2018', 7),
-    createData(810365, 'Iphone 14 Pro Max', 'Television', 2500, '12.07.2018', 7),
-    createData(810814, 'Samsung TV 40” LED Retina', 'Television', 263, '12.07.2018', 7),
-    createData(820385, 'Iphone 15 Pro Max', 'Television', 750, '12.07.2018', 7),
-    createData(820885, 'Samsung TV 42” LED Retina', 'Television', 2500, '12.07.2018', 7),
-    createData(830390, 'Iphone 16 Pro Max', 'Television', 975, '12.07.2018', 7),
-    createData(830879, 'Samsung TV 44” LED Retina', 'Television', 2500, '12.07.2018', 12),
-    createData(900111, 'Iphone 17 Pro Max', 'Television', 750, '12.07.2018', 7),
-    createData(900836, 'Samsung TV 46” LED Retina', 'Television', 1120, '12.07.2018', 7),
-    createData(900112, 'Iphone 18 Pro Max', 'Television', 975, '12.07.2018', 7),
-    createData(900871, 'Samsung TV 48” LED Retina', 'Television', 975, '12.07.2018', 9),
-    createData(910232, 'Iphone 19 Pro Max', 'Television', 1120, '12.07.2018', 3),
-    createData(910886, 'Samsung TV 50” LED Retina', 'Television', 1120, '12.07.2018', 100),
-    createData(910232, 'Iphone 20 Pro Max', 'Television', 1120, '12.07.2018', 5)
-];
+import { productListData } from '../data';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -95,7 +69,7 @@ const headCells = [
     { id: 'id', align: false, numeric: false, disablePadding: false, label: 'ID' },
     { id: 'name', align: true, numeric: false, disablePadding: false, label: 'Product Name' },
     { id: 'category', align: true, numeric: false, disablePadding: false, label: 'Category' },
-    { id: 'price', align: true, numeric: true, disablePadding: false, label: 'Price' },
+    { id: 'price', align: null, numeric: true, disablePadding: false, label: 'Price' },
     { id: 'date', align: false, numeric: false, disablePadding: false, label: 'Date' },
     { id: 'quantity', align: false, numeric: true, disablePadding: false, label: 'QTY' },
     { id: 'action', align: false, numeric: false, disablePadding: false, label: 'Action' }
@@ -131,6 +105,7 @@ const EnhancedTableHead = (props) => {
                                 key={headCell.id}
                                 align={headCell.align ? 'left' : 'center'}
                                 sortDirection={orderBy === headCell.id ? order : false}
+                                style ={{color: 'black'}}
                             >
                                 <TableSortLabel
                                     active={orderBy === headCell.id}
@@ -231,10 +206,6 @@ const EnhancedTableToolbar = (props) => {
     );
 };
 
-EnhancedTableToolbar.propTypes = {
-    numSelected: PropTypes.number.isRequired
-};
-
 const Product = () => {
     const classes = useStyles();
     const [order, setOrder] = useState('asc');
@@ -251,7 +222,7 @@ const Product = () => {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = rows.map((n) => n.name);
+            const newSelecteds = productListData.map((n) => n.name);
             setSelected(newSelecteds);
             return;
         }
@@ -286,7 +257,7 @@ const Product = () => {
 
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    const emptyRows = rowsPerPage - Math.min(rowsPerPage, productListData.length - page * rowsPerPage);
 
     return (
         <div className={classes.root}>
@@ -301,10 +272,10 @@ const Product = () => {
                             orderBy={orderBy}
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
-                            rowCount={rows.length}
+                            rowCount={productListData.length}
                         />
                         <TableBody>
-                            {stableSort(rows, getComparator(order, orderBy))
+                            {stableSort(productListData, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
@@ -332,7 +303,7 @@ const Product = () => {
                                                 <Typography variant="h5">{row.name}</Typography>
                                             </TableCell>
                                             <TableCell align="left">{row.category}</TableCell>
-                                            <TableCell align="left">{row.price}</TableCell>
+                                            <TableCell align="center">{row.price}$</TableCell>
                                             <TableCell align="center">{row.date}</TableCell>
                                             <TableCell align="center">{row.quantity}</TableCell>
                                             <TableCell align="center">
@@ -354,7 +325,7 @@ const Product = () => {
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
-                    count={rows.length}
+                    count={productListData.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}

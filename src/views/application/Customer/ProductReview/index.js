@@ -15,14 +15,14 @@ import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-// import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import PrintTwoToneIcon from '@material-ui/icons/PrintTwoTone';
 import FileCopyTwoToneIcon from '@material-ui/icons/FileCopyTwoTone';
 import { IconSearch } from '@tabler/icons';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
-import { customerListData } from '../data';
+import Rating from '@material-ui/lab/Rating';
+import { productReviewData } from '../data';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -48,13 +48,72 @@ function stableSort(array, comparator) {
     return stabilizedThis.map((el) => el[0]);
 }
 
+// const filterData = (data) => {
+
+// };
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%'
+    },
+    paper: {
+        width: '100%',
+        marginBottom: theme.spacing(2)
+    },
+    table: {
+        minWidth: 750
+    },
+    visuallyHidden: {
+        clip: 'rect(0 0 0 0)',
+        overflow: 'hidden',
+        position: 'absolute'
+    },
+    stComplete: {
+        color: '#00c853',
+        background: '#b9f6ca60',
+        '&:hover': {
+            background: '#00c853',
+            color: '#ffffff'
+        }
+    },
+    stProcessing: {
+        background: '#fbe9e7',
+        color: '#d84315',
+        '&:hover': {
+            background: '#d84315',
+            color: '#ffffff'
+        }
+    },
+    stConfirm: {
+        background: '#e3f2fd',
+        color: '#2196f3',
+        '&:hover': {
+            background: '#2196f3',
+            color: '#ffffff'
+        }
+    },
+    visibleAction: {
+        color: 'rgb(33, 150, 243)',
+        padding: 12
+    },
+    editAction: {
+        color: 'rgb(103, 58, 183)',
+        padding: 12
+    },
+    productName:{
+        color: 'black'
+    }
+}));
+
 const headCells = [
-    { id: 'name', align: true, numeric: false, disablePadding: false, label: 'Customer Name' },
-    { id: 'location', align: false, numeric: false, disablePadding: false, label: 'Location' },
-    { id: 'order', align: false, numeric: true, disablePadding: false, label: 'Orders' },
-    { id: 'registered', align: false, numeric: false, disablePadding: false, label: 'Registered' },
-    { id: 'status', align: false, numeric: false, disablePadding: false, label: 'Status' },
-    { id: 'action', align: false, numeric: false, disablePadding: false, label: 'Action' }
+    { id: 'name', align: true, numeric: false, disablePadding: false, label: 'Product Name' },
+    { id: 'author', align: true, numeric: false, disablePadding: false, label: 'Author' },
+    { id: 'review', align: true, numeric: false, disablePadding: false, label: 'Review' },
+    { id: 'rating', align: false, numeric: true, disablePadding: false, label: 'Rating' },
+    { id: 'date', align: false, numeric: false, disablePadding: false, label: 'Date' },
+    { id: 'status', align: false, numeric: true, disablePadding: false, label: 'Status' },
+    { id: 'action', align: false, numeric: true, disablePadding: false, label: 'Action' },
+
 ];
 
 const EnhancedTableHead = (props) => {
@@ -80,9 +139,6 @@ const EnhancedTableHead = (props) => {
                             <TableCell>
                                 <Typography variant="h4">{numSelected} selected</Typography>
                             </TableCell>
-                            {/* <Tooltip style={{float: 'right'}}>
-                            <DeleteIcon/>
-                        </Tooltip> */}
                         </>
                     ) : (
                         headCells.map((headCell) => (
@@ -128,12 +184,9 @@ const useToolbarStyles = makeStyles((theme) => ({
         paddingLeft: theme.spacing(2),
         paddingRight: theme.spacing(1)
     },
-
-    title: {
-        flex: '1 1 100%'
-    },
     searchInput: {
-        height: 40
+        height: 40,
+        marginTop: 10
     },
     tooltipHeader: {
         float: 'right',
@@ -148,12 +201,11 @@ const useToolbarStyles = makeStyles((theme) => ({
 
 const EnhancedTableToolbar = (props) => {
     const classes = useToolbarStyles();
-    // const { numSelected } = props;
 
     return (
         <>
             <Typography variant="h4" className={classes.header}>
-                Customer List
+                Product Review
             </Typography>
             <Divider />
 
@@ -161,8 +213,9 @@ const EnhancedTableToolbar = (props) => {
                 <Grid item xs={12} sm={6}>
                     <OutlinedInput
                         className={classes.searchInput}
+                        // onChange={productReviewData.filter((row) => row.name.contains(value))}
                         id="input-search-header"
-                        placeholder="Search customer"
+                        placeholder="Search Product"
                         startAdornment={
                             <InputAdornment position="start">
                                 <IconSearch stroke={1.5} size="1rem" className={classes.startAdornment} />
@@ -195,74 +248,13 @@ const EnhancedTableToolbar = (props) => {
     );
 };
 
-EnhancedTableToolbar.propTypes = {
-    numSelected: PropTypes.number.isRequired
-};
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        width: '100%'
-    },
-    paper: {
-        width: '100%',
-        marginBottom: theme.spacing(2)
-    },
-    table: {
-        minWidth: 750
-    },
-    visuallyHidden: {
-        border: 0,
-        clip: 'rect(0 0 0 0)',
-        height: 1,
-        margin: -1,
-        overflow: 'hidden',
-        padding: 0,
-        position: 'absolute',
-        top: 20,
-        width: 1
-    },
-    visibleAction: {
-        color: 'rgb(33, 150, 243)',
-        padding: 12
-    },
-    editAction: {
-        color: 'rgb(103, 58, 183)',
-        padding: 12
-    },
-    stComplete: {
-        color: '#00c853',
-        background: '#b9f6ca60',
-        '&:hover': {
-            background: '#00c853',
-            color: '#ffffff'
-        }
-    },
-    stProcessing: {
-        background: '#fbe9e7',
-        color: '#d84315',
-        '&:hover': {
-            background: '#d84315',
-            color: '#ffffff'
-        }
-    },
-    stConfirm: {
-        background: '#e3f2fd',
-        color: '#2196f3',
-        '&:hover': {
-            background: '#2196f3',
-            color: '#ffffff'
-        }
-    }
-}));
-
-const CustomerList = (props) => {
+const ProductReview = () => {
     const classes = useStyles();
     const [order, setOrder] = useState('asc');
     const [orderBy, setOrderBy] = useState('calories');
     const [selected, setSelected] = useState([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
-    // const { numSelected } = props;
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -272,7 +264,7 @@ const CustomerList = (props) => {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = customerListData.map((n) => n.name);
+            const newSelecteds = productReviewData.map((n) => n.name);
             setSelected(newSelecteds);
             return;
         }
@@ -307,7 +299,7 @@ const CustomerList = (props) => {
 
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, customerListData.length - page * rowsPerPage);
+    const emptyRows = rowsPerPage - Math.min(rowsPerPage, productReviewData.length - page * rowsPerPage);
 
     return (
         <div className={classes.root}>
@@ -322,13 +314,14 @@ const CustomerList = (props) => {
                             orderBy={orderBy}
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
-                            rowCount={customerListData.length}
+                            rowCount={productReviewData.length}
                         />
                         <TableBody>
-                            {stableSort(customerListData, getComparator(order, orderBy))
+                            {stableSort(productReviewData, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
+
                                     return (
                                         <TableRow
                                             hover
@@ -345,13 +338,17 @@ const CustomerList = (props) => {
                                             >
                                                 <Checkbox checked={isItemSelected} />
                                             </TableCell>
-                                            <TableCell padding="normal" onClick={(event) => handleClick(event, row.name)}>
-                                                <Typography variant="h5">{row.name}</Typography>
-                                                <Typography variant="subtitle2">{row.email}</Typography>
+                                            <TableCell align="left" onClick={(event) => handleClick(event, row.name)}>
+                                                <Typography variant="subtitle" className={classes.productName}>{row.name}</Typography>
                                             </TableCell>
-                                            <TableCell align="center">{row.location}</TableCell>
-                                            <TableCell align="center">{row.order}</TableCell>
-                                            <TableCell align="center">{row.registered}</TableCell>
+                                            <TableCell padding="normal" onClick={(event) => handleClick(event, row.name)}>
+                                                <Typography variant="subtitle">{row.author}</Typography>
+                                            </TableCell>
+                                            <TableCell align="left">{row.review}</TableCell>
+                                            <TableCell align="center">
+                                                <Rating precision={0.5} value={row.rating} />
+                                            </TableCell>
+                                            <TableCell align="center">{row.date}</TableCell>
                                             <TableCell align="center">
                                                 {row.status === 'Complete' ? (
                                                     <Chip label={row.status} className={classes.stComplete} />
@@ -383,7 +380,7 @@ const CustomerList = (props) => {
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
-                    count={customerListData.length}
+                    count={productReviewData.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}
@@ -394,8 +391,4 @@ const CustomerList = (props) => {
     );
 };
 
-CustomerList.propTypes = {
-    numSelected: PropTypes.number.isRequired
-};
-
-export default CustomerList;
+export default ProductReview;

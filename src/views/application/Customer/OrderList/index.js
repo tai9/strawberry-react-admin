@@ -23,33 +23,7 @@ import FileCopyTwoToneIcon from '@material-ui/icons/FileCopyTwoTone';
 import { IconSearch } from '@tabler/icons';
 import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
-
-function createData(id, name, branch, paymentType, quantity, registered, status, action) {
-    return { id, name, branch, paymentType, quantity, registered, status, action };
-}
-
-const rows = [
-    createData(790841, 'Joseph William 1', 'Toronto', 'Credit Card', 2500, '12.07.2018', 'Complete'),
-    createData(790842, 'Ashy Handgun 2', 'Toronto', 'Paytm', 750, '12.07.2018', 'Processing'),
-    createData(798699, 'Larry Doe 3', 'Toronto', 'Net Banking', 5000, '12.07.2018', 'Processing'),
-    createData(790752, 'Sara Soudan 4', 'Toronto', 'Upi', 2500, '12.07.2018', 'Confirm'),
-    createData(790955, 'Joseph William 5', 'Toronto', 'Credit Card', 263, '12.07.2018', 'Complete'),
-    createData(790785, 'Ashy Handgun 6', 'Toronto', 'Upi', 2500, '12.07.2018', 'Processing'),
-    createData(800837, 'Larry Doe 7', 'Toronto', 'Upi', 1120, '12.07.2018', 'Processing'),
-    createData(810365, 'Sara Soudan 8', 'Toronto', 'Net Banking', 2500, '12.07.2018', 'Confirm'),
-    createData(810814, 'Joseph William 9', 'Toronto', 'Credit Card', 263, '12.07.2018', 'Complete'),
-    createData(820385, 'Ashy Handgun 10', 'Toronto', 'Paytm', 750, '12.07.2018', 'Processing'),
-    createData(820885, 'Larry Doe 11', 'Toronto', 'Paytm', 2500, '12.07.2018', 'Processing'),
-    createData(830390, 'Sara Soudan 12', 'Toronto', 'Net Banking', 975, '12.07.2018', 'Confirm'),
-    createData(830879, 'Joseph William 13', 'Toronto', 'Credit Card', 2500, '12.07.2018', 'Complete'),
-    createData(900111, 'Ashy Handgun 14', 'Toronto', 'Credit Card', 750, '12.07.2018', 'Processing'),
-    createData(900836, 'Larry Doe 15', 'Toronto', 'Upi', 1120, '12.07.2018', 'Processing'),
-    createData(900112, 'Sara Soudan 16', 'Toronto', 'Paytm', 975, '12.07.2018', 'Confirm'),
-    createData(900871, 'Sara Soudan 17', 'Toronto', 'Net Banking', 975, '12.07.2018', 'Confirm'),
-    createData(910232, 'Ashy Doe 18', 'Toronto', 'Upi', 1120, '12.07.2018', 'Processing'),
-    createData(910886, 'Larry Doe 19', 'Toronto', 'Upi', 1120, '12.07.2018', 'Processing'),
-    createData(910232, 'Larry Soudan 20', 'Toronto', 'Upi', 1120, '12.07.2018', 'Processing')
-];
+import { orderListData } from '../data';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -172,6 +146,7 @@ const EnhancedTableHead = (props) => {
                                 key={headCell.id}
                                 align={headCell.align ? 'left' : 'center'}
                                 sortDirection={orderBy === headCell.id ? order : false}
+                                style ={{color: 'black'}}
                             >
                                 <TableSortLabel
                                     active={orderBy === headCell.id}
@@ -296,7 +271,7 @@ const OrderList = (props) => {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = rows.map((n) => n.name);
+            const newSelecteds = orderListData.map((n) => n.name);
             setSelected(newSelecteds);
             return;
         }
@@ -331,7 +306,7 @@ const OrderList = (props) => {
 
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    const emptyRows = rowsPerPage - Math.min(rowsPerPage, orderListData.length - page * rowsPerPage);
 
     return (
         <div className={classes.root}>
@@ -346,10 +321,10 @@ const OrderList = (props) => {
                             orderBy={orderBy}
                             onSelectAllClick={handleSelectAllClick}
                             onRequestSort={handleRequestSort}
-                            rowCount={rows.length}
+                            rowCount={orderListData.length}
                         />
                         <TableBody>
-                            {stableSort(rows, getComparator(order, orderBy))
+                            {stableSort(orderListData, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
@@ -411,7 +386,7 @@ const OrderList = (props) => {
                 <TablePagination
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
-                    count={rows.length}
+                    count={orderListData.length}
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}
