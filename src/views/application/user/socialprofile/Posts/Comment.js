@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
         // display: 'flex'
     },
     onClickIconLike: {
-        color: 'rgb(33, 150, 243)',
+        color: '#673ab7',
         fontSize: '18px',
         marginRight: '8px'
     },
@@ -125,14 +125,15 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '50px'
     }
 }));
-
 const Comment = (cmt) => {
     const classes = useStyles();
 
     const [checked, setChecked] = React.useState(false);
 
-    const [like, setLike] = React.useState(false);
-    const [score, setScore] = React.useState(10);
+    const [like, setLike] = React.useState(cmt.like);
+    const [likeReply, setLikereply] = React.useState(false);
+    const [score, setScore] = React.useState(cmt.numberOfLike);
+    const [scoreReply, setScoreReply] = React.useState(0);
 
     const handleClickCmt = () => {
         setChecked((prev) => !prev);
@@ -147,9 +148,18 @@ const Comment = (cmt) => {
         }
     };
 
+    const handleClickToLikeReply = async () => {
+        await setLikereply((prev) => !prev);
+        if (likeReply) {
+            setScoreReply(scoreReply - 1);
+        } else {
+            setScoreReply(scoreReply + 1);
+        }
+    };
+
     const dispatch = useDispatch();
 
-    const [dataReplyCmt, setDataReplyCmt] = useState();
+    const [dataReplyCmt, setDataReplyCmt] = useState('');
 
     const handleChange = (e) => {
         const { value } = e.target;
@@ -157,9 +167,9 @@ const Comment = (cmt) => {
     };
     const PostComment = async () => {
         const newValues = { dataPost: dataReplyCmt, idCmt: cmt.id, idpost: cmt.idpost };
-        console.log(cmt);
         dispatch(await PostReplyCommentAction(newValues));
         setChecked((prev) => !prev);
+        setDataReplyCmt('');
     };
 
     return (
@@ -201,14 +211,15 @@ const Comment = (cmt) => {
                                           <div className={classes.borderLikeCmt}>
                                               {/* button like and reply */}
                                               <div>
-                                                  <div className={classes.likecmt} onClick={handleClickToLike}>
-                                                      {like ? (
+                                                  <div className={classes.likecmt} onClick={handleClickToLikeReply}>
+                                                      {likeReply ? (
                                                           <>
-                                                              <ThumbUpAltTwoToneIcon className={classes.onClickIconLike} /> {score} Likes
+                                                              <ThumbUpAltTwoToneIcon className={classes.onClickIconLike} /> {scoreReply}{' '}
+                                                              Likes
                                                           </>
                                                       ) : (
                                                           <>
-                                                              <ThumbUpAltTwoToneIcon className={classes.iconLike} /> {score} Likes
+                                                              <ThumbUpAltTwoToneIcon className={classes.iconLike} /> {scoreReply} Likes
                                                           </>
                                                       )}
                                                   </div>
@@ -232,7 +243,11 @@ const Comment = (cmt) => {
                                 <div>
                                     <div className={classes.borderLikeCmtHindden}>
                                         <div className={classes.borderAvatar}>
-                                            <Avatar className={classes.avatar} src={cmt.avatar.avatar} alt="avatar" />
+                                            {cmt.imageCmt ? (
+                                                <Avatar className={classes.avatar} src={cmt.imageCmt} alt="avatar" />
+                                            ) : (
+                                                <Avatar className={classes.avatar} src={cmt.avatar} alt="avatar" />
+                                            )}
                                         </div>
 
                                         <div className={classes.borderTextField}>
@@ -249,6 +264,7 @@ const Comment = (cmt) => {
                                                 }}
                                                 variant="outlined"
                                                 onChange={handleChange}
+                                                value={dataReplyCmt}
                                             />
                                         </div>
                                         <div className={classes.btnComment}>
