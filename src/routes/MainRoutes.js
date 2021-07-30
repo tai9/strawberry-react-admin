@@ -7,10 +7,10 @@ import Loadable from '../ui-component/Loadable';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
-const CustomerList = Loadable(lazy(() => import('../views/application/Customer/CustomerList')));
-const OrderList = Loadable(lazy(() => import('../views/application/Customer/OrderList')));
-const ProductList = Loadable(lazy(() => import('../views/application/Customer/Product')));
-const ProductReview = Loadable(lazy(() => import('../views/application/Customer/ProductReview')));
+const CustomerList = Loadable(lazy(() => import('../views/application/customer/customer-list')));
+const OrderList = Loadable(lazy(() => import('../views/application/customer/order-list')));
+const ProductList = Loadable(lazy(() => import('../views/application/customer/product')));
+const ProductReview = Loadable(lazy(() => import('../views/application/customer/product-review')));
 
 
 
