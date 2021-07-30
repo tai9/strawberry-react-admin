@@ -13,7 +13,7 @@ Strawberry React Admin was built from Berry Free React Material Admin Template [
 
 #### Preview
 
- - [Demo](https://berrydashboard.io/free)
+ - [Demo](https://strawberry-react-admin.netlify.app)
 
 #### Download
 
