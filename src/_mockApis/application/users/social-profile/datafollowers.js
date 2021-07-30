@@ -130,11 +130,5 @@ export const datafollowers = [
         adress: 'Bergstrombury',
         status: 'true',
         avatar: follower9
-    },
-    {
-        name: 'Henderson',
-        adress: 'South Antoni',
-        status: 'true',
-        avatar: follower10
     }
 ];
