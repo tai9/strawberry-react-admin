@@ -2,7 +2,7 @@ import { Avatar } from '@material-ui/core';
 import React from 'react';
 
 // react momemt
-import moment from 'moment';
+// import moment from 'moment';
 
 // icons MoreVertSharp
 import MoreVertSharpIcon from '@material-ui/icons/MoreVertSharp';
@@ -121,7 +121,7 @@ const HeaderInfo = (post) => {
                                 <div className={classes.name}>John Doe</div>
                                 <div className={classes.timePost}>
                                     <FiberManualRecordIcon className={classes.dots} />
-                                    {moment(post.datetime).fromNow()}
+                                    {/* {moment(post.datetime).fromNow()} */}
                                 </div>
                             </div>
                         </div>
