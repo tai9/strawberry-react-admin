@@ -99,6 +99,9 @@ const rows = dataCollapse;
 export default function CollapseTable() {
     return (
         <TableContainer component={Paper}>
+            <div style={{ padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }}>
+                Collapse Table
+            </div>
             <Table aria-label="collapsible table">
                 <TableHead>
                     <TableRow>

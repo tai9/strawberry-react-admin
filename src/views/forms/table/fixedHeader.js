@@ -24,6 +24,9 @@ export default function FixedHeader() {
 
     return (
         <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+            <div style={{ padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }}>
+                Fixed Header
+            </div>
             <TableContainer sx={{ maxHeight: 440 }}>
                 <Table stickyHeader aria-label="sticky table">
                     <TableHead>

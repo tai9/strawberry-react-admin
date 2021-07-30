@@ -11,6 +11,9 @@ import { basicData } from '../../../_mockApis/forms/table/data';
 export default function DenseTable() {
     return (
         <TableContainer component={Paper}>
+            <div style={{ padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }}>
+                Dense Table
+            </div>
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
                     <TableRow>
