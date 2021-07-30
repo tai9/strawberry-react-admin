@@ -10,7 +10,7 @@ import { Button } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     formPost: {
         paddingTop: '24px',
-        width: "100%",
+        width: '100%'
     },
     textPost: {
         border: '1x solid red',
@@ -31,23 +31,26 @@ const useStyles = makeStyles((theme) => ({
         minWidth: '0px',
         resize: 'none',
         color: 'rgb(33, 33, 33)',
-        borderWadius: '12px',
+        borderWadius: '12px'
     },
     postContent: {
         padding: '24px',
         backgroundColor: 'white',
         borderRadius: '12px',
-        border: "1px solid rgba(144, 202, 249, 0.46)",
+        border: '1px solid rgba(144, 202, 249, 0.46)'
     },
     iconLayer: {
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
-        marginRight: "5px"
+        marginRight: '5px'
     },
     buttonPost: {
         background: '#673ab7',
-        color: 'white'
+        color: 'white',
+        '&:hover': {
+            background: '#673ab7'
+        }
     },
     buttonGallery: {
         color: '#673ab7'
@@ -55,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     buttons: {
         display: 'flex',
         justifyContent: 'space-between',
-        paddingTop: "24px"
+        paddingTop: '24px'
     }
 }));
 
@@ -72,8 +75,7 @@ const FormPost = () => {
                             <AttachmentIcon className={classes.iconLayer} />
                             Gallery
                         </Button>
-                        <Button color="primary" className={classes.buttonPost}>
-                            {' '}
+                        <Button className={classes.buttonPost}>
                             <LayersIcon className={classes.iconLayer} />
                             Post
                         </Button>
