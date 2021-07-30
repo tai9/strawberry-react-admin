@@ -19,6 +19,9 @@ const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/Analyt
 // widget routing
 const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
 
+// application routing
+const ApplicationContactCard = Loadable(lazy(() => import('../views/application/contact/Card')));
+
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
 const UtilsColor = Loadable(lazy(() => import('../views/utilities/Color')));
@@ -47,15 +50,20 @@ const MainRoutes = () => {
                 '/dashboard/analytics',
                 '/customer/product-review',
 
+                '/application/contact/cards',
+                '/application/contact/list',
+
                 '/widget/statistics',
+
                 '/utils/util-typography',
                 '/utils/util-color',
                 '/utils/util-shadow',
+
                 '/icons/tabler-icons',
                 '/icons/material-icons',
 
                 '/sample-page',
-                '/user/social-profile/posts', // eltr
+                '/user/social-profile/posts'
             ]}
         >
             <MainLayout>
@@ -65,10 +73,13 @@ const MainRoutes = () => {
 
                     <Route path="/customer/customer-list" component={CustomerList} />
                     <Route path="/customer/order-list" component={OrderList} />
-                    <Route path="/customer/product" component={ProductList} />ProductReview
+                    <Route path="/customer/product" component={ProductList} />
                     <Route path="/customer/product-review" component={ProductReview} />
+                    <Route path="/application/contact/cards" component={ApplicationContactCard} />
+                    <Route path="/application/contact/list" component={DashboardDefault} />
 
                     <Route path="/widget/statistics" component={Statistics} />
+
                     <Route path="/utils/util-typography" component={UtilsTypography} />
                     <Route path="/utils/util-color" component={UtilsColor} />
                     <Route path="/utils/util-shadow" component={UtilsShadow} />
@@ -77,7 +88,7 @@ const MainRoutes = () => {
 
                     <Route path="/sample-page" component={SamplePage} />
 
-                    {/* eltr */}
+                    {/* Change your path */}
                     <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
                 </Switch>
             </MainLayout>

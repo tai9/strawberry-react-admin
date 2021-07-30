@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '12px',
         paddingTop: '12px',
         paddingRight: '12px',
-        paddingLeft: '12px',
+        paddingLeft: '12px'
     },
     headerTopProfile: {
         // width: "100%"
@@ -52,7 +52,6 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     namePosition: {
-        // paddingTop: "2px",
         paddingLeft: '24px',
         [theme.breakpoints.down('sm')]: {
             marginTop: '20px',
@@ -94,28 +93,51 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         width: '100%',
-        border: "none",
-        boxShadow: "none !important ",
-        marginTop: "20px",
-        overflow: "hidden",
+        border: 'none',
+        boxShadow: 'none !important ',
+        marginTop: '20px',
+        overflow: 'hidden'
     },
     boxshadow: {
-        boxShadow: "none !important ",
+        boxShadow: 'none !important ',
+        paddingLeft: '80px',
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: '0px'
+        }
     },
     br: {
-        flexDirection: "row",
-        paddingLeft: "30px"
+        flexDirection: 'row'
     },
     tagA: {
-        textDecoration: "none"
+        textDecoration: 'none'
     },
     iconTabs: {
-        marginRight: "10px",
-        marginBottom: "4px !important",
-        width: "15px"
+        marginRight: '15px',
+        marginBottom: '4px !important',
+        width: '20px'
     },
-    scrollablekk : {
-        justifyContent: "flex-end !important ",
+    scrollablekk: {
+        justifyContent: 'flex-end !important '
+    },
+    tab: {
+        color: '#616161',
+        padding: '12px 8px',
+        minWidth: 10,
+        minHeight: 'auto',
+        marginRight: 18,
+        '& > span': {
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'center'
+        },
+        '& > span > svg': {
+            marginRight: 10,
+            marginBottom: '4px !important'
+        }
+    },
+    fontSizeTabs: {
+        fontSize: '14px'
     }
 }));
 
@@ -203,11 +225,61 @@ const SocialProfile = () => {
                                         scrollButtons="auto"
                                         aria-label="scrollable auto tabs example"
                                     >
-                                        <Tab  className={classes.br} icon={<IconInbox className={classes.iconTabs}/>}  label="PROFILE" {...a11yProps(0)} />
-                                        <Tab className={classes.br} icon={<IconUsers className={classes.iconTabs}/>} label="FOLLOWERS" {...a11yProps(1)} />
-                                        <Tab className={classes.br} icon={<IconFriends className={classes.iconTabs}/>} label="FRIENDS" {...a11yProps(2)} />
-                                        <Tab className={classes.br} icon={<IconPhoto className={classes.iconTabs}/>} label="GALLERY" {...a11yProps(3)} />
-                                        <Tab className={classes.br} icon={<IconUserPlus className={classes.iconTabs}/>} label="FRIEND REQUEST" {...a11yProps(4)} />
+                                        <Tab
+                                            className={classes.tab}
+                                            icon={
+                                                <span className={classes.fontSizeTabs}>
+                                                    <IconInbox fontSize="small" />
+                                                    PROFILE
+                                                </span>
+                                            }
+                                            wrapped
+                                            {...a11yProps(0)}
+                                        />
+                                        <Tab
+                                            className={classes.tab}
+                                            icon={
+                                                <span className={classes.fontSizeTabs}>
+                                                    <IconUsers className={classes.iconTabs} />
+                                                    FOLLOWERS
+                                                </span>
+                                            }
+                                            wrapped
+                                            {...a11yProps(1)}
+                                        />
+                                        <Tab
+                                            className={classes.tab}
+                                            icon={
+                                                <span className={classes.fontSizeTabs}>
+                                                    <IconFriends className={classes.iconTabs} />
+                                                    FRIENDS
+                                                </span>
+                                            }
+                                            wrapped
+                                            {...a11yProps(2)}
+                                        />
+                                        <Tab
+                                            className={classes.tab}
+                                            icon={
+                                                <span className={classes.fontSizeTabs}>
+                                                    <IconPhoto className={classes.iconTabs} />
+                                                    GALLERY
+                                                </span>
+                                            }
+                                            wrapped
+                                            {...a11yProps(3)}
+                                        />
+                                        <Tab
+                                            className={classes.tab}
+                                            icon={
+                                                <span className={classes.fontSizeTabs}>
+                                                    <IconUserPlus className={classes.iconTabs} />
+                                                    FRIEND REQUEST
+                                                </span>
+                                            }
+                                            wrapped
+                                            {...a11yProps(4)}
+                                        />
                                     </Tabs>
                                 </AppBar>
                                 {/* <TabPanel value={value} index={0}>

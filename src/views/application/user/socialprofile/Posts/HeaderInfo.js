@@ -1,6 +1,9 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
 
+// react momemt
+import moment from 'moment';
+
 // icons MoreVertSharp
 import MoreVertSharpIcon from '@material-ui/icons/MoreVertSharp';
 
@@ -10,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -22,13 +26,16 @@ const useStyles = makeStyles((theme) => ({
         // borderRadius: '12px'
     },
     dots: {
-        fontSize: '40px',
-        margin: '0px',
-        padding: '0px',
-        fontFamily: 'Roboto, sans-serif',
-        fontWeight: '400',
-        color: 'rgb(158, 158, 158)',
-        textAlign: 'left'
+        userSelect: 'none',
+        display: 'inline-block',
+        fill: 'currentcolor',
+        flexShrink: 0,
+        transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        fontSize: '1.5rem',
+        width: '10px',
+        height: '10px',
+        opacity: '0.5',
+        margin: '0px 5px'
     },
     nameStatus: {
         display: 'flex'
@@ -72,6 +79,19 @@ const useStyles = makeStyles((theme) => ({
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    timePost: {
+        margin: '0px',
+        fontfamily: 'Roboto, sans-serif',
+        fontweight: '400',
+        fontsize: '0.75rem',
+        lineheight: '1.66',
+        color: 'rgb(158, 158, 158)',
+        textalign: 'left',
+        paddingLeft: '8px',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 }));
 
@@ -99,9 +119,9 @@ const HeaderInfo = (post) => {
                             <Avatar alt="avatar" src={post.avatar} />
                             <div className={classes.nameStatus}>
                                 <div className={classes.name}>John Doe</div>
-                                <div>
-                                    <span className={classes.dots}>.</span>
-                                    <span>now</span>
+                                <div className={classes.timePost}>
+                                    <FiberManualRecordIcon className={classes.dots} />
+                                    {moment(post.datetime).fromNow()}
                                 </div>
                             </div>
                         </div>
