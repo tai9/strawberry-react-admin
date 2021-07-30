@@ -12,12 +12,12 @@ const ProFile = () => {
         <React.Fragment>
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={12} md={4}>
-                    <FriendAndFollow/>
-                    <About/>
+                    <FriendAndFollow />
+                    <About />
                 </Grid>
                 <Grid item xs={12} sm={12} md={8}>
-                    <FormPost/>
-                    <Post/>
+                    <FormPost />
+                    <Post />
                 </Grid>
             </Grid>
         </React.Fragment>

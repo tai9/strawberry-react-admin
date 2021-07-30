@@ -1,6 +1,6 @@
 // project imports
 
-import { datapost } from '../_mockApis/application/users/social-profile/data';
+import { datapost } from '../_mockApis/application/users/social-profile/datapost';
 
 export const initialState = {
     arrPost: datapost
