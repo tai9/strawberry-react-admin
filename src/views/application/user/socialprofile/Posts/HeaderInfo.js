@@ -17,14 +17,6 @@ import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
-    post: {
-        // paddingTop: '24px'
-    },
-    postContent: {
-        // background: 'white',
-        // padding: '24px',
-        // borderRadius: '12px'
-    },
     dots: {
         userSelect: 'none',
         display: 'inline-block',
@@ -111,29 +103,27 @@ const HeaderInfo = (post) => {
 
     return (
         <React.Fragment>
-            <div className={classes.post}>
-                <div className={classes.postContent}>
-                    {/* avatar, name, time, editButton */}
-                    <div className={classes.avataNameEdit}>
-                        <div className={classes.avataName}>
-                            <Avatar alt="avatar" src={post.avatar} />
-                            <div className={classes.nameStatus}>
-                                <div className={classes.name}>John Doe</div>
-                                <div className={classes.timePost}>
-                                    <FiberManualRecordIcon className={classes.dots} />
-                                    {moment(post.datetime).fromNow()}
-                                </div>
+            <div>
+                {/* avatar, name, time, editButton */}
+                <div className={classes.avataNameEdit}>
+                    <div className={classes.avataName}>
+                        <Avatar alt="avatar" src={post.avatar} />
+                        <div className={classes.nameStatus}>
+                            <div className={classes.name}>John Doe</div>
+                            <div className={classes.timePost}>
+                                <FiberManualRecordIcon className={classes.dots} />
+                                {moment(post.datetime).fromNow()}
                             </div>
                         </div>
-                        <div className={classes.btnCover}>
-                            <div className={classes.btnEditDelete} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                                <MoreVertSharpIcon className={classes.btnThereDots} />
-                            </div>
-                            <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-                                <MenuItem onClick={handleClose}>Edit</MenuItem>
-                                <MenuItem onClick={handleClose}>Delete</MenuItem>
-                            </Menu>
+                    </div>
+                    <div className={classes.btnCover}>
+                        <div className={classes.btnEditDelete} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                            <MoreVertSharpIcon className={classes.btnThereDots} />
                         </div>
+                        <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+                            <MenuItem onClick={handleClose}>Edit</MenuItem>
+                            <MenuItem onClick={handleClose}>Delete</MenuItem>
+                        </Menu>
                     </div>
                 </div>
             </div>
