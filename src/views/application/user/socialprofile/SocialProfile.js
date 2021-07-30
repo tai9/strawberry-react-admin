@@ -30,9 +30,6 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '12px',
         paddingLeft: '12px'
     },
-    headerTopProfile: {
-        // width: "100%"
-    },
     imgcover: {
         width: '100%',
         borderRadius: '12px',
@@ -205,7 +202,7 @@ const SocialProfile = () => {
     return (
         <React.Fragment>
             <div className={classes.header}>
-                <div className={classes.headerTopProfile}>
+                <div>
                     <img className={classes.imgcover} src={imageCover}></img>
                 </div>
                 <div className={classes.headerBottomProfile}>
