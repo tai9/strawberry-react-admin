@@ -139,6 +139,23 @@ const useStyles = makeStyles((theme) => ({
     },
     fontSizeTabs: {
         fontSize: '14px'
+    },
+    tabNavLink: {
+        color: '#616161',
+        minWidth: 10,
+        minHeight: 'auto',
+        marginRight: 18,
+        textDecoration: 'none',
+        '& > span': {
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'center'
+        },
+        '& > span > svg': {
+            marginRight: 10,
+            marginBottom: '4px !important'
+        }
     }
 }));
 
@@ -229,10 +246,12 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconInbox fontSize="small" />
-                                                    PROFILE
-                                                </span>
+                                                <NavLink to="/user/social-profile/posts" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconInbox fontSize="small" />
+                                                        PROFILE
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(0)}
@@ -240,7 +259,7 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <NavLink to="/user/social-profile/follower">
+                                                <NavLink to="/user/social-profile/follower" className={classes.tabNavLink}>
                                                     <span className={classes.fontSizeTabs}>
                                                         <IconUsers className={classes.iconTabs} />
                                                         FOLLOWERS
