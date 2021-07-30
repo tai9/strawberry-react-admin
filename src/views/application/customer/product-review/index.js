@@ -117,6 +117,7 @@ const ProductReview = () => {
     const [selected, setSelected] = useState([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [data, setData] = useState(productReviewData);
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -158,10 +159,20 @@ const ProductReview = () => {
     const isSelected = (name) => selected.indexOf(name) !== -1;
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, productReviewData.length - page * rowsPerPage);
 
+    const handleFilter = (event) => {
+        const {value} = event.target
+        if (value === ''){
+            setData(productReviewData)
+        }else{
+            const dataFiltered = productReviewData.filter((item) => item.name.includes(value))
+            setData(dataFiltered)
+        }
+    }
+
     return (
         <div className={classes.root}>
             <Paper className={classes.paper}>
-                <EnhancedTableToolbar numSelected={selected.length} />
+                <EnhancedTableToolbar numSelected={selected.length} handleFilter={handleFilter}/>
                 <TableContainer>
                     <Table className={classes.table} aria-labelledby="tableTitle" aria-label="enhanced table">
                         <EnhancedTableHead
@@ -174,7 +185,7 @@ const ProductReview = () => {
                             rowCount={productReviewData.length}
                         />
                         <TableBody>
-                            {stableSort(productReviewData, getComparator(order, orderBy))
+                            {stableSort(data, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);

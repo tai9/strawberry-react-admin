@@ -107,6 +107,7 @@ const CustomerList = (props) => {
     const [selected, setSelected] = useState([]);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(5);
+    const [data, setData] = useState(customerListData)
 
     const handleRequestSort = (event, property) => {
         const isAsc = orderBy === property && order === 'asc';
@@ -116,7 +117,7 @@ const CustomerList = (props) => {
 
     const handleSelectAllClick = (event) => {
         if (event.target.checked) {
-            const newSelecteds = customerListData.map((n) => n.name);
+            const newSelecteds = data.map((n) => n.name);
             setSelected(newSelecteds);
             return;
         }
@@ -149,6 +150,16 @@ const CustomerList = (props) => {
         setPage(0);
     };
 
+    const handleFilter = (event) => {
+        const {value} = event.target
+        if (value === ''){
+            setData(customerListData)
+        }else{
+            const dataFiltered = customerListData.filter((item) => item.name.includes(value))
+            setData(dataFiltered)
+        }
+    }
+
     const isSelected = (name) => selected.indexOf(name) !== -1;
 
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, customerListData.length - page * rowsPerPage);
@@ -156,7 +167,7 @@ const CustomerList = (props) => {
     return (
         <div className={classes.root}>
             <Paper className={classes.paper}>
-                <EnhancedTableToolbar numSelected={selected.length} />
+                <EnhancedTableToolbar numSelected={selected.length} handleFilter={handleFilter}/>
                 <TableContainer>
                     <Table className={classes.table} aria-labelledby="tableTitle" aria-label="enhanced table">
                         <EnhancedTableHead
@@ -169,7 +180,7 @@ const CustomerList = (props) => {
                             rowCount={customerListData.length}
                         />
                         <TableBody>
-                            {stableSort(customerListData, getComparator(order, orderBy))
+                            {stableSort(data, getComparator(order, orderBy))
                                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                 .map((row, index) => {
                                     const isItemSelected = isSelected(row.name);
