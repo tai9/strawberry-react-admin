@@ -8,17 +8,17 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { basicData } from '../../../_mockApis/forms/table/data';
 import { makeStyles } from '@material-ui/styles';
-
 const useStyles = makeStyles((theme) => ({
     header: { padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }
 }));
-export default function Basic() {
+
+export default function Dence() {
     const classes = useStyles();
 
     return (
         <TableContainer component={Paper}>
-            <div className={classes.header}>Basic Table</div>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <div className={classes.header}>Dense Table</div>
+            <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Dessert (100g serving)</TableCell>
@@ -30,7 +30,7 @@ export default function Basic() {
                 </TableHead>
                 <TableBody>
                     {basicData.map((row) => (
-                        <TableRow key={row.name} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                        <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                             <TableCell component="th" scope="row">
                                 {row.name}
                             </TableCell>
