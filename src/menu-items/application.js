@@ -26,6 +26,34 @@ export const application = {
                     type: 'item',
                     url: '/user/social-profile/posts',
                     target: false
+                },
+                {
+                    id: 'accountProfile',
+                    title: 'Account Profile',
+                    type: 'collapse',
+                    children: [
+                        {
+                            id: 'profile1',
+                            title: ' Profile 1',
+                            type: 'item',
+                            url: '/user/account-profile/profile1',
+                            target: false
+                        },
+                        {
+                            id: 'profile2',
+                            title: ' Profile 2',
+                            type: 'item',
+                            url: '/user/account-profile/profile2',
+                            target: false
+                        },
+                        {
+                            id: 'profile3',
+                            title: ' Profile 3',
+                            type: 'item',
+                            url: '/user/account-profile/profile3',
+                            target: false
+                        }
+                    ]
                 }
                 // {
                 //     id: 'register3',

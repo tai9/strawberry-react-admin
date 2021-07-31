@@ -27,7 +27,7 @@ const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
 // application routing // eltr
 const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
-
+const Profile1 = Loadable(lazy(() => import('../views/application/user/accountProfile/profile1')));
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
 const MainRoutes = () => {
@@ -52,7 +52,10 @@ const MainRoutes = () => {
                 '/icons/material-icons',
 
                 '/sample-page',
-                '/user/social-profile/posts'
+                '/user/social-profile/posts',
+                '/user/account-profile/profile1',
+                '/user/account-profile/profile2',
+                '/user/account-profile/profile3'
             ]}
         >
             <MainLayout>
@@ -75,6 +78,9 @@ const MainRoutes = () => {
 
                     {/* Change your path */}
                     <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
+                    <Route path="/user/account-profile/profile1" component={Profile1} />
+                    <Route path="/user/account-profile/profile2" component={Profile1} />
+                    <Route path="/user/account-profile/profile3" component={Profile1} />
                 </Switch>
             </MainLayout>
         </Route>
