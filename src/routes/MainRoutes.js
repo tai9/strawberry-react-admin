@@ -7,7 +7,7 @@ import Loadable from '../ui-component/Loadable';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
-const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/Analytics')));
+const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/analytics')));
 
 // widget routing
 const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));

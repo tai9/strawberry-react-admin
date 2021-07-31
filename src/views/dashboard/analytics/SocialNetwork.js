@@ -2,14 +2,15 @@ import React from 'react';
 
 //material-ui
 import { makeStyles } from '@material-ui/styles';
-import { Grid, Typography, Paper } from '@material-ui/core';
+import { Grid, Typography, Paper, CardContent } from '@material-ui/core';
 
 //import project
 import LogoShare from '../../../assets/images/dashboard/logo-shares';
 import LogoNetwork from '../../../assets/images/dashboard/logo-network';
 import LogoReturn from '../../../assets/images/dashboard/logo-return';
 import LogoOrder from '../../../assets/images/dashboard/logo-order';
-import CardContent from '@material-ui/core/CardContent';
+
+//-----------------------|| SOCIAL NETWORK ||-----------------------//
 
 const useStyles = makeStyles((theme) => ({
     gridItem: {
@@ -48,7 +49,6 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-//UI
 const SocialNetwork = (theme) => {
     const classes = useStyles();
     return (

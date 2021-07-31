@@ -4,11 +4,11 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography, Paper, CardContent } from '@material-ui/core';
 
-//project
-// import { LogoDailyPage } from '../../../assets/images/dashboard/daily-page.svg';
-// import DefaultLogo from '../../../assets/images/dashboard/'
+// assets
 import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+//-----------------------|| DAILY COMPONENT ||-----------------------//
 
 const useStyles = makeStyles((theme) => ({
     dailyUser: {
