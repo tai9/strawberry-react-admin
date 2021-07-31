@@ -1,4 +1,6 @@
 import * as React from 'react';
+
+//material-ui
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,8 +9,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import { columnsFixed, dataFixed } from '../../../_mockApis/forms/table/data';
 import { makeStyles } from '@material-ui/styles';
+
+//import data
+import { columnsFixed, dataFixed } from '../../../_mockApis/forms/table/data';
 
 const useStyles = makeStyles((theme) => ({
     header: { padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }

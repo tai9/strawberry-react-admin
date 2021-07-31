@@ -1,4 +1,6 @@
 import * as React from 'react';
+
+//material-ui
 import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 import Collapse from '@material-ui/core/Collapse';
@@ -13,8 +15,10 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { dataCollapse } from '../../../_mockApis/forms/table/data';
 import { makeStyles } from '@material-ui/styles';
+
+//import data
+import { dataCollapse } from '../../../_mockApis/forms/table/data';
 const useStyles = makeStyles((theme) => ({
     header: { padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' },
     tbCell: { paddingBottom: 0, paddingTop: 0 }

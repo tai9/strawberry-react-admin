@@ -1,4 +1,6 @@
 import * as React from 'react';
+
+//material-ui
 import PropTypes from 'prop-types';
 import { alpha } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
@@ -21,8 +23,11 @@ import Switch from '@material-ui/core/Switch';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { visuallyHidden } from '@material-ui/utils';
-import { rowEnhanced, headCells } from '../../../_mockApis/forms/table/data';
 import { makeStyles } from '@material-ui/styles';
+
+//import data
+import { rowEnhanced, headCells } from '../../../_mockApis/forms/table/data';
+
 const useStyles = makeStyles((theme) => ({
     header: { padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }
 }));
