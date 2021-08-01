@@ -2,15 +2,14 @@ import React from 'react';
 
 //material-ui
 import { makeStyles } from '@material-ui/styles';
-import { Paper, Divider } from '@material-ui/core';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import { Paper, Divider, List, ListItem, ListItemIcon, ListItemText, CardHeader } from '@material-ui/core';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+
+// assets
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import CardHeader from '@material-ui/core/CardHeader';
+
+//-----------------------|| TOTAL REVENUE ||-----------------------//
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,10 +38,13 @@ const useStyles = makeStyles((theme) => ({
         float: 'right !important',
         paddingRight: '10px'
     },
-    ScrollHeight: {
-        height: '450px',
+    scrollHeight: {
+        height: '400px',
         paddingLeft: '16px',
         paddingRight: '16px'
+    },
+    itemList:{
+        paddingLeft : 10
     }
 }));
 
@@ -54,8 +56,8 @@ const Revenue = (theme) => {
                 <ListItemIcon>
                     <ArrowDropUpIcon className={classes.increaseIcon} />
                 </ListItemIcon>
-                <ListItemText inset primary="Bitcoin" />
-                <ListItemText inset>
+                <ListItemText inset className={classes.itemList}>
+                    Bitcoin
                     <span className={classes.increaseText}>+ $145.86</span>
                 </ListItemText>
             </ListItem>
@@ -63,8 +65,8 @@ const Revenue = (theme) => {
                 <ListItemIcon>
                     <ArrowDropDownIcon className={classes.decreaseIcon} />
                 </ListItemIcon>
-                <ListItemText inset primary="Ethereum" />
-                <ListItemText inset>
+                <ListItemText inset className={classes.itemList}>
+                    Ethereum
                     <span className={classes.decreaseText}>- $12.39</span>
                 </ListItemText>
             </ListItem>
@@ -72,8 +74,8 @@ const Revenue = (theme) => {
                 <ListItemIcon>
                     <ArrowDropUpIcon className={classes.increaseIcon} />
                 </ListItemIcon>
-                <ListItemText inset primary="Ripple" />
-                <ListItemText inset>
+                <ListItemText inset className={classes.itemList}>
+                    Ripple
                     <span className={classes.increaseText}>+ $47.26</span>
                 </ListItemText>
             </ListItem>
@@ -81,8 +83,8 @@ const Revenue = (theme) => {
                 <ListItemIcon>
                     <ArrowDropDownIcon className={classes.decreaseIcon} />
                 </ListItemIcon>
-                <ListItemText inset primary="Neo" />
-                <ListItemText inset>
+                <ListItemText inset className={classes.itemList}>
+                    Neo
                     <span className={classes.decreaseText}>- $6.398</span>
                 </ListItemText>
             </ListItem>
@@ -98,7 +100,7 @@ const TotalRevenue = (theme) => {
             <CardHeader title="Total Revenue"></CardHeader>
             <Divider />
             <List>
-                <PerfectScrollbar component="div" className={classes.ScrollHeight}>
+                <PerfectScrollbar component="div" className={classes.scrollHeight}>
                     <Revenue />
                     <Revenue />
                     <Revenue />
