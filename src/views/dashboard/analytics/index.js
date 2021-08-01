@@ -11,6 +11,8 @@ import OderReceive from './OrderReceive';
 import BasicTable from './LatestCustomer';
 import DailyComponent from './DailyComponent';
 
+//-----------------------|| ANALYTICS ||-----------------------//
+
 const Analytics = () => {
     return (
         <Grid container spacing={3}>

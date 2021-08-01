@@ -1,8 +1,11 @@
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import HeaderStatistics from '../../ui-component/statistics/headerStatistics';
+
+//import data
 import {
     boxOne,
     boxThere,
@@ -12,7 +15,10 @@ import {
     dataImpressions,
     dataSocial,
     dataDaily
-} from '../../ui-component/statistics/data';
+} from '../../_mockApis/widget/statistics/data';
+
+//import project
+import HeaderStatistics from '../../ui-component/statistics/headerStatistics';
 import BoxOne from '../../ui-component/statistics/boxOne';
 import BoxRevenue from '../../ui-component/statistics/boxRevenue';
 import BoxThere from '../../ui-component/statistics/boxThere';

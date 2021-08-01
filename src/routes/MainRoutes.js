@@ -14,7 +14,7 @@ const ProductReview = Loadable(lazy(() => import('../views/application/customer/
 
 
 
-const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/Analytics')));
+const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/analytics')));
 
 // widget routing
 const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
@@ -32,6 +32,14 @@ const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIc
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
+// forms routing
+const BacisTable = Loadable(lazy(() => import('../views/forms/table/bacisTable')));
+const DenceTable = Loadable(lazy(() => import('../views/forms/table/denceTable')));
+const DataTable = Loadable(lazy(() => import('../views/forms/table/dataTable')));
+const CustomTable = Loadable(lazy(() => import('../views/forms/table/customTable')));
+const CollapseTable = Loadable(lazy(() => import('../views/forms/table/collapseTable')));
+const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedTable')));
+const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
 // application routing // eltr
 const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
 
@@ -61,8 +69,14 @@ const MainRoutes = () => {
 
                 '/icons/tabler-icons',
                 '/icons/material-icons',
-
                 '/sample-page',
+                '/table/basic-table',
+                '/table/dence-table',
+                '/table/data-table',
+                '/table/custom-table',
+                '/table/collapse-table',
+                '/table/enhanced-table',
+                '/table/fixed-header',
                 '/user/social-profile/posts'
             ]}
         >
@@ -85,10 +99,14 @@ const MainRoutes = () => {
                     <Route path="/utils/util-shadow" component={UtilsShadow} />
                     <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                     <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
-
                     <Route path="/sample-page" component={SamplePage} />
-
-                    {/* Change your path */}
+                    <Route path="/table/basic-table" component={BacisTable} />
+                    <Route path="/table/dence-table" component={DenceTable} />
+                    <Route path="/table/data-table" component={DataTable} />
+                    <Route path="/table/custom-table" component={CustomTable} />
+                    <Route path="/table/collapse-table" component={CollapseTable} />
+                    <Route path="/table/enhanced-table" component={EnhancedTable} />
+                    <Route path="/table/fixed-header" component={FixedHeader} />
                     <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
                 </Switch>
             </MainLayout>
