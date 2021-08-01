@@ -7,6 +7,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableRow from '@material-ui/core/TableRow';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
+//-----------------------|| LATEST CUSTOMER ||-----------------------//
+
 const useStyles = makeStyles((theme) => ({
     ScrollHeight: {
         height: '400px',
@@ -23,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold'
     },
     button:{
+        display: 'flex',
+        webkitBoxAlign: 'center',
+        alignItems: 'center',
+        webkitBoxPack: 'end',
         justifyContent: 'flex-end'
     }
 }));
@@ -83,8 +89,8 @@ export default function BasicTable() {
             </TableContainer>
             <Divider />
             <CardActions>
-                <Button color="primary" className={classes.button}>
-                    View all Latest Customers
+                <Button color="primary">
+                    <span className={classes.button}>View all Latest Customers</span>
                 </Button>
             </CardActions>
         </Paper>
