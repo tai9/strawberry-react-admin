@@ -31,13 +31,14 @@ export const application = {
                     id: 'accountProfile',
                     title: 'Account Profile',
                     type: 'collapse',
+                    target: false,
                     children: [
                         {
                             id: 'profile1',
                             title: ' Profile 1',
                             type: 'item',
                             url: '/user/account-profile/profile1',
-                            target: false
+                            breadcrumbs: false
                         },
                         {
                             id: 'profile2',
