@@ -7,6 +7,13 @@ import Loadable from '../ui-component/Loadable';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
+const CustomerList = Loadable(lazy(() => import('../views/application/customer/customer-list')));
+const OrderList = Loadable(lazy(() => import('../views/application/customer/order-list')));
+const ProductList = Loadable(lazy(() => import('../views/application/customer/product')));
+const ProductReview = Loadable(lazy(() => import('../views/application/customer/product-review')));
+
+
+
 const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/analytics')));
 
 // widget routing
@@ -45,7 +52,11 @@ const MainRoutes = () => {
         <Route
             path={[
                 '/dashboard/default',
+                '/customer/customer-list',
+                '/customer/order-list',
+                '/customer/product',
                 '/dashboard/analytics',
+                '/customer/product-review',
 
                 '/application/contact/cards',
                 '/application/contact/list',
@@ -74,6 +85,10 @@ const MainRoutes = () => {
                     <Route path="/dashboard/default" component={DashboardDefault} />
                     <Route path="/dashboard/analytics" component={DashBoardAnalytics} />
 
+                    <Route path="/customer/customer-list" component={CustomerList} />
+                    <Route path="/customer/order-list" component={OrderList} />
+                    <Route path="/customer/product" component={ProductList} />
+                    <Route path="/customer/product-review" component={ProductReview} />
                     <Route path="/application/contact/cards" component={ApplicationContactCard} />
                     <Route path="/application/contact/list" component={DashboardDefault} />
 
