@@ -294,7 +294,7 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <NavLink to="/user/social-profile/follower" className={classes.tabNavLink}>
+                                                <NavLink to="/user/social-profile/friends" className={classes.tabNavLink}>
                                                     <span className={classes.fontSizeTabs}>
                                                         <IconFriends className={classes.iconTabs} />
                                                         FRIENDS

@@ -4,8 +4,9 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 // project imports
 import MainLayout from './../layout/MainLayout';
 import Loadable from '../ui-component/Loadable';
-import TemplateSocialProfile from '../views/application/TemplateSocialProfile';
-import Follower from '../views/application/user/socialprofile/followers/Follower';
+
+// template application
+import TemplateSocialProfile from '../views/application/user/socialprofile/TemplateSocialProfile';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
@@ -32,6 +33,11 @@ const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIc
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
+// application routing
+const ProFile = Loadable(lazy(() => import('../views/application/user/socialprofile/ProFile')));
+const Follower = Loadable(lazy(() => import('../views/application/user/socialprofile/followers/Follower')));
+const Friend = Loadable(lazy(() => import('../views/application/user/socialprofile/friends/Friend')));
+
 // forms routing
 const BacisTable = Loadable(lazy(() => import('../views/forms/table/bacisTable')));
 const DenceTable = Loadable(lazy(() => import('../views/forms/table/denceTable')));
@@ -44,9 +50,6 @@ const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader
 // application routing // eltr
 // const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
 const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
-
-// application routing
-const ProFile = Loadable(lazy(() => import('../views/application/user/socialprofile/ProFile')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -81,6 +84,7 @@ const MainRoutes = () => {
                 '/user/account-profile/profile1',
                 '/user/account-profile/profile2',
                 '/user/account-profile/profile3',
+                '/user/social-profile/friends',
 
                 '/table/basic-table',
                 '/table/dence-table',
@@ -111,6 +115,11 @@ const MainRoutes = () => {
                     <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                     <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
                     <Route path="/sample-page" component={SamplePage} />
+
+                    {/* Change your path */}
+                    <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
+                    <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
+                    <TemplateSocialProfile path="/user/social-profile/friends" Component={Friend} />
 
                     <Route path="/table/basic-table" component={BacisTable} />
                     <Route path="/table/dence-table" component={DenceTable} />

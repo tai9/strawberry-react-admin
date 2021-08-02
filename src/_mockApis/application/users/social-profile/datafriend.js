@@ -10,7 +10,7 @@ import follower9 from '../../../../assets/images/application/user/socialProfile/
 import follower10 from '../../../../assets/images/application/user/socialProfile/follower/follower10.png';
 import follower11 from '../../../../assets/images/application/user/socialProfile/follower/follower11.png';
 
-export const datafollowers = [
+export const datafriend = [
     {
         name: 'Barney',
         adress: 'Handburgh',
