@@ -4,8 +4,9 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 // project imports
 import MainLayout from './../layout/MainLayout';
 import Loadable from '../ui-component/Loadable';
+
+// template application
 import TemplateSocialProfile from '../views/application/user/socialprofile/TemplateSocialProfile';
-import Follower from '../views/application/user/socialprofile/followers/Follower';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
@@ -34,6 +35,8 @@ const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
 // application routing
 const ProFile = Loadable(lazy(() => import('../views/application/user/socialprofile/ProFile')));
+const Follower = Loadable(lazy(() => import('../views/application/user/socialprofile/followers/Follower')));
+const Friend = Loadable(lazy(() => import('../views/application/user/socialprofile/friends/Friend')));
 
 // forms routing
 const BacisTable = Loadable(lazy(() => import('../views/forms/table/bacisTable')));
@@ -74,6 +77,7 @@ const MainRoutes = () => {
 
                 '/user/social-profile/posts',
                 '/user/social-profile/follower',
+                '/user/social-profile/friends',
 
                 '/table/basic-table',
                 '/table/dence-table',
@@ -108,6 +112,7 @@ const MainRoutes = () => {
                     {/* Change your path */}
                     <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
                     <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
+                    <TemplateSocialProfile path="/user/social-profile/friends" Component={Friend} />
 
                     <Route path="/table/basic-table" component={BacisTable} />
                     <Route path="/table/dence-table" component={DenceTable} />
