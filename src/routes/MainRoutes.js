@@ -5,7 +5,7 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import MainLayout from './../layout/MainLayout';
 import Loadable from '../ui-component/Loadable';
 import TemplateSocialProfile from '../views/application/TemplateSocialProfile';
-import Follower from '../views/application/user/socialprofile/Followers/Follower';
+import Follower from '../views/application/user/socialprofile/followers/Follower';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
