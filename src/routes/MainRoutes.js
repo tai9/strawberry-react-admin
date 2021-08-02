@@ -103,6 +103,7 @@ const MainRoutes = () => {
                     <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                     <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
                     <Route path="/sample-page" component={SamplePage} />
+
                     <Route path="/table/basic-table" component={BacisTable} />
                     <Route path="/table/dence-table" component={DenceTable} />
                     <Route path="/table/data-table" component={DataTable} />
@@ -110,7 +111,9 @@ const MainRoutes = () => {
                     <Route path="/table/collapse-table" component={CollapseTable} />
                     <Route path="/table/enhanced-table" component={EnhancedTable} />
                     <Route path="/table/fixed-header" component={FixedHeader} />
+
                     <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
+
                     <Route path="/user/account-profile/profile1" component={Profile1} />
                     <Route path="/user/account-profile/profile2" component={Profile1} />
                     <Route path="/user/account-profile/profile3" component={Profile1} />

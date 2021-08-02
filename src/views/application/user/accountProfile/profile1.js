@@ -15,6 +15,7 @@ import HttpsTwoToneIcon from '@material-ui/icons/HttpsTwoTone';
 import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
 import Profile from '../../../../ui-component/application/user/accountProfile/profile1/profile/index';
 import PresonalDetails from '../../../../ui-component/application/user/accountProfile/profile1/presonal';
+import MyAccount from '../../../../ui-component/application/user/accountProfile/profile1/myAccount';
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -170,7 +171,7 @@ export default function Profile1() {
                 <PresonalDetails />
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item Three
+                <MyAccount />
             </TabPanel>
             <TabPanel value={value} index={3}>
                 Item Four
