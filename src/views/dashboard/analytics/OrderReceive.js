@@ -1,12 +1,14 @@
 import React from 'react';
 
-//project
-
 //material-ui
 import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography } from '@material-ui/core';
+
+// assets
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+
+//-----------------------|| ORDER RECEIVE ||-----------------------//
 
 const useStyles = makeStyles((theme) => ({
     root: {

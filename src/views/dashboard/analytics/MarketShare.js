@@ -1,30 +1,27 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-// material-ui- icons
-import TrendingDownIcon from '@material-ui/icons/TrendingDown';
-
 //material-ui
 import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography, Box} from '@material-ui/core';
-
-// project imports
-import MainCard from '../../../ui-component/cards/MainCard';
 import SkeletonEarningCard from '../../../ui-component/cards/Skeleton/EarningCard';
+
+// assets
+import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import LogoTwitter from '../../../assets/images/dashboard/logo-twitter';
 import LogoFaceBook from '../../../assets/images/dashboard/logo-facebook';
 import LogoYouTube from '../../../assets/images/dashboard/logo-youtube';
 
-
-// assets
-
 //charts
 import Chart from 'react-apexcharts';
+
+// project imports
 import MarketShareChart from './chart-data/MarketShareChart'
 
 // style constant
-import { gridSpacing } from './../../../store/constant';
+import { gridSpacing } from '../../../store/constant';
 
+//-----------------------|| MARKET SHARE ||-----------------------//
 
 const useStyles = makeStyles((theme) => ({
     logoFacebook: {
@@ -54,9 +51,28 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor : "rgb(251 232 233)",
         color: "rgb(244, 67, 54)",
     },
+    card:{
+        backgroundColor: '#ffffff',
+        paddingTop: 24,
+        borderRadius: 15
+    },
+    itemGrid:{
+        paddingTop: 12,
+        paddingLeft: 24
+    },
+    iconTrending: {
+        verticalAlign : 'middle',
+        fontSize: 35,
+        color: "#EE0000",
+    },
+    textTrending: {
+        paddingRight:24
+    },
+    logoSocial:{
+        paddingTop:12,
+        paddingLeft: 12
+    }
 }));
-
-//===========================|| DASHBOARD DEFAULT - EARNING CARD ||===========================//
 
 const MarketShare = ({ isLoading }) => {
     const classes = useStyles();
@@ -66,8 +82,8 @@ const MarketShare = ({ isLoading }) => {
             {isLoading ? (
                 <SkeletonEarningCard />
             ) : (
-                <MainCard>
-                    <Grid container spacing={gridSpacing}>
+                <div className={classes.card}>
+                    <Grid container spacing={gridSpacing} className={classes.itemGrid}>
                         <Grid item xs={12}>
                             <Grid container justifyContent="space-between">
                                 <Grid item>
@@ -76,19 +92,19 @@ const MarketShare = ({ isLoading }) => {
                                             <Typography variant="h3">Market Share</Typography>
                                         </Grid>
                                         <Grid item>
-                                            <Typography variant="h5">Department wise monthly sales report</Typography>
+                                            <Typography variant="subtitle">Department wise monthly sales report</Typography>
                                         </Grid>
                                     </Grid>
                                 </Grid>
                                 <Grid item>
                                     <Typography variant="h3">
-                                        <span style={{verticalAlign : "middle"}}><TrendingDownIcon style={{color : "#EE0000", fontSize : 35}} /></span>
-                                        <span> 99,368.23</span>
+                                        <span className={classes.iconTrending}><TrendingDownIcon /></span>
+                                        <span className={classes.textTrending}> 99,368.23</span>
                                     </Typography>
                                 </Grid>
                             </Grid>
-                            <br/>
-                            <Grid container direction="row" spacing={1}>
+                        </Grid>
+                        <Grid container direction="row" spacing={1} className={classes.logoSocial}>
                                 <Box flexDirection="row" p={1} m={1}>
                                     <Box display="flex" alignItems="center">
                                         <div className = {classes.logoFacebook}><LogoFaceBook /></div>
@@ -108,12 +124,11 @@ const MarketShare = ({ isLoading }) => {
                                     </Box>
                                 </Box>
                             </Grid>
-                        </Grid>
                     </Grid>
                     <Grid>
                         <Chart {...MarketShareChart} />
                     </Grid>
-                </MainCard>
+                </div>
             )}
         </React.Fragment>
     );
