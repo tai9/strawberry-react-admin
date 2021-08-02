@@ -1,14 +1,14 @@
-import follower1 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower1.png';
-import follower2 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower2.png';
-import follower3 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower3.png';
-import follower4 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower4.png';
-import follower5 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower5.png';
-import follower6 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower6.png';
-import follower7 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower7.png';
-import follower8 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower8.png';
-import follower9 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower9.png';
-import follower10 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower10.png';
-import follower11 from '../../../../assets/images/Application/User/SocialProfile/Follower/follower11.png';
+import follower1 from '../../../../assets/images/application/user/socialProfile/follower/follower1.png';
+import follower2 from '../../../../assets/images/application/user/socialProfile/follower/follower2.png';
+import follower3 from '../../../../assets/images/application/user/socialProfile/follower/follower3.png';
+import follower4 from '../../../../assets/images/application/user/socialProfile/follower/follower4.png';
+import follower5 from '../../../../assets/images/application/user/socialProfile/follower/follower5.png';
+import follower6 from '../../../../assets/images/application/user/socialProfile/follower/follower6.png';
+import follower7 from '../../../../assets/images/application/user/socialProfile/follower/follower7.png';
+import follower8 from '../../../../assets/images/application/user/socialProfile/follower/follower8.png';
+import follower9 from '../../../../assets/images/application/user/socialProfile/follower/follower9.png';
+import follower10 from '../../../../assets/images/application/user/socialProfile/follower/follower10.png';
+import follower11 from '../../../../assets/images/application/user/socialProfile/follower/follower11.png';
 
 export const datafollowers = [
     {

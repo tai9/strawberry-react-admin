@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
 
 // material-ui
+import { Grid } from '@material-ui/core';
+
 import FriendAndFollow from './FriendAndFollow';
 import About from './About';
 import FormPost from './FormPost';

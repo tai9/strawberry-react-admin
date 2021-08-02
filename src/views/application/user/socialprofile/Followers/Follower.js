@@ -1,13 +1,15 @@
 import React from 'react';
 
-//Input Adornments
+//input adornments
 import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
-import SearchIcon from '@material-ui/icons/Search';
 import FollowerPerson from './FollowerPerson';
+
+// asset
+import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme) => ({
     follower: {

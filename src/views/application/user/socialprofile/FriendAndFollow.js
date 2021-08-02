@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
+
+// asset
 import NavigateNextOutlinedIcon from '@material-ui/icons/NavigateNextOutlined';
 import PeopleAltOutlinedIcon from '@material-ui/icons/PeopleAltOutlined';
 import RecentActorsIcon from '@material-ui/icons/RecentActors';
-
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -14,10 +15,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'white',
         marginTop: '24px',
         borderRadius: '12px',
-        border: "1px solid rgba(144, 202, 249, 0.46)",
+        border: '1px solid rgba(144, 202, 249, 0.46)'
     },
     friAndFolContent: {
-        width: '100%',
+        width: '100%'
     },
     avataFriend: {
         display: 'flex'
@@ -37,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         borderRadius: '12px',
 
-        marginRight: "24px"
+        marginRight: '24px'
     },
     followers: {
         color: '#5e35b1',
@@ -50,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         borderRadius: '12px',
 
-        marginRight: "24px"
+        marginRight: '24px'
     },
     iconAvatar: {},
     totalFriend: {
@@ -67,21 +68,21 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: '600',
         fontSize: '1.25rem',
         lineHeight: '1.167',
-        color: "#673ab7"
+        color: '#673ab7'
     },
     friend: {
-        margin: "0px",
-        fontFamily: "Roboto, sans-serif",
-        fontWeight: "400",
-        fontSize: "0.875rem",
-        lineHeight: "1.5em",
-        letterSpacing: "0em",
-        color: "rgb(97, 97, 97)",
+        margin: '0px',
+        fontFamily: 'Roboto, sans-serif',
+        fontWeight: '400',
+        fontSize: '0.875rem',
+        lineHeight: '1.5em',
+        letterSpacing: '0em',
+        color: 'rgb(97, 97, 97)'
     },
     nextIcon: {
         display: 'inline-flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     }
 }));
 
@@ -90,47 +91,46 @@ const FriendAndFollow = () => {
     return (
         <React.Fragment>
             <div className={classes.friendAndFollow}>
-                        <div className={classes.friAndFolContent}>
-                            <div>
-                                <div className={classes.borderAvataAndFriend}>
-                                    <div className={classes.avataFriend}>
-                                        <div>
-                                            <div className={classes.friends}>
-                                                <PeopleAltOutlinedIcon className={classes.iconFriend} />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className={classes.totalFriend}>239k</div>
-                                            <p className={classes.friend}>Friends</p>
-                                        </div>
-                                    </div>
-                                    <div className={classes.nextIcon}>
-                                        <NavigateNextOutlinedIcon />
+                <div className={classes.friAndFolContent}>
+                    <div>
+                        <div className={classes.borderAvataAndFriend}>
+                            <div className={classes.avataFriend}>
+                                <div>
+                                    <div className={classes.friends}>
+                                        <PeopleAltOutlinedIcon className={classes.iconFriend} />
                                     </div>
                                 </div>
-                                <hr style={{ marginTop: '16px', marginBottom: '16px', borderWidth: "0px 0px thin"}}></hr>
-                                <div className={classes.borderAvataAndFriend}>
-                                    <div className={classes.avataFriend}>
-                                        <div>
-                                            <div className={classes.followers}>
-                                                <RecentActorsIcon className={classes.iconAvatar} />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className={classes.totalFollowers}>234k</div>
-                                            <p className={classes.friend}>Followers</p>
-                                        </div>
-                                    </div>
-                                    <div className={classes.nextIcon}>
-                                        <NavigateNextOutlinedIcon />
+                                <div>
+                                    <div className={classes.totalFriend}>239k</div>
+                                    <p className={classes.friend}>Friends</p>
+                                </div>
+                            </div>
+                            <div className={classes.nextIcon}>
+                                <NavigateNextOutlinedIcon />
+                            </div>
+                        </div>
+                        <hr style={{ marginTop: '16px', marginBottom: '16px', borderWidth: '0px 0px thin' }}></hr>
+                        <div className={classes.borderAvataAndFriend}>
+                            <div className={classes.avataFriend}>
+                                <div>
+                                    <div className={classes.followers}>
+                                        <RecentActorsIcon className={classes.iconAvatar} />
                                     </div>
                                 </div>
+                                <div>
+                                    <div className={classes.totalFollowers}>234k</div>
+                                    <p className={classes.friend}>Followers</p>
+                                </div>
+                            </div>
+                            <div className={classes.nextIcon}>
+                                <NavigateNextOutlinedIcon />
                             </div>
                         </div>
                     </div>
-                
+                </div>
+            </div>
         </React.Fragment>
-    )
-}
+    );
+};
 
-export default FriendAndFollow
+export default FriendAndFollow;

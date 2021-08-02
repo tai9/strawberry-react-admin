@@ -1,13 +1,13 @@
-import avatarPost1 from '../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
+import avatarPost1 from '../../../../assets/images/application/user/socialProfile/img-user.41a8c066.png';
 
-import avatarPost2 from '../../../../assets/images/Application/User/SocialProfile/download.png';
-import imagePost2 from '../../../../assets/images/Application/User/SocialProfile/img-post1.png';
-import avatarCmt1Post2 from '../../../../assets/images/Application/User/SocialProfile/download1.png';
-import avatarCmt2Post2 from '../../../../assets/images/Application/User/SocialProfile/download2.png';
-import avatarCmt3Post2 from '../../../../assets/images/Application/User/SocialProfile/download3.png';
+import avatarPost2 from '../../../../assets/images/application/user/socialProfile/download.png';
+import imagePost2 from '../../../../assets/images/application/user/socialProfile/img-post1.png';
+import avatarCmt1Post2 from '../../../../assets/images/application/user/socialProfile/download1.png';
+import avatarCmt2Post2 from '../../../../assets/images/application/user/socialProfile/download2.png';
+import avatarCmt3Post2 from '../../../../assets/images/application/user/socialProfile/download3.png';
 
-import avatarPost3 from '../../../../assets/images/Application/User/SocialProfile/download4.png';
-import imagePost3 from '../../../../assets/images/Application/User/SocialProfile/img-profile2.071c9e98.jpg';
+import avatarPost3 from '../../../../assets/images/application/user/socialProfile/download4.png';
+import imagePost3 from '../../../../assets/images/application/user/socialProfile/img-profile2.071c9e98.jpg';
 
 export const datapost = [
     {
