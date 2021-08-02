@@ -13,7 +13,8 @@ import DescriptionTwoToneIcon from '@material-ui/icons/DescriptionTwoTone';
 import LibraryBooksTwoToneIcon from '@material-ui/icons/LibraryBooksTwoTone';
 import HttpsTwoToneIcon from '@material-ui/icons/HttpsTwoTone';
 import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
-import Profile from '../../../../ui-component/application/user/accountProfile/profile1';
+import Profile from '../../../../ui-component/application/user/accountProfile/profile1/profile/index';
+import PresonalDetails from '../../../../ui-component/application/user/accountProfile/profile1/presonal';
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -52,8 +53,10 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         width: '100%',
         backgroundColor: theme.palette.background.paper,
-        overflow: 'hidden',
-        padding: '20px'
+        overflow: 'hidden'
+    },
+    tabs: {
+        padding: '20px 20px 0 20px'
     },
     tab: {
         color: '#616161',
@@ -79,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '14px'
     },
     tabPanel: {
-        padding: 0
+        padding: '0px'
     }
 }));
 
@@ -160,11 +163,11 @@ export default function Profile1() {
                     />
                 </Tabs>
             </AppBar>
-            <TabPanel className={classes.tabPanel} value={value} index={0}>
+            <TabPanel value={value} index={0}>
                 <Profile />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Item Two
+                <PresonalDetails />
             </TabPanel>
             <TabPanel value={value} index={2}>
                 Item Three

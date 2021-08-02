@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: 1,
         borderColor: ' rgb(227, 242, 253)'
     },
-    content: { padding: '20px' },
+    content: { padding: '10px' },
     avt: {
         width: '40px'
     },
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         borderColor: ' rgb(227, 242, 253)',
         '&:hover': { backgroundColor: 'rgb(237, 231, 246)', color: 'rgb(94, 53, 177) !important' }
     },
-    interactive: { padding: '24px' },
+    interactive: { padding: '20px' },
     interactiveItem: {
         textAlign: 'center'
     },
@@ -48,7 +48,11 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '19px',
         fontWeight: '600'
     },
-    title: { fontSize: '12px' }
+    title: { fontSize: '12px' },
+    icon: {
+        minWidth: '5px',
+        width: '15%'
+    }
 }));
 export default function ProfileCard() {
     const classes = useStyles();
@@ -67,21 +71,21 @@ export default function ProfileCard() {
                 <div className={classes.list}>
                     <List dense>
                         <ListItem className={classes.listItem} button>
-                            <ListItemAvatar>
+                            <ListItemAvatar className={classes.icon}>
                                 <MailTwoToneIcon />
                             </ListItemAvatar>
                             <ListItemText>Email</ListItemText>
                             <ListItemSecondaryAction>demo@sample.com</ListItemSecondaryAction>
                         </ListItem>
                         <ListItem className={classes.listItem} button>
-                            <ListItemAvatar>
+                            <ListItemAvatar className={classes.icon}>
                                 <PhonelinkRingTwoToneIcon />
                             </ListItemAvatar>
                             <ListItemText>Phone</ListItemText>
                             <ListItemSecondaryAction>(+99) 9999 999 999</ListItemSecondaryAction>
                         </ListItem>{' '}
                         <ListItem className={classes.listItem} button>
-                            <ListItemAvatar>
+                            <ListItemAvatar className={classes.icon}>
                                 <PinDropTwoToneIcon />
                             </ListItemAvatar>
                             <ListItemText>Location</ListItemText>

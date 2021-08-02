@@ -40,7 +40,7 @@ export default function Skill() {
             <hr className={classes.tagHr} />
             <div className={classes.process}>
                 <Grid container>
-                    <Grid xs={6} className={classes.processItem}>
+                    <Grid xs={12} md={6} className={classes.processItem}>
                         Junior
                         <Box display="flex" alignItems="center">
                             <Box width="100%" mr={1}>
@@ -53,7 +53,7 @@ export default function Skill() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid xs={6} className={classes.processItem}>
+                    <Grid xs={12} md={6} className={classes.processItem}>
                         UX Researcher
                         <Box display="flex" alignItems="center">
                             <Box width="100%" mr={1}>
@@ -66,7 +66,7 @@ export default function Skill() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid xs={6} className={classes.processItem}>
+                    <Grid xs={12} md={6} className={classes.processItem}>
                         Wordpress
                         <Box display="flex" alignItems="center">
                             <Box width="100%" mr={1}>
@@ -79,7 +79,7 @@ export default function Skill() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid xs={6} className={classes.processItem}>
+                    <Grid xs={12} md={6} className={classes.processItem}>
                         Graphic Designer
                         <Box display="flex" alignItems="center">
                             <Box width="100%" mr={1}>
@@ -92,7 +92,7 @@ export default function Skill() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid xs={6} className={classes.processItem}>
+                    <Grid xs={12} md={6} className={classes.processItem}>
                         HTML
                         <Box display="flex" alignItems="center">
                             <Box width="100%" mr={1}>
@@ -105,7 +105,7 @@ export default function Skill() {
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid xs={6} className={classes.processItem}>
+                    <Grid xs={12} md={6} className={classes.processItem}>
                         PHP
                         <Box display="flex" alignItems="center">
                             <Box width="100%" mr={1}>

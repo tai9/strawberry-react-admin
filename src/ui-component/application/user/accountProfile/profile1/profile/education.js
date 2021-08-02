@@ -1,10 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableRow from '@material-ui/core/TableRow';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     header: {
@@ -27,11 +23,15 @@ const useStyles = makeStyles((theme) => ({
         borderColor: ' rgb(227, 242, 253)'
     },
     table: {
-        padding: '20px'
+        padding: '20px',
+        flexShrink: 0,
+        borderWidth: '0px 0px thin',
+        borderStyle: 'solid',
+        opacity: 1,
+        borderColor: ' rgb(227, 242, 253)'
     },
     tbCell: {
-        borderBottom: 'none',
-        padding: '10px 25px',
+        padding: '0px',
         fontWeight: 600
     },
     description: {
@@ -57,26 +57,25 @@ export default function Education() {
                 <div className={classes.title}>Education</div>
             </div>
             <hr className={classes.tagHr} />
-            <div className={classes.table}>
-                <TableContainer>
-                    <Table className={classes.table}>
-                        <TableBody>
-                            {rows.map((row) => (
-                                <TableRow key={row.name}>
-                                    <TableCell className={classes.tbCell}>
-                                        {row.time}
-                                        <div className={classes.description}> {row.level}</div>
-                                    </TableCell>
-                                    <TableCell className={classes.tbCell}>
-                                        {row.content}
-                                        <div className={classes.description}>{row.scholl}</div>
-                                    </TableCell>
-                                </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TableContainer>
-            </div>
+
+            {rows.map((row) => (
+                <div className={classes.table}>
+                    <Grid container>
+                        <Grid item xs={12} md={5}>
+                            <div className={classes.tbCell}>
+                                {row.time}
+                                <div className={classes.description}> {row.level}</div>
+                            </div>
+                        </Grid>
+                        <Grid item xs={12} md={7}>
+                            <div className={classes.tbCell}>
+                                {row.content}
+                                <div className={classes.description}>{row.scholl}</div>
+                            </div>
+                        </Grid>
+                    </Grid>{' '}
+                </div>
+            ))}
         </div>
     );
 }

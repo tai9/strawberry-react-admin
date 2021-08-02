@@ -2,11 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import ProfileCard from './profile/profileCard';
-import About from './profile/about';
-import Education from './profile/education';
-import Employment from './profile/employment';
-import Skill from './profile/skill';
+import PresonalInfo from './presonalInfo';
+import SocialInfo from './socialInfo';
+import ContactInfo from './contactInfo';
 const useStyles = makeStyles((theme) => ({
     paper: {
         backgroundColor: 'rgb(255, 255, 255)',
@@ -18,30 +16,27 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px'
     }
 }));
-export default function Profile() {
+export default function PresonalDetails() {
     const classes = useStyles();
 
     return (
         <Grid container>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={6}>
                 {' '}
                 <Paper className={classes.paper}>
-                    <ProfileCard />
+                    <PresonalInfo />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={6}>
                 {' '}
                 <Paper className={classes.paper}>
-                    <About />
+                    <ContactInfo />
                 </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                {' '}
                 <Paper className={classes.paper}>
-                    <Education />
-                </Paper>
-                <Paper className={classes.paper}>
-                    <Employment />
-                </Paper>
-                <Paper className={classes.paper}>
-                    <Skill />
+                    <SocialInfo />
                 </Paper>
             </Grid>
         </Grid>
