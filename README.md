@@ -43,7 +43,10 @@ Strawberry documentation helps you out in all aspects from Installation to deplo
 
 ## Author
 
-Strawberry is managed by NotFound Team
+Strawberry is managed by NotFound Team: 
+- Nguyễn Đình Gia Khải
+<img src="https://img.icons8.com/doodle/16/000000/gmail.png"/> Email: nguyendinhgiakhai@gmail.com
+<img src="https://img.icons8.com/doodle/16/000000/facebook-new.png"/> Facebook: https://www.facebook.com/khaigia111/
 
 ## Issues
 
