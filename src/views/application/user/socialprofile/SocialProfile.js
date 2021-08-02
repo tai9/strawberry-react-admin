@@ -153,6 +153,31 @@ const useStyles = makeStyles((theme) => ({
             marginRight: 10,
             marginBottom: '4px !important'
         }
+    },
+    totalFriend: {
+        fontSize: '0.8125rem',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '24px',
+        borderRadius: '16px',
+        whiteSpace: 'nowrap',
+        transition: 'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        cursor: 'default',
+        outline: '0px',
+        padding: '0px',
+        verticalAlign: 'middle',
+        boxSizing: 'border-box',
+        color: 'rgb(103, 58, 183)',
+        backgroundColor: 'rgb(237, 231, 246)',
+        marginLeft: '12px'
+    },
+    numberFriend: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        paddingLeft: '8px',
+        paddingRight: '8px',
+        whiteSpace: 'nowrap'
     }
 }));
 
@@ -269,10 +294,15 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconFriends className={classes.iconTabs} />
-                                                    FRIENDS
-                                                </span>
+                                                <NavLink to="/user/social-profile/follower" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconFriends className={classes.iconTabs} />
+                                                        FRIENDS
+                                                        <div className={classes.totalFriend}>
+                                                            <span className={classes.numberFriend}>100</span>
+                                                        </div>
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(2)}
