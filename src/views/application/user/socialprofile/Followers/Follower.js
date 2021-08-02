@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 //input adornments
 import TextField from '@material-ui/core/TextField';
@@ -7,6 +8,9 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 // material-ui
 import { makeStyles } from '@material-ui/styles';
 import FollowerPerson from './FollowerPerson';
+
+// gird material-ui
+import Grid from '@material-ui/core/Grid';
 
 // asset
 import SearchIcon from '@material-ui/icons/Search';
@@ -64,6 +68,20 @@ const useStyles = makeStyles((theme) => ({
 export default function Follower() {
     const classes = useStyles();
 
+    const arrFollowes = useSelector((state) => state.followerState.arrFollowers);
+    const [data, setData] = useState();
+
+    const handleFilter = (e) => {
+        const { value } = e.target;
+        if (value !== '') {
+            console.log(value);
+            setData(arrFollowes.filter((fl) => fl.name.toLowerCase().includes(value.toLowerCase())));
+            console.log(data);
+        } else {
+            setData('');
+        }
+    };
+
     return (
         <>
             <div className={classes.formFollower}>
@@ -82,6 +100,7 @@ export default function Follower() {
                                         </InputAdornment>
                                     )
                                 }}
+                                onChange={handleFilter}
                                 variant="outlined"
                             />
                         </div>
@@ -89,7 +108,13 @@ export default function Follower() {
                 </div>
                 <hr className={classes.tagHr} />
                 <div className={classes.formFollowPerson}>
-                    <FollowerPerson />
+                    <Grid container>
+                        {data
+                            ? data.map((follower) => <FollowerPerson key={follower.id} {...follower} />)
+                            : arrFollowes
+                            ? arrFollowes.map((follower) => <FollowerPerson key={follower.id} {...follower} />)
+                            : ''}
+                    </Grid>
                 </div>
             </div>
         </>
