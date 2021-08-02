@@ -3,6 +3,10 @@ import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ProfileCard from './profile/profileCard';
+import About from './profile/about';
+import Education from './profile/education';
+import Employment from './profile/employment';
+import Skill from './profile/skill';
 const useStyles = makeStyles((theme) => ({
     paper: {
         backgroundColor: 'rgb(255, 255, 255)',
@@ -27,7 +31,18 @@ export default function Profile() {
             </Grid>
             <Grid item xs={12} md={7}>
                 {' '}
-                <Paper className={classes.paper}>123456</Paper>
+                <Paper className={classes.paper}>
+                    <About />
+                </Paper>
+                <Paper className={classes.paper}>
+                    <Education />
+                </Paper>
+                <Paper className={classes.paper}>
+                    <Employment />
+                </Paper>
+                <Paper className={classes.paper}>
+                    <Skill />
+                </Paper>
             </Grid>
         </Grid>
     );
