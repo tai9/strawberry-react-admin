@@ -3,6 +3,12 @@ import React from 'react';
 // material-ui
 import { makeStyles } from '@material-ui/styles';
 import Avatar from '@material-ui/core/Avatar';
+
+// asset
+import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
+import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
+import PeopleAltTwoToneIcon from '@material-ui/icons/PeopleAltTwoTone';
+import DeleteTwoToneIcon from '@material-ui/icons/DeleteTwoTone';
 import PinDropTwoToneIcon from '@material-ui/icons/PinDropTwoTone';
 import MoreHorizTwoToneIcon from '@material-ui/icons/MoreHorizTwoTone';
 
@@ -10,10 +16,9 @@ import MoreHorizTwoToneIcon from '@material-ui/icons/MoreHorizTwoTone';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import PeopleAltTwoToneIcon from '@material-ui/icons/PeopleAltTwoTone';
-import Grid from '@material-ui/core/Grid';
 
-import { useSelector } from 'react-redux';
+// gird material-ui
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
     adressDetail: {
@@ -85,77 +90,81 @@ const useStyles = makeStyles((theme) => ({
     },
     iconUserFollow: {
         marginRight: '7px'
+    },
+    icons: {
+        marginRight: '10px'
+    },
+    hoverTabs: {
+        transition: 'all .5s',
+        '&:hover': {
+            backgroundColor: 'rgb(237, 231, 246)',
+            color: 'rgb(94, 53, 177)'
+        }
     }
 }));
 
-export default function FollowerPerson() {
+export default function FollowerPerson(follower) {
     const classes = useStyles();
-
-    const arrFollowes = useSelector((state) => state.followerState.arrFollowers);
-    console.log(arrFollowes);
 
     // menu material-ui
     const [anchorEl, setAnchorEl] = React.useState(null);
-
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
-
     const handleClose = () => {
         setAnchorEl(null);
     };
 
     return (
         <>
-            <Grid container>
-                {arrFollowes
-                    ? arrFollowes.map((follower) => (
-                          <Grid item xs={12} sm={6} md={4} lg={3} spacing={3}>
-                              <div className={classes.followers}>
-                                  <div className={classes.headerFollower}>
-                                      <div className={classes.avatarAdress}>
-                                          <Avatar alt="avatar" src={follower.avatar} />
-                                          <div className={classes.nameAndAdress}>
-                                              <div className={classes.namePerson}>{follower.name}</div>
-                                              <div className={classes.adress}>
-                                                  <h6 className={classes.adressDetail}>
-                                                      <PinDropTwoToneIcon className={classes.iconAdress} />
-                                                      {follower.adress}
-                                                  </h6>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div>
-                                          <MoreHorizTwoToneIcon
-                                              className={classes.btnEdit}
-                                              aria-controls="simple-menu"
-                                              aria-haspopup="true"
-                                              onClick={handleClick}
-                                          >
-                                              Open Menu
-                                          </MoreHorizTwoToneIcon>
-                                          <Menu
-                                              id="simple-menu"
-                                              anchorEl={anchorEl}
-                                              keepMounted
-                                              open={Boolean(anchorEl)}
-                                              onClose={handleClose}
-                                          >
-                                              <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                              <MenuItem onClick={handleClose}>My account</MenuItem>
-                                              <MenuItem onClick={handleClose}>Logout</MenuItem>
-                                          </Menu>
-                                      </div>
-                                  </div>
-                                  <div>
-                                      <Button className={classes.btnFollow} variant="outlined" color="primary">
-                                          <PeopleAltTwoToneIcon className={classes.iconUserFollow} /> Followed
-                                      </Button>
-                                  </div>
-                              </div>
-                          </Grid>
-                      ))
-                    : ''}
+            <Grid item xs={12} sm={6} md={4} lg={3} spacing={3}>
+                <div className={classes.followers}>
+                    <div className={classes.headerFollower}>
+                        <div className={classes.avatarAdress}>
+                            <Avatar alt="avatar" src={follower.avatar} />
+                            <div className={classes.nameAndAdress}>
+                                <div className={classes.namePerson}>{follower.name}</div>
+                                <div className={classes.adress}>
+                                    <h6 className={classes.adressDetail}>
+                                        <PinDropTwoToneIcon className={classes.iconAdress} />
+                                        {follower.adress}
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={classes.btnEdit} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                                <MoreHorizTwoToneIcon />
+                            </div>
+                            <Menu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+                                <MenuItem onClick={handleClose} className={classes.hoverTabs}>
+                                    <FavoriteTwoToneIcon className={classes.icons} /> Favorites
+                                </MenuItem>
+                                <MenuItem onClick={handleClose} className={classes.hoverTabs}>
+                                    <PeopleAltTwoToneIcon className={classes.icons} /> Edit Friend List
+                                </MenuItem>
+                                <MenuItem onClick={handleClose} className={classes.hoverTabs}>
+                                    <DeleteTwoToneIcon className={classes.icons} /> Removed
+                                </MenuItem>
+                            </Menu>
+                        </div>
+                    </div>
+                    <div>
+                        {follower.status ? (
+                            follower.status === 'true' ? (
+                                <Button className={classes.btnFollow} variant="outlined" color="primary">
+                                    <PeopleAltTwoToneIcon className={classes.iconUserFollow} /> Followed
+                                </Button>
+                            ) : (
+                                <Button variant="contained" className={classes.btnFollow} color="primary">
+                                    <PersonAddTwoToneIcon className={classes.iconUserFollow} /> Follow Back
+                                </Button>
+                            )
+                        ) : (
+                            ''
+                        )}
+                    </div>
+                </div>
             </Grid>
         </>
     );
