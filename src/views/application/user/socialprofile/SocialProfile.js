@@ -310,10 +310,12 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconPhoto className={classes.iconTabs} />
-                                                    GALLERY
-                                                </span>
+                                                <NavLink to="/user/social-profile/gallery" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconPhoto className={classes.iconTabs} />
+                                                        GALLERY
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(3)}

@@ -1,7 +1,7 @@
 import { Avatar } from '@material-ui/core';
 import React from 'react';
 
-// react momemt
+// momemt
 import moment from 'moment';
 
 // icons MoreVertSharp
