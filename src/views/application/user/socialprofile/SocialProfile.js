@@ -223,7 +223,6 @@ const SocialProfile = () => {
         setValue(newValue);
     };
 
-    console.log(window.location.href.includes('gallery'));
     useEffect(() => {
         if (window.location.href.includes('posts')) {
             setValue(0);
