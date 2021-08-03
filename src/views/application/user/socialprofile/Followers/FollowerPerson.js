@@ -117,7 +117,7 @@ export default function FollowerPerson(follower) {
 
     return (
         <>
-            <Grid item xs={12} sm={6} md={4} lg={3} spacing={3}>
+            <Grid container item xs={12} sm={6} md={4} lg={3} spacing={3}>
                 <div className={classes.followers}>
                     <div className={classes.headerFollower}>
                         <div className={classes.avatarAdress}>
