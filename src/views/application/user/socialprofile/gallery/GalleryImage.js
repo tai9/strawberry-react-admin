@@ -2,16 +2,8 @@ import React from 'react';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
-import Avatar from '@material-ui/core/Avatar';
 
 // asset
-import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
-import PeopleAltTwoToneIcon from '@material-ui/icons/PeopleAltTwoTone';
-import DeleteTwoToneIcon from '@material-ui/icons/DeleteTwoTone';
-import PinDropTwoToneIcon from '@material-ui/icons/PinDropTwoTone';
-import MoreHorizTwoToneIcon from '@material-ui/icons/MoreHorizTwoTone';
-import VideoCallTwoToneIcon from '@material-ui/icons/VideoCallTwoTone';
-import ChatBubbleTwoToneIcon from '@material-ui/icons/ChatBubbleTwoTone';
 import InsertInvitationTwoToneIcon from '@material-ui/icons/InsertInvitationTwoTone';
 import MoreVertTwoToneIcon from '@material-ui/icons/MoreVertTwoTone';
 
@@ -19,12 +11,8 @@ import MoreVertTwoToneIcon from '@material-ui/icons/MoreVertTwoTone';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-// material-ui tooltip
-import Tooltip from '@material-ui/core/Tooltip';
-
 // gird material-ui
 import Grid from '@material-ui/core/Grid';
-import { Button } from '@material-ui/core';
 
 // momemt
 import moment from 'moment';
