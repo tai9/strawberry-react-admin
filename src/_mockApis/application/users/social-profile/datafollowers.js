@@ -1,4 +1,4 @@
-import follower1 from '../../../../assets/images/application/user/socialProfile/follower/follower1.png';
+import follower1 from '../../../../assets/images/application/user/socialProfile/follower/follower2.png';
 import follower2 from '../../../../assets/images/application/user/socialProfile/follower/follower2.png';
 import follower3 from '../../../../assets/images/application/user/socialProfile/follower/follower3.png';
 import follower4 from '../../../../assets/images/application/user/socialProfile/follower/follower4.png';
