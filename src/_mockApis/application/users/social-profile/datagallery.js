@@ -10,66 +10,66 @@ import gallery9 from '../../../../assets/images/application/user/socialProfile/g
 import gallery10 from '../../../../assets/images/application/user/socialProfile/gallery/gallery10.png';
 import gallery11 from '../../../../assets/images/application/user/socialProfile/gallery/gallery11.png';
 import gallery12 from '../../../../assets/images/application/user/socialProfile/gallery/gallery12.png';
-// format('ddd ll')
-export const datafriend = [
+
+export const datagallery = [
     {
         name: '1080p_table_denar',
         datetime: '2021-08-24T15:56:51+07:00',
-        avatar: gallery1
+        image: gallery1
     },
     {
         name: 'handmade.mp2',
         datetime: '2021-04-30T15:56:51+07:00',
-        avatar: gallery2
+        image: gallery2
     },
     {
         name: 'granite_cheese.wav',
         datetime: '2021-06-25T15:56:51+07:00',
-        avatar: gallery3
+        image: gallery3
     },
     {
         name: 'invoice.mpg',
         datetime: '2021-10-23T15:56:51+07:00',
-        avatar: gallery4
+        image: gallery4
     },
     {
         name: 'benchmark_forge',
         datetime: '2021-01-21T15:56:51+07:00',
-        avatar: gallery5
+        image: gallery5
     },
     {
         name: 'violet_withdrawal',
         datetime: '2021-10-22T15:56:51+07:00',
-        avatar: gallery6
+        image: gallery6
     },
     {
         name: 'web_readiness.mpeg',
         datetime: '2021-07-12T15:56:51+07:00',
-        avatar: gallery7
+        image: gallery7
     },
     {
         name: 'zimbabwe.htm',
         datetime: '2021-03-20T15:56:51+07:00',
-        avatar: gallery8
+        image: gallery8
     },
     {
         name: 'circuit.m3a',
         datetime: '2021-01-18T15:56:51+07:00',
-        avatar: gallery9
+        image: gallery9
     },
     {
         name: 'data_red.png',
         datetime: '2021-4-04T15:56:51+07:00',
-        avatar: gallery10
+        image: gallery10
     },
     {
         name: 'handcrafted.html',
         datetime: '2021-05-25T15:56:51+07:00',
-        avatar: gallery11
+        image: gallery11
     },
     {
         name: 'hacking_games.pdf',
         datetime: '2021-10-19T15:56:51+07:00',
-        avatar: gallery12
+        image: gallery12
     }
 ];

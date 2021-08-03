@@ -58,3 +58,6 @@ Please generate a Github issue if you found a bug in any version. We are trying 
 -   <img src="https://img.icons8.com/doodle/16/000000/twitter.png"/> Twitter: https://twitter.com/Mark51030767
 
 # Strawberry-admin-fe
+
+-   <img src="https://img.icons8.com/doodle/16/000000/gmail.png"/> Email: trandinhhiep789@gmail.com
+-   <img src="https://img.icons8.com/doodle/16/000000/linkin.png"/> LinkedIn: linkedin.com/in/trandinhhiep
