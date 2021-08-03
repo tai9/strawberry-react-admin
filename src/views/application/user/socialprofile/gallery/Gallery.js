@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
-
-//input adornments
-import TextField from '@material-ui/core/TextField';
-import InputAdornment from '@material-ui/core/InputAdornment';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
@@ -13,7 +9,6 @@ import GalleryImage from './GalleryImage';
 import Grid from '@material-ui/core/Grid';
 
 // asset
-import SearchIcon from '@material-ui/icons/Search';
 import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
