@@ -7,7 +7,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
-import FriendPerson from './FriendPerson';
+import FriendRequestPerson from './FriendRequestPerson';
 
 // gird material-ui
 import Grid from '@material-ui/core/Grid';
@@ -73,10 +73,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function Friend() {
+export default function FriendRequest() {
     const classes = useStyles();
 
-    const arrFriend = useSelector((state) => state.friendState.arrfriends);
+    const arrFriend = useSelector((state) => state.friendrequestState.arrfriendrequest);
     const [data, setData] = useState();
 
     const handleFilter = (e) => {
@@ -93,13 +93,11 @@ export default function Friend() {
             <div className={classes.formFollower}>
                 <div className={classes.follower}>
                     <div className={classes.headerFollower}>
-                        <h3 className={classes.followerTitle}>
-                            Friend <span className={classes.numberFriend}>(460)</span>
-                        </h3>
+                        <h3 className={classes.followerTitle}>Friend Request</h3>
                         <div className={classes.divSearch}>
                             <TextField
                                 id="outlined-start-adornment"
-                                placeholder="Search"
+                                placeholder="Search Friends"
                                 className={classes.inputSearch}
                                 InputProps={{
                                     startAdornment: (
@@ -118,9 +116,9 @@ export default function Friend() {
                 <div className={classes.formFollowPerson}>
                     <Grid container>
                         {data
-                            ? data.map((friend, index) => <FriendPerson key={index} {...friend} />)
+                            ? data.map((friend, index) => <FriendRequestPerson key={index} {...friend} />)
                             : arrFriend
-                            ? arrFriend.map((friend, index) => <FriendPerson key={index} {...friend} />)
+                            ? arrFriend.map((friend, index) => <FriendRequestPerson key={index} {...friend} />)
                             : ''}
                     </Grid>
                 </div>

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
+import React, { useEffect } from 'react';
 import imageCover from '../../../../assets/images/application/user/socialProfile/img-profile-bg.2b15e931.png';
 import avatar from '../../../../assets/images/application/user/socialProfile/img-user.41a8c066.png';
 
@@ -98,8 +98,8 @@ const useStyles = makeStyles((theme) => ({
     },
     boxshadow: {
         boxShadow: 'none !important ',
-        paddingLeft: '80px',
-        [theme.breakpoints.down('md')]: {
+        paddingLeft: '30px',
+        [theme.breakpoints.down('960px')]: {
             paddingLeft: '0px'
         }
     },
@@ -122,7 +122,6 @@ const useStyles = makeStyles((theme) => ({
         padding: '12px 8px',
         minWidth: 10,
         minHeight: 'auto',
-        marginRight: 18,
         '& > span': {
             display: 'flex',
             alignItems: 'center',
@@ -224,6 +223,21 @@ const SocialProfile = () => {
         setValue(newValue);
     };
 
+    console.log(window.location.href.includes('gallery'));
+    useEffect(() => {
+        if (window.location.href.includes('posts')) {
+            setValue(0);
+        } else if (window.location.href.includes('follower')) {
+            setValue(1);
+        } else if (window.location.href.includes('friends')) {
+            setValue(2);
+        } else if (window.location.href.includes('gallery')) {
+            setValue(3);
+        } else if (window.location.href.includes('request')) {
+            setValue(4);
+        }
+    }, []);
+
     return (
         <React.Fragment>
             <div className={classes.header}>
@@ -323,19 +337,18 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconUserPlus className={classes.iconTabs} />
-                                                    FRIEND REQUEST
-                                                </span>
+                                                <NavLink to="/user/social-profile/friend-request" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconUserPlus className={classes.iconTabs} />
+                                                        FRIEND REQUEST
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(4)}
                                         />
                                     </Tabs>
                                 </AppBar>
-                                {/* <TabPanel value={value} index={0}>
-                                    Item One
-                                </TabPanel> */}
                             </div>
                         </Grid>
                     </Grid>

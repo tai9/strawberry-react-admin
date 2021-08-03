@@ -38,6 +38,7 @@ const ProFile = Loadable(lazy(() => import('../views/application/user/socialprof
 const Follower = Loadable(lazy(() => import('../views/application/user/socialprofile/followers/Follower')));
 const Friend = Loadable(lazy(() => import('../views/application/user/socialprofile/friends/Friend')));
 const Gallery = Loadable(lazy(() => import('../views/application/user/socialprofile/gallery/Gallery')));
+const FriendRequest = Loadable(lazy(() => import('../views/application/user/socialprofile/friendrequest/FriendRequest')));
 
 // forms routing
 const BacisTable = Loadable(lazy(() => import('../views/forms/table/bacisTable')));
@@ -87,6 +88,7 @@ const MainRoutes = () => {
                 '/user/account-profile/profile3',
                 '/user/social-profile/friends',
                 '/user/social-profile/gallery',
+                '/user/social-profile/friend-request',
 
                 '/table/basic-table',
                 '/table/dence-table',
@@ -123,6 +125,7 @@ const MainRoutes = () => {
                     <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
                     <TemplateSocialProfile path="/user/social-profile/friends" Component={Friend} />
                     <TemplateSocialProfile path="/user/social-profile/gallery" Component={Gallery} />
+                    <TemplateSocialProfile path="/user/social-profile/friend-request" Component={FriendRequest} />
 
                     <Route path="/table/basic-table" component={BacisTable} />
                     <Route path="/table/dence-table" component={DenceTable} />
