@@ -120,9 +120,9 @@ export default function Friend() {
                 <div className={classes.formFollowPerson}>
                     <Grid container>
                         {data
-                            ? data.map((friend) => <FriendPerson key={friend.id} {...friend} />)
+                            ? data.map((friend, index) => <FriendPerson key={index} {...friend} />)
                             : arrFriend
-                            ? arrFriend.map((friend) => <FriendPerson key={friend.id} {...friend} />)
+                            ? arrFriend.map((friend, index) => <FriendPerson key={index} {...friend} />)
                             : ''}
                     </Grid>
                 </div>
