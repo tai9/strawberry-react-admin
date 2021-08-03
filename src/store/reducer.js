@@ -6,6 +6,7 @@ import userReducer from './userReducer';
 import followersReducer from './followersReducer';
 import friendReducer from './friendReducer';
 import galleryReducer from './galleryReducer';
+import friendrequestReducer from './friendrequestReducer';
 //-----------------------|| COMBINE REDUCER ||-----------------------//
 
 const reducer = combineReducers({
@@ -13,7 +14,8 @@ const reducer = combineReducers({
     postState: userReducer,
     followerState: followersReducer,
     friendState: friendReducer,
-    galleryState: galleryReducer
+    galleryState: galleryReducer,
+    friendrequestState: friendrequestReducer
 });
 
 export default reducer;
