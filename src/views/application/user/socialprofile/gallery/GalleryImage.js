@@ -18,42 +18,6 @@ import Grid from '@material-ui/core/Grid';
 import moment from 'moment';
 
 const useStyles = makeStyles((theme) => ({
-    adressDetail: {
-        margin: '2px 0px 0px',
-        fontFamily: 'Roboto, sans-serif',
-        fontWeight: '400',
-        fontSize: '0.75rem',
-        lineHeight: '1.57',
-        color: 'rgb(158, 158, 158)',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
-        display: 'block'
-    },
-    iconAdress: {
-        userSelect: 'none',
-        width: '1em',
-        height: '1em',
-        display: 'inline-block',
-        fill: 'currentcolor',
-        flexShrink: '0',
-        transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-        marginRight: '6px',
-        fontSize: '16px',
-        verticalAlign: 'text-top'
-    },
-    namePerson: {
-        margin: '0px',
-        fontFamily: 'Roboto, sans-serif',
-        fontWeight: '500',
-        fontSize: '0.875rem',
-        lineHeight: '1.334',
-        color: 'rgb(33, 33, 33)',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
-        display: 'block'
-    },
     btnEdit: {
         cursor: 'pointer',
         display: 'inline-flex',
@@ -72,59 +36,12 @@ const useStyles = makeStyles((theme) => ({
             color: 'white'
         }
     },
-    avatarAdress: {
-        display: 'flex'
-    },
-    btnFollow: {
-        width: '100%',
-        marginTop: '16px'
-    },
-    nameAndAdress: {
-        paddingLeft: '16px'
-    },
-    iconUserFollow: {
-        marginRight: '7px'
-    },
-    icons: {
-        marginRight: '10px'
-    },
     hoverTabs: {
         transition: 'all .5s',
         '&:hover': {
             backgroundColor: 'rgb(237, 231, 246)',
             color: 'rgb(94, 53, 177)'
         }
-    },
-    btnVideoCall: {
-        width: '90%',
-        background: '#fff'
-    },
-    btnChat: {
-        width: '90%',
-        background: '#fff'
-    },
-    borderBtn: {
-        paddingTop: '20px',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flexWrap: 'wrap',
-        width: '100%',
-        marginTop: '-8px',
-        textAlign: 'center',
-        borderColor: '#EDE7F6',
-        borderRadius: '4px'
-    },
-    iconVideoCall: {
-        color: 'rgb(94, 53, 177)',
-        width: '20px',
-        height: '20px'
-    },
-    iconChat: {
-        width: '20px',
-        height: '20px'
-    },
-    borderButton: {
-        width: '50%'
     },
     imageGallery: {
         width: '100%'
