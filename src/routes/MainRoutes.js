@@ -35,7 +35,7 @@ const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
 // application routing
 const ProFile = Loadable(lazy(() => import('../views/application/user/socialprofile/ProFile')));
-const Follower = Loadable(lazy(() => import('../views/application/user/socialprofile/followers/Follower')));
+const Follower = Loadable(lazy(() => import('../views/application/user/socialprofile/Followers/Follower')));
 const Friend = Loadable(lazy(() => import('../views/application/user/socialprofile/friends/Friend')));
 const Gallery = Loadable(lazy(() => import('../views/application/user/socialprofile/gallery/Gallery')));
 const FriendRequest = Loadable(lazy(() => import('../views/application/user/socialprofile/friendrequest/FriendRequest')));
