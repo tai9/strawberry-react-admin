@@ -4,6 +4,8 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 // project imports
 import MainLayout from './../layout/MainLayout';
 import Loadable from '../ui-component/Loadable';
+import TemplateSocialProfile from '../views/application/TemplateSocialProfile';
+import Follower from '../views/application/user/socialprofile/Followers/Follower';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
@@ -38,9 +40,14 @@ const CustomTable = Loadable(lazy(() => import('../views/forms/table/customTable
 const CollapseTable = Loadable(lazy(() => import('../views/forms/table/collapseTable')));
 const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedTable')));
 const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
+
 // application routing // eltr
-const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
+// const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
 const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
+
+// application routing
+const ProFile = Loadable(lazy(() => import('../views/application/user/socialprofile/ProFile')));
+
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
 const MainRoutes = () => {
@@ -70,6 +77,7 @@ const MainRoutes = () => {
                 '/sample-page',
 
                 '/user/social-profile/posts',
+                '/user/social-profile/follower',
                 '/user/account-profile/profile1',
                 '/user/account-profile/profile2',
                 '/user/account-profile/profile3',
@@ -112,11 +120,14 @@ const MainRoutes = () => {
                     <Route path="/table/enhanced-table" component={EnhancedTable} />
                     <Route path="/table/fixed-header" component={FixedHeader} />
 
-                    <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
+                    {/* <Route path="/user/social-profile/posts" component={AppUserSocialProfile} /> */}
 
                     <Route path="/user/account-profile/profile1" component={Profile1} />
                     <Route path="/user/account-profile/profile2" component={Profile1} />
                     <Route path="/user/account-profile/profile3" component={Profile1} />
+                    {/* Change your path */}
+                    <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
+                    <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
                 </Switch>
             </MainLayout>
         </Route>

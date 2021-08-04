@@ -18,6 +18,7 @@ import Box from '@material-ui/core/Box';
 
 // material-ui ions for tabs
 import { IconInbox, IconUsers, IconFriends, IconPhoto, IconUserPlus } from '@tabler/icons';
+import { NavLink } from 'react-router-dom';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -239,10 +240,12 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconUsers className={classes.iconTabs} />
-                                                    FOLLOWERS
-                                                </span>
+                                                <NavLink to="/user/social-profile/follower">
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconUsers className={classes.iconTabs} />
+                                                        FOLLOWERS
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(1)}
