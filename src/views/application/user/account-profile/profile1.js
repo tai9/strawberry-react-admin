@@ -13,9 +13,10 @@ import DescriptionTwoToneIcon from '@material-ui/icons/DescriptionTwoTone';
 import LibraryBooksTwoToneIcon from '@material-ui/icons/LibraryBooksTwoTone';
 import HttpsTwoToneIcon from '@material-ui/icons/HttpsTwoTone';
 import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
-import Profile from '../../../../ui-component/application/user/accountProfile/profile1/profile/index';
-import PresonalDetails from '../../../../ui-component/application/user/accountProfile/profile1/presonal';
-import MyAccount from '../../../../ui-component/application/user/accountProfile/profile1/myAccount';
+import Profile from '../../../../ui-component/application/user/account-profile/profile1/profile/index';
+import PresonalDetails from '../../../../ui-component/application/user/account-profile/profile1/presonal';
+import MyAccount from '../../../../ui-component/application/user/account-profile/profile1/my-account';
+import ChangePass from '../../../../ui-component/application/user/account-profile/profile1/change-pass';
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -174,7 +175,7 @@ export default function Profile1() {
                 <MyAccount />
             </TabPanel>
             <TabPanel value={value} index={3}>
-                Item Four
+                <ChangePass />
             </TabPanel>
             <TabPanel value={value} index={4}>
                 Item Five
