@@ -127,9 +127,6 @@ const FormBtnLikeCmt = (post) => {
     };
 
     const handleClickToLike = () => {
-        // setLike((prev) => !prev);
-
-        console.log(like);
         if (like === 'true') {
             setLike('false');
             setScore(score - 1);
