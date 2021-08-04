@@ -12,8 +12,6 @@ const OrderList = Loadable(lazy(() => import('../views/application/customer/orde
 const ProductList = Loadable(lazy(() => import('../views/application/customer/product')));
 const ProductReview = Loadable(lazy(() => import('../views/application/customer/product-review')));
 
-
-
 const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/analytics')));
 
 // widget routing
@@ -42,7 +40,7 @@ const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedT
 const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
 // application routing // eltr
 const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
-
+const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
 const MainRoutes = () => {
@@ -70,14 +68,19 @@ const MainRoutes = () => {
                 '/icons/tabler-icons',
                 '/icons/material-icons',
                 '/sample-page',
+
+                '/user/social-profile/posts',
+                '/user/account-profile/profile1',
+                '/user/account-profile/profile2',
+                '/user/account-profile/profile3',
+
                 '/table/basic-table',
                 '/table/dence-table',
                 '/table/data-table',
                 '/table/custom-table',
                 '/table/collapse-table',
                 '/table/enhanced-table',
-                '/table/fixed-header',
-                '/user/social-profile/posts'
+                '/table/fixed-header'
             ]}
         >
             <MainLayout>
@@ -100,6 +103,7 @@ const MainRoutes = () => {
                     <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                     <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
                     <Route path="/sample-page" component={SamplePage} />
+
                     <Route path="/table/basic-table" component={BacisTable} />
                     <Route path="/table/dence-table" component={DenceTable} />
                     <Route path="/table/data-table" component={DataTable} />
@@ -107,7 +111,12 @@ const MainRoutes = () => {
                     <Route path="/table/collapse-table" component={CollapseTable} />
                     <Route path="/table/enhanced-table" component={EnhancedTable} />
                     <Route path="/table/fixed-header" component={FixedHeader} />
+
                     <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
+
+                    <Route path="/user/account-profile/profile1" component={Profile1} />
+                    <Route path="/user/account-profile/profile2" component={Profile1} />
+                    <Route path="/user/account-profile/profile3" component={Profile1} />
                 </Switch>
             </MainLayout>
         </Route>
