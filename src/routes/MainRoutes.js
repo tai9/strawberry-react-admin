@@ -15,7 +15,7 @@ const OrderList = Loadable(lazy(() => import('../views/application/customer/orde
 const ProductList = Loadable(lazy(() => import('../views/application/customer/product')));
 const ProductReview = Loadable(lazy(() => import('../views/application/customer/product-review')));
 
-const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/Analytics')));
+const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/analytics')));
 
 // widget routing
 const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
