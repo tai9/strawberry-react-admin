@@ -13,14 +13,16 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden',
         border: '1px solid rgb(227, 242, 253)',
         marginTop: '20px'
-    }
+    },
+    alert: { borderStyle: 'dashed' }
 }));
 export default function ChangePass() {
     const classes = useStyles();
 
     return (
         <div>
-            <Alert variant="outlined" severity="warning">
+            <Alert className={classes.alert} variant="outlined" severity="warning">
+                <b>Alert</b> <br />
                 Your Password will expire in every 3 months. So change it periodically. <b>Do not share your password</b>
             </Alert>
             <Paper className={classes.paper}>

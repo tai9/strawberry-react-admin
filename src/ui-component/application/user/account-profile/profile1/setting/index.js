@@ -23,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
         padding: '20px'
     },
     title: {
-        fontSize: '15px',
+        fontSize: '0.875rem',
+        color: 'rgb(33, 33, 33)',
         fontWeight: '500',
-        color: 'black',
+        fontFamily: ' Roboto, sans-serif',
         flex: '1 1 auto'
     },
     tagHr: {
@@ -140,7 +141,7 @@ export default function Setting() {
             <div className={classes.btnSubmit}>
                 <div className={classes.update}>
                     <Button variant="contained" color="primary">
-                        Change Password
+                        Update
                     </Button>
                 </div>{' '}
                 <div className={classes.clear}>
