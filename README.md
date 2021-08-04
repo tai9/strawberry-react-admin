@@ -47,6 +47,10 @@ Strawberry is managed by NotFound Team:
 -   <img src="https://img.icons8.com/doodle/16/000000/gmail.png"/> Email: nguyendinhgiakhai@gmail.com
 -   <img src="https://img.icons8.com/doodle/16/000000/facebook-new.png"/> Facebook: https://www.facebook.com/khaigia111/
 
+-   Trần Đình Hiệp
+-   <img src="https://img.icons8.com/doodle/16/000000/gmail.png"/> Email: trandinhhiep789@gmail.com
+-   <img src="https://img.icons8.com/doodle/16/000000/linkin.png"/> LinkedIn: linkedin.com/in/trandinhhiep
+
 ## Issues
 
 Please generate a Github issue if you found a bug in any version. We are trying to be responsive to resolve the issue.

@@ -82,6 +82,12 @@ const MainRoutes = () => {
 
                 '/user/social-profile/posts',
                 '/user/social-profile/follower',
+
+                '/user/social-profile/follower',
+                '/user/social-profile/friends',
+                '/user/social-profile/gallery',
+                '/user/social-profile/friend-request',
+
                 '/user/account-profile/profile1',
                 '/user/account-profile/profile2',
                 '/user/account-profile/profile3',
