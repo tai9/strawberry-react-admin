@@ -49,6 +49,10 @@ const CollapseTable = Loadable(lazy(() => import('../views/forms/table/collapseT
 const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedTable')));
 const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
 
+// application routing // eltr
+const AppUserSocialProfile = Loadable(lazy(() => import('../views/application/index')));
+const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
+
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
 const MainRoutes = () => {
@@ -78,10 +82,15 @@ const MainRoutes = () => {
                 '/sample-page',
 
                 '/user/social-profile/posts',
+
                 '/user/social-profile/follower',
                 '/user/social-profile/friends',
                 '/user/social-profile/gallery',
                 '/user/social-profile/friend-request',
+
+                '/user/account-profile/profile1',
+                '/user/account-profile/profile2',
+                '/user/account-profile/profile3',
 
                 '/table/basic-table',
                 '/table/dence-table',
@@ -127,6 +136,12 @@ const MainRoutes = () => {
                     <Route path="/table/collapse-table" component={CollapseTable} />
                     <Route path="/table/enhanced-table" component={EnhancedTable} />
                     <Route path="/table/fixed-header" component={FixedHeader} />
+
+                    <Route path="/user/social-profile/posts" component={AppUserSocialProfile} />
+
+                    <Route path="/user/account-profile/profile1" component={Profile1} />
+                    <Route path="/user/account-profile/profile2" component={Profile1} />
+                    <Route path="/user/account-profile/profile3" component={Profile1} />
                 </Switch>
             </MainLayout>
         </Route>
