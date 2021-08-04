@@ -1,6 +1,6 @@
 // project imports
 
-import { datapost } from '../_mockApis/application/users/social-profile/data';
+import { datapost } from '../_mockApis/application/users/social-profile/datapost';
 
 export const initialState = {
     arrPost: datapost
@@ -37,7 +37,6 @@ const userReducer = (state = initialState, action) => {
             };
             const cmtId = post[action.data.idpost].comment.findIndex((cmt) => cmt.id === action.data.idCmt);
 
-            // console.log(action.data.idpost);
             post[action.data.idpost].comment[cmtId].reply.push(reply);
 
             state.arrPost = post;

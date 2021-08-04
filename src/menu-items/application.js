@@ -4,15 +4,15 @@ import ShoppingBasketOutlinedIcon from '@material-ui/icons/ShoppingBasketOutline
 
 // constant
 const icons = {
-    IconUserCheck : IconUserCheck, //eltr
+    IconUserCheck: IconUserCheck, //eltr
     IconNfc: IconNfc,
     IconKey: IconKey,
     IconReceipt2: IconReceipt2,
     IconBug: IconBug,
     IconBellRinging: IconBellRinging,
     IconPhoneCall: IconPhoneCall,
-    ShoppingBasketOutlinedIcon: ShoppingBasketOutlinedIcon,
-}
+    ShoppingBasketOutlinedIcon: ShoppingBasketOutlinedIcon
+};
 
 //-----------------------|| EXTRA PAGES MENU ITEMS ||-----------------------//
 
@@ -55,8 +55,8 @@ export const application = {
                     type: 'item',
                     url: '/customer/product-review',
                     breadcrumbs: false
-                },
-            ],
+                }
+            ]
         },
         {
             id: 'users',
