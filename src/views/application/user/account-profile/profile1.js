@@ -17,6 +17,8 @@ import Profile from '../../../../ui-component/application/user/account-profile/p
 import PresonalDetails from '../../../../ui-component/application/user/account-profile/profile1/presonal';
 import MyAccount from '../../../../ui-component/application/user/account-profile/profile1/my-account';
 import ChangePass from '../../../../ui-component/application/user/account-profile/profile1/change-pass';
+import Setting from '../../../../ui-component/application/user/account-profile/profile1/setting/index';
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -178,13 +180,7 @@ export default function Profile1() {
                 <ChangePass />
             </TabPanel>
             <TabPanel value={value} index={4}>
-                Item Five
-            </TabPanel>
-            <TabPanel value={value} index={5}>
-                Item Six
-            </TabPanel>
-            <TabPanel value={value} index={6}>
-                Item Seven
+                <Setting />
             </TabPanel>
         </Paper>
     );
