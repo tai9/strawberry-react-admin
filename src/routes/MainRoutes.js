@@ -82,6 +82,7 @@ const MainRoutes = () => {
                 '/sample-page',
 
                 '/user/social-profile/posts',
+                '/user/social-profile/follower',
 
                 '/user/social-profile/follower',
                 '/user/social-profile/friends',
@@ -91,6 +92,9 @@ const MainRoutes = () => {
                 '/user/account-profile/profile1',
                 '/user/account-profile/profile2',
                 '/user/account-profile/profile3',
+                '/user/social-profile/friends',
+                '/user/social-profile/gallery',
+                '/user/social-profile/friend-request',
 
                 '/table/basic-table',
                 '/table/dence-table',
@@ -137,9 +141,14 @@ const MainRoutes = () => {
                     <Route path="/table/enhanced-table" component={EnhancedTable} />
                     <Route path="/table/fixed-header" component={FixedHeader} />
 
+                    {/* <Route path="/user/social-profile/posts" component={AppUserSocialProfile} /> */}
+
                     <Route path="/user/account-profile/profile1" component={Profile1} />
                     <Route path="/user/account-profile/profile2" component={Profile2} />
                     <Route path="/user/account-profile/profile3" component={Profile1} />
+                    {/* Change your path */}
+                    <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
+                    <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
                 </Switch>
             </MainLayout>
         </Route>
