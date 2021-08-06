@@ -6,7 +6,7 @@ import MainLayout from './../layout/MainLayout';
 import Loadable from '../ui-component/Loadable';
 
 // template application
-import TemplateSocialProfile from '../views/application/user/socialprofile/TemplateSocialProfile';
+import TemplateSocialProfile from '../views/application/user/social-profile';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
@@ -34,11 +34,11 @@ const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIc
 const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
 // application routing
-const ProFile = Loadable(lazy(() => import('../views/application/user/socialprofile/ProFile')));
-const Follower = Loadable(lazy(() => import('../views/application/user/socialprofile/followers/Follower')));
-const Friend = Loadable(lazy(() => import('../views/application/user/socialprofile/friends/Friend')));
-const Gallery = Loadable(lazy(() => import('../views/application/user/socialprofile/gallery/Gallery')));
-const FriendRequest = Loadable(lazy(() => import('../views/application/user/socialprofile/friendrequest/FriendRequest')));
+const ProFile = Loadable(lazy(() => import('../views/application/user/social-profile/profile/ProFile')));
+const Follower = Loadable(lazy(() => import('../views/application/user/social-profile/followers')));
+const Friend = Loadable(lazy(() => import('../views/application/user/social-profile/friends')));
+const Gallery = Loadable(lazy(() => import('../views/application/user/social-profile/gallery')));
+const FriendRequest = Loadable(lazy(() => import('../views/application/user/social-profile/friend-request')));
 
 // forms routing
 const BacisTable = Loadable(lazy(() => import('../views/forms/table/bacisTable')));
@@ -49,8 +49,9 @@ const CollapseTable = Loadable(lazy(() => import('../views/forms/table/collapseT
 const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedTable')));
 const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
 
-// application routing // eltr
+// application routing
 const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
+const Profile2 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile2')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -137,7 +138,7 @@ const MainRoutes = () => {
                     <Route path="/table/fixed-header" component={FixedHeader} />
 
                     <Route path="/user/account-profile/profile1" component={Profile1} />
-                    <Route path="/user/account-profile/profile2" component={Profile1} />
+                    <Route path="/user/account-profile/profile2" component={Profile2} />
                     <Route path="/user/account-profile/profile3" component={Profile1} />
                 </Switch>
             </MainLayout>

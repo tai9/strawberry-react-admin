@@ -31,7 +31,12 @@ const useStyles = makeStyles((theme) => ({
         minWidth: '0px',
         resize: 'none',
         color: 'rgb(33, 33, 33)',
-        borderWadius: '12px'
+        borderWadius: '12px',
+        borderColor: 'rgba(0, 0, 0, 0.23)',
+        '&:focus': {
+            outline: '0px',
+            border: '2px solid #2196f3'
+        }
     },
     postContent: {
         padding: '24px',

@@ -8,11 +8,17 @@ import Avatar from '@material-ui/core/Avatar';
 import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 import PeopleAltTwoToneIcon from '@material-ui/icons/PeopleAltTwoTone';
 import DeleteTwoToneIcon from '@material-ui/icons/DeleteTwoTone';
+import PinDropTwoToneIcon from '@material-ui/icons/PinDropTwoTone';
 import MoreHorizTwoToneIcon from '@material-ui/icons/MoreHorizTwoTone';
+import VideoCallTwoToneIcon from '@material-ui/icons/VideoCallTwoTone';
+import ChatBubbleTwoToneIcon from '@material-ui/icons/ChatBubbleTwoTone';
 
 // menu material-ui
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+
+// material-ui tooltip
+import Tooltip from '@material-ui/core/Tooltip';
 
 // gird material-ui
 import Grid from '@material-ui/core/Grid';
@@ -30,6 +36,18 @@ const useStyles = makeStyles((theme) => ({
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
         display: 'block'
+    },
+    iconAdress: {
+        userSelect: 'none',
+        width: '1em',
+        height: '1em',
+        display: 'inline-block',
+        fill: 'currentcolor',
+        flexShrink: '0',
+        transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        marginRight: '6px',
+        fontSize: '16px',
+        verticalAlign: 'text-top'
     },
     namePerson: {
         margin: '0px',
@@ -72,7 +90,11 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     nameAndAdress: {
-        paddingLeft: '16px'
+        paddingLeft: '16px',
+        width: '70%',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
     },
     iconUserFollow: {
         marginRight: '7px'
@@ -88,22 +110,12 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     btnVideoCall: {
-        borderColor: '#EDE7F6',
         width: '90%',
-        background: '#fff',
-        '&:hover': {
-            background: '#e3f2fd'
-        }
+        background: '#fff'
     },
     btnChat: {
-        borderColor: '#EDE7F6',
-        color: 'rgb(244, 67, 54)',
         width: '90%',
-        background: '#fff',
-        '&:hover': {
-            color: '#fff',
-            background: '#ef9a9a'
-        }
+        background: '#fff'
     },
     borderBtn: {
         paddingTop: '20px',
@@ -130,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function FriendRequestPerson(friend) {
+export default function FriendPerson(friend) {
     const classes = useStyles();
 
     // menu material-ui
@@ -152,7 +164,10 @@ export default function FriendRequestPerson(friend) {
                             <div className={classes.nameAndAdress}>
                                 <div className={classes.namePerson}>{friend.name}</div>
                                 <div className={classes.adress}>
-                                    <h6 className={classes.adressDetail}>{friend.mutualfriedn} mutual friends ...</h6>
+                                    <h6 className={classes.adressDetail}>
+                                        <PinDropTwoToneIcon className={classes.iconAdress} />
+                                        {friend.adress}
+                                    </h6>
                                 </div>
                             </div>
                         </div>
@@ -176,10 +191,18 @@ export default function FriendRequestPerson(friend) {
                     <div>
                         <div className={classes.borderBtn}>
                             <div className={classes.borderButton}>
-                                <Button className={classes.btnVideoCall}>Confirm</Button>
+                                <Tooltip title="Video call" placement="top">
+                                    <Button className={classes.btnVideoCall}>
+                                        <VideoCallTwoToneIcon className={classes.iconVideoCall} />
+                                    </Button>
+                                </Tooltip>
                             </div>
                             <div className={classes.borderButton}>
-                                <Button className={classes.btnChat}>Delete</Button>
+                                <Tooltip title="Message" placement="top">
+                                    <Button className={classes.btnChat}>
+                                        <ChatBubbleTwoToneIcon className={classes.iconChat} />
+                                    </Button>
+                                </Tooltip>
                             </div>
                         </div>
                     </div>

@@ -87,6 +87,12 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         padding: '16px'
+    },
+    borderNameTime: {
+        width: '70%',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
     }
 }));
 
@@ -110,7 +116,7 @@ export default function GalleryImage(gallery) {
                         <img className={classes.imageGallery} alt="imageGallery" src={gallery.image} />
                     </div>
                     <div className={classes.borderNameAndBtn}>
-                        <div>
+                        <div className={classes.borderNameTime}>
                             <div>
                                 <h5 className={classes.nameGallery}>{gallery.name}</h5>
                                 <span className={classes.dateTime}>

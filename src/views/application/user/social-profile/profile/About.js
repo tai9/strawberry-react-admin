@@ -69,12 +69,20 @@ const useStyles = makeStyles((theme) => ({
         color: 'color: rgb(33, 33, 33)'
     },
     tagA: {
-        color: 'black',
+        color: '#616161',
         width: '100%',
         textDecoration: 'none',
         '&:hover': {
             color: '#2196f3'
         }
+    },
+    tagHr: {
+        marginTop: '16px',
+        marginBottom: '16px',
+        borderWidth: '0px 0px thin',
+        borderStyle: 'solid',
+        borderColor: 'rgb(238, 238, 238)',
+        opacity: '1'
     }
 }));
 
@@ -88,7 +96,7 @@ const About = () => {
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its
                     layout.
                 </p>
-                <hr style={{ marginTop: '16px', marginBottom: '16px', borderWidth: '0px 0px thin' }}></hr>
+                <hr className={classes.tagHr}></hr>
                 <div>
                     <div className={classes.infolink}>
                         <PublicIcon className={classes.iconWeb} />

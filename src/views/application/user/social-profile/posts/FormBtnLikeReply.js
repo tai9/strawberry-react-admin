@@ -6,7 +6,7 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import TextField from '@material-ui/core/TextField';
 
-import avatar from '../../../../../assets/images/application/user/socialProfile/img-user.41a8c066.png';
+import avatar from '../../../../../assets/images/application/user/social-profile/img-user.41a8c066.png';
 import { Avatar } from '@material-ui/core';
 
 // Transitions Collapse

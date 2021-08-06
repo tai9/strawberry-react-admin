@@ -5,20 +5,18 @@ import { makeStyles } from '@material-ui/styles';
 import Avatar from '@material-ui/core/Avatar';
 
 // asset
-import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
 import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 import PeopleAltTwoToneIcon from '@material-ui/icons/PeopleAltTwoTone';
 import DeleteTwoToneIcon from '@material-ui/icons/DeleteTwoTone';
-import PinDropTwoToneIcon from '@material-ui/icons/PinDropTwoTone';
 import MoreHorizTwoToneIcon from '@material-ui/icons/MoreHorizTwoTone';
 
 // menu material-ui
-import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 // gird material-ui
 import Grid from '@material-ui/core/Grid';
+import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     adressDetail: {
@@ -32,18 +30,6 @@ const useStyles = makeStyles((theme) => ({
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
         display: 'block'
-    },
-    iconAdress: {
-        userSelect: 'none',
-        width: '1em',
-        height: '1em',
-        display: 'inline-block',
-        fill: 'currentcolor',
-        flexShrink: '0',
-        transition: 'fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
-        marginRight: '6px',
-        fontSize: '16px',
-        verticalAlign: 'text-top'
     },
     namePerson: {
         margin: '0px',
@@ -86,7 +72,11 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     nameAndAdress: {
-        paddingLeft: '16px'
+        paddingLeft: '16px',
+        width: '70%',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
     },
     iconUserFollow: {
         marginRight: '7px'
@@ -100,10 +90,51 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: 'rgb(237, 231, 246)',
             color: 'rgb(94, 53, 177)'
         }
+    },
+    btnVideoCall: {
+        borderColor: '#EDE7F6',
+        width: '90%',
+        background: '#fff',
+        '&:hover': {
+            background: '#e3f2fd'
+        }
+    },
+    btnChat: {
+        borderColor: '#EDE7F6',
+        color: 'rgb(244, 67, 54)',
+        width: '90%',
+        background: '#fff',
+        '&:hover': {
+            color: '#fff',
+            background: '#ef9a9a'
+        }
+    },
+    borderBtn: {
+        paddingTop: '20px',
+        boxSizing: 'border-box',
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: '100%',
+        marginTop: '-8px',
+        textAlign: 'center',
+        borderColor: '#EDE7F6',
+        borderRadius: '4px'
+    },
+    iconVideoCall: {
+        color: 'rgb(94, 53, 177)',
+        width: '20px',
+        height: '20px'
+    },
+    iconChat: {
+        width: '20px',
+        height: '20px'
+    },
+    borderButton: {
+        width: '50%'
     }
 }));
 
-export default function FollowerPerson(follower) {
+export default function FriendRequestPerson(friend) {
     const classes = useStyles();
 
     // menu material-ui
@@ -121,14 +152,11 @@ export default function FollowerPerson(follower) {
                 <div className={classes.followers}>
                     <div className={classes.headerFollower}>
                         <div className={classes.avatarAdress}>
-                            <Avatar alt="avatar" src={follower.avatar} />
+                            <Avatar alt="avatar" src={friend.avatar} />
                             <div className={classes.nameAndAdress}>
-                                <div className={classes.namePerson}>{follower.name}</div>
+                                <div className={classes.namePerson}>{friend.name}</div>
                                 <div className={classes.adress}>
-                                    <h6 className={classes.adressDetail}>
-                                        <PinDropTwoToneIcon className={classes.iconAdress} />
-                                        {follower.adress}
-                                    </h6>
+                                    <h6 className={classes.adressDetail}>{friend.mutualfriedn} mutual friends</h6>
                                 </div>
                             </div>
                         </div>
@@ -150,19 +178,14 @@ export default function FollowerPerson(follower) {
                         </div>
                     </div>
                     <div>
-                        {follower.status ? (
-                            follower.status === 'true' ? (
-                                <Button className={classes.btnFollow} variant="outlined" color="primary">
-                                    <PeopleAltTwoToneIcon className={classes.iconUserFollow} /> Followed
-                                </Button>
-                            ) : (
-                                <Button variant="contained" className={classes.btnFollow} color="primary">
-                                    <PersonAddTwoToneIcon className={classes.iconUserFollow} /> Follow Back
-                                </Button>
-                            )
-                        ) : (
-                            ''
-                        )}
+                        <div className={classes.borderBtn}>
+                            <div className={classes.borderButton}>
+                                <Button className={classes.btnVideoCall}>Confirm</Button>
+                            </div>
+                            <div className={classes.borderButton}>
+                                <Button className={classes.btnChat}>Delete</Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </Grid>

@@ -5,24 +5,20 @@ import { makeStyles } from '@material-ui/styles';
 import Avatar from '@material-ui/core/Avatar';
 
 // asset
+import PersonAddTwoToneIcon from '@material-ui/icons/PersonAddTwoTone';
 import FavoriteTwoToneIcon from '@material-ui/icons/FavoriteTwoTone';
 import PeopleAltTwoToneIcon from '@material-ui/icons/PeopleAltTwoTone';
 import DeleteTwoToneIcon from '@material-ui/icons/DeleteTwoTone';
 import PinDropTwoToneIcon from '@material-ui/icons/PinDropTwoTone';
 import MoreHorizTwoToneIcon from '@material-ui/icons/MoreHorizTwoTone';
-import VideoCallTwoToneIcon from '@material-ui/icons/VideoCallTwoTone';
-import ChatBubbleTwoToneIcon from '@material-ui/icons/ChatBubbleTwoTone';
 
 // menu material-ui
+import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
-// material-ui tooltip
-import Tooltip from '@material-ui/core/Tooltip';
-
 // gird material-ui
 import Grid from '@material-ui/core/Grid';
-import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     adressDetail: {
@@ -32,10 +28,11 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '0.75rem',
         lineHeight: '1.57',
         color: 'rgb(158, 158, 158)',
+        width: '100%',
+        display: 'block',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
-        display: 'block'
+        whiteSpace: 'nowrap'
     },
     iconAdress: {
         userSelect: 'none',
@@ -56,9 +53,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '0.875rem',
         lineHeight: '1.334',
         color: 'rgb(33, 33, 33)',
-        overflow: 'hidden',
-        textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
+
         display: 'block'
     },
     btnEdit: {
@@ -66,11 +61,12 @@ const useStyles = makeStyles((theme) => ({
         cursor: 'pointer'
     },
     avatarAdress: {
-        display: 'flex'
+        display: 'flex',
+        width: '90%'
     },
     headerFollower: {
         display: 'flex',
-        justifyContent: 'space-between'
+        width: '100%'
     },
     btnFollow: {
         width: '100%',
@@ -89,8 +85,14 @@ const useStyles = makeStyles((theme) => ({
             border: '1px solid#2196f3'
         }
     },
+    avatar: {},
     nameAndAdress: {
-        paddingLeft: '16px'
+        paddingLeft: '16px',
+        paddingRight: '16px',
+        width: '70%',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap'
     },
     iconUserFollow: {
         marginRight: '7px'
@@ -105,40 +107,12 @@ const useStyles = makeStyles((theme) => ({
             color: 'rgb(94, 53, 177)'
         }
     },
-    btnVideoCall: {
-        width: '90%',
-        background: '#fff'
-    },
-    btnChat: {
-        width: '90%',
-        background: '#fff'
-    },
-    borderBtn: {
-        paddingTop: '20px',
-        boxSizing: 'border-box',
-        display: 'flex',
-        flexWrap: 'wrap',
-        width: '100%',
-        marginTop: '-8px',
-        textAlign: 'center',
-        borderColor: '#EDE7F6',
-        borderRadius: '4px'
-    },
-    iconVideoCall: {
-        color: 'rgb(94, 53, 177)',
-        width: '20px',
-        height: '20px'
-    },
-    iconChat: {
-        width: '20px',
-        height: '20px'
-    },
-    borderButton: {
-        width: '50%'
+    borderBtnEdit: {
+        width: '10%'
     }
 }));
 
-export default function FriendPerson(friend) {
+export default function FollowerPerson(follower) {
     const classes = useStyles();
 
     // menu material-ui
@@ -156,18 +130,18 @@ export default function FriendPerson(friend) {
                 <div className={classes.followers}>
                     <div className={classes.headerFollower}>
                         <div className={classes.avatarAdress}>
-                            <Avatar alt="avatar" src={friend.avatar} />
+                            <Avatar alt="avatar" src={follower.avatar} className={classes.avatar} />
                             <div className={classes.nameAndAdress}>
-                                <div className={classes.namePerson}>{friend.name}</div>
+                                <div className={classes.namePerson}>{follower.name}</div>
                                 <div className={classes.adress}>
                                     <h6 className={classes.adressDetail}>
                                         <PinDropTwoToneIcon className={classes.iconAdress} />
-                                        {friend.adress}
+                                        {follower.adress}
                                     </h6>
                                 </div>
                             </div>
                         </div>
-                        <div>
+                        <div className={classes.borderBtnEdit}>
                             <div className={classes.btnEdit} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                                 <MoreHorizTwoToneIcon />
                             </div>
@@ -185,22 +159,19 @@ export default function FriendPerson(friend) {
                         </div>
                     </div>
                     <div>
-                        <div className={classes.borderBtn}>
-                            <div className={classes.borderButton}>
-                                <Tooltip title="Video call" placement="top">
-                                    <Button className={classes.btnVideoCall}>
-                                        <VideoCallTwoToneIcon className={classes.iconVideoCall} />
-                                    </Button>
-                                </Tooltip>
-                            </div>
-                            <div className={classes.borderButton}>
-                                <Tooltip title="Message" placement="top">
-                                    <Button className={classes.btnChat}>
-                                        <ChatBubbleTwoToneIcon className={classes.iconChat} />
-                                    </Button>
-                                </Tooltip>
-                            </div>
-                        </div>
+                        {follower.status ? (
+                            follower.status === 'true' ? (
+                                <Button className={classes.btnFollow} variant="outlined" color="primary">
+                                    <PeopleAltTwoToneIcon className={classes.iconUserFollow} /> Followed
+                                </Button>
+                            ) : (
+                                <Button variant="contained" className={classes.btnFollow} color="primary">
+                                    <PersonAddTwoToneIcon className={classes.iconUserFollow} /> Follow Back
+                                </Button>
+                            )
+                        ) : (
+                            ''
+                        )}
                     </div>
                 </div>
             </Grid>

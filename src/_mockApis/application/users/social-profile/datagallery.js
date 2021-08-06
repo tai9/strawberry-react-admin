@@ -1,15 +1,15 @@
-import gallery1 from '../../../../assets/images/application/user/socialProfile/gallery/gallery1.png';
-import gallery2 from '../../../../assets/images/application/user/socialProfile/gallery/gallery2.png';
-import gallery3 from '../../../../assets/images/application/user/socialProfile/gallery/gallery3.png';
-import gallery4 from '../../../../assets/images/application/user/socialProfile/gallery/gallery4.png';
-import gallery5 from '../../../../assets/images/application/user/socialProfile/gallery/gallery5.png';
-import gallery6 from '../../../../assets/images/application/user/socialProfile/gallery/gallery6.png';
-import gallery7 from '../../../../assets/images/application/user/socialProfile/gallery/gallery7.png';
-import gallery8 from '../../../../assets/images/application/user/socialProfile/gallery/gallery8.png';
-import gallery9 from '../../../../assets/images/application/user/socialProfile/gallery/gallery9.png';
-import gallery10 from '../../../../assets/images/application/user/socialProfile/gallery/gallery10.png';
-import gallery11 from '../../../../assets/images/application/user/socialProfile/gallery/gallery11.png';
-import gallery12 from '../../../../assets/images/application/user/socialProfile/gallery/gallery12.png';
+import gallery1 from '../../../../assets/images/application/user/social-profile/gallery/gallery1.png';
+import gallery2 from '../../../../assets/images/application/user/social-profile/gallery/gallery2.png';
+import gallery3 from '../../../../assets/images/application/user/social-profile/gallery/gallery3.png';
+import gallery4 from '../../../../assets/images/application/user/social-profile/gallery/gallery4.png';
+import gallery5 from '../../../../assets/images/application/user/social-profile/gallery/gallery5.png';
+import gallery6 from '../../../../assets/images/application/user/social-profile/gallery/gallery6.png';
+import gallery7 from '../../../../assets/images/application/user/social-profile/gallery/gallery7.png';
+import gallery8 from '../../../../assets/images/application/user/social-profile/gallery/gallery8.png';
+import gallery9 from '../../../../assets/images/application/user/social-profile/gallery/gallery9.png';
+import gallery10 from '../../../../assets/images/application/user/social-profile/gallery/gallery10.png';
+import gallery11 from '../../../../assets/images/application/user/social-profile/gallery/gallery11.png';
+import gallery12 from '../../../../assets/images/application/user/social-profile/gallery/gallery12.png';
 
 export const datagallery = [
     {

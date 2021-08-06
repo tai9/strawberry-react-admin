@@ -82,7 +82,43 @@ const useStyles = makeStyles((theme) => ({
     nextIcon: {
         display: 'inline-flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        cursor: 'pointer'
+    },
+    btnNextIcon: {
+        display: 'inline-flex',
+        alignIems: 'center',
+        justifyContent: 'center',
+        position: 'relative',
+        boxSizing: 'border-box',
+        outline: '0px',
+        border: '0px',
+        margin: '0px',
+        cursor: 'pointer',
+        userSelect: 'none',
+        verticalAlign: 'middle',
+        appearance: 'none',
+        textDecoration: 'none',
+        textAlign: 'center',
+        flex: '0 0 auto',
+        fontSize: '1.5rem',
+        padding: '8px',
+        borderRadius: '50%',
+        overflow: 'visible',
+        color: 'rgba(0, 0, 0, 0.54)',
+        transition: 'all .5s',
+        backgroundColor: 'transparent',
+        '&:hover': {
+            backgroundColor: 'rgba(0, 0, 0, 0.04)'
+        }
+    },
+    tagHr: {
+        marginTop: '16px',
+        marginBottom: '16px',
+        borderWidth: '0px 0px thin',
+        borderStyle: 'solid',
+        borderColor: 'rgb(238, 238, 238)',
+        opacity: '1'
     }
 }));
 
@@ -106,10 +142,12 @@ const FriendAndFollow = () => {
                                 </div>
                             </div>
                             <div className={classes.nextIcon}>
-                                <NavigateNextOutlinedIcon />
+                                <button className={classes.btnNextIcon}>
+                                    <NavigateNextOutlinedIcon />
+                                </button>
                             </div>
                         </div>
-                        <hr style={{ marginTop: '16px', marginBottom: '16px', borderWidth: '0px 0px thin' }}></hr>
+                        <hr className={classes.tagHr}></hr>
                         <div className={classes.borderAvataAndFriend}>
                             <div className={classes.avataFriend}>
                                 <div>
@@ -123,7 +161,10 @@ const FriendAndFollow = () => {
                                 </div>
                             </div>
                             <div className={classes.nextIcon}>
-                                <NavigateNextOutlinedIcon />
+                                <button className={classes.btnNextIcon}>
+                                    {' '}
+                                    <NavigateNextOutlinedIcon />
+                                </button>
                             </div>
                         </div>
                     </div>

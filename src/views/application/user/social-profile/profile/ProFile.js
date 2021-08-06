@@ -3,10 +3,10 @@ import React from 'react';
 // material-ui
 import { Grid } from '@material-ui/core';
 
-import FriendAndFollow from './FriendAndFollow';
-import About from './About';
-import FormPost from './FormPost';
-import Post from './posts/Post';
+import FriendAndFollow from '../profile/FriendAndFollow';
+import About from '../profile/About';
+import FormPost from '../profile/FormPost';
+import Post from '../posts/Post';
 
 const ProFile = () => {
     return (

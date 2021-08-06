@@ -53,8 +53,12 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: '24px'
     },
     tagHr: {
-        opacity: '0.5',
-        margin: '0'
+        margin: '0px',
+        flexShrink: '0',
+        borderStyle: 'solid',
+        borderColor: 'rgb(238, 238, 238)',
+        opacity: '1',
+        borderWidth: '0px 0px thin'
     }
 }));
 
