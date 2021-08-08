@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function GalleryImage(gallery) {
+const GalleryImage = (gallery) => {
     const classes = useStyles();
 
     // menu material-ui
@@ -154,4 +154,6 @@ export default function GalleryImage(gallery) {
             </Grid>
         </>
     );
-}
+};
+
+export default GalleryImage;

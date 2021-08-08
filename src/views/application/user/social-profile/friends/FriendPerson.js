@@ -142,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function FriendPerson(friend) {
+const FriendPerson = (friend) => {
     const classes = useStyles();
 
     // menu material-ui
@@ -210,4 +210,6 @@ export default function FriendPerson(friend) {
             </Grid>
         </>
     );
-}
+};
+
+export default FriendPerson;

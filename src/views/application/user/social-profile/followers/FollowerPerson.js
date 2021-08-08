@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function FollowerPerson(follower) {
+const FollowerPerson = (follower) => {
     const classes = useStyles();
 
     // menu material-ui
@@ -177,4 +177,6 @@ export default function FollowerPerson(follower) {
             </Grid>
         </>
     );
-}
+};
+
+export default FollowerPerson;

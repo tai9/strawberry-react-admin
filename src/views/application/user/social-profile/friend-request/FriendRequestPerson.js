@@ -134,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function FriendRequestPerson(friend) {
+const FriendRequestPerson = (friend) => {
     const classes = useStyles();
 
     // menu material-ui
@@ -191,4 +191,6 @@ export default function FriendRequestPerson(friend) {
             </Grid>
         </>
     );
-}
+};
+
+export default FriendRequestPerson;
