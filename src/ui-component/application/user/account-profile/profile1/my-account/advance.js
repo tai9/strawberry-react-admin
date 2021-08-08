@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
@@ -60,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between'
     },
     iconActive: { color: '#00e676' },
-    btnSubmit: { display: 'flex', justifyContent: 'flex-end', padding: '10px' },
+    btnSubmit: { display: 'flex', justifyContent: 'flex-end', marginTop: '20px' },
     clear: { marginLeft: '5px' }
 }));
 
@@ -98,13 +100,13 @@ export default function AdvanceSetting() {
                     <div className={classes.recognizedItem}>
                         {' '}
                         <Grid container>
-                            <Grid className={classes.device} item xs={12} md={10}>
+                            <Grid className={classes.device} item xs={12} md={8}>
                                 <div className={classes.icon}>
                                     <DesktopMacTwoToneIcon fontSize="small" />
                                 </div>
                                 <span className={classes.name}>Cent Desktop </span> | 4351 Deans Lane, Chelmsford
                             </Grid>
-                            <Grid dir="rtl" className={classes.statusActive} item xs={12} md={2}>
+                            <Grid dir="rtl" className={classes.statusActive} item xs={12} md={4}>
                                 {' '}
                                 <IconButton aria-label="delete" className={classes.margin} size="small">
                                     <HighlightOffTwoToneIcon fontSize="inherit" />
@@ -117,13 +119,13 @@ export default function AdvanceSetting() {
                     <div className={classes.recognizedItem}>
                         {' '}
                         <Grid container>
-                            <Grid className={classes.device} item xs={12} md={10}>
+                            <Grid className={classes.device} item xs={12} md={8}>
                                 <div className={classes.icon}>
                                     <SmartphoneTwoToneIcon fontSize="small" />
                                 </div>
                                 <span className={classes.name}>Imho Tablet </span> | 4185 Michigan Avenue
                             </Grid>
-                            <Grid dir="rtl" className={classes.status} item xs={12} md={2}>
+                            <Grid dir="rtl" className={classes.status} item xs={12} md={4}>
                                 {' '}
                                 <IconButton aria-label="delete" className={classes.margin} size="small">
                                     <HighlightOffTwoToneIcon fontSize="inherit" />
@@ -136,13 +138,13 @@ export default function AdvanceSetting() {
                     <div className={classes.recognizedItem}>
                         {' '}
                         <Grid container>
-                            <Grid className={classes.device} item xs={12} md={10}>
+                            <Grid className={classes.device} item xs={12} md={8}>
                                 <div className={classes.icon}>
                                     <PhoneIphoneTwoToneIcon fontSize="small" />
                                 </div>
                                 <span className={classes.name}>Albs Mobile </span> | 3462 Fairfax Drive, Montcalm
                             </Grid>
-                            <Grid dir="rtl" className={classes.status} item xs={12} md={2}>
+                            <Grid dir="rtl" className={classes.status} item xs={12} md={4}>
                                 {' '}
                                 <IconButton aria-label="delete" className={classes.margin} size="small">
                                     <HighlightOffTwoToneIcon fontSize="inherit" />

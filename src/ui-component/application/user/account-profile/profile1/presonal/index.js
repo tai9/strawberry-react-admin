@@ -1,10 +1,13 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import PresonalInfo from './presonalInfo';
 import SocialInfo from './socialInfo';
 import ContactInfo from './contactInfo';
+
 const useStyles = makeStyles((theme) => ({
     paper: {
         backgroundColor: 'rgb(255, 255, 255)',

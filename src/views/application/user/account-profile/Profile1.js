@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,12 +9,13 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
-
 import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
 import DescriptionTwoToneIcon from '@material-ui/icons/DescriptionTwoTone';
 import LibraryBooksTwoToneIcon from '@material-ui/icons/LibraryBooksTwoTone';
 import HttpsTwoToneIcon from '@material-ui/icons/HttpsTwoTone';
 import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
+
+//project import
 import Profile from '../../../../ui-component/application/user/account-profile/profile1/profile/index';
 import PresonalDetails from '../../../../ui-component/application/user/account-profile/profile1/presonal';
 import MyAccount from '../../../../ui-component/application/user/account-profile/profile1/my-account';

@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import women1 from '../../../../../../assets/images/avatars/women1.png';
 import Grid from '@material-ui/core/Grid';
@@ -10,6 +12,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
 import PhonelinkRingTwoToneIcon from '@material-ui/icons/PhonelinkRingTwoTone';
 import PinDropTwoToneIcon from '@material-ui/icons/PinDropTwoTone';
+
 const useStyles = makeStyles((theme) => ({
     infor: {
         padding: '20px',

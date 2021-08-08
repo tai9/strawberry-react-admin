@@ -50,7 +50,7 @@ const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedT
 const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
 
 // application routing // eltr
-const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
+const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile1')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 

@@ -15,7 +15,10 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '12px',
         overflow: 'hidden',
         border: '1px solid rgb(227, 242, 253)',
-        margin: '10px'
+        margin: '10px',
+        ':hover': {
+            boxShadow: '0 2px 14px 0 rgb(32 40 45 / 8%)'
+        }
     }
 }));
 export default function Profile() {

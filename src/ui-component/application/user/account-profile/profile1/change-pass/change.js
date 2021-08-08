@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
         verticalAlign: 'top',
         width: '100%'
     },
-    btnSubmit: { display: 'flex', justifyContent: 'flex-end', padding: '10px' },
+    btnSubmit: { display: 'flex', justifyContent: 'flex-end', marginTop: '20px', padding: '20px 0' },
     clear: { marginLeft: '5px' }
 }));
 

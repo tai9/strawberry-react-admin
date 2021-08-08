@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Switch from '@material-ui/core/Switch';
@@ -38,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
         borderColor: ' rgb(227, 242, 253)'
     },
     setup: { padding: '0 20px 20px' },
-    btnSubmit: { display: 'flex', justifyContent: 'flex-end', padding: '10px' },
+    btnSubmit: { display: 'flex', justifyContent: 'flex-end', marginTop: '10px', padding: '20px 10px' },
     clear: { marginLeft: '5px' }
 }));
 export default function Setting() {
