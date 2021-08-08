@@ -130,7 +130,8 @@ const useStyles = makeStyles((theme) => ({
     },
     borderLeft: {
         borderLeft: `1px solid ${theme.palette.divider}`,
-        paddingLeft: '24px'
+        paddingLeft: '38px',
+        textAlign: 'center'
     }
 }));
 
