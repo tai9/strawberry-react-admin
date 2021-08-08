@@ -17,7 +17,7 @@ import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
 
 //project import
 import Profile from '../../../../ui-component/application/user/account-profile/profile1/profile/index';
-import PresonalDetails from '../../../../ui-component/application/user/account-profile/profile1/presonal';
+import PersonalDetails from '../../../../ui-component/application/user/account-profile/profile1/personal';
 import MyAccount from '../../../../ui-component/application/user/account-profile/profile1/my-account';
 import ChangePass from '../../../../ui-component/application/user/account-profile/profile1/change-pass';
 import Setting from '../../../../ui-component/application/user/account-profile/profile1/setting/index';
@@ -174,7 +174,7 @@ export default function Profile1() {
                 <Profile />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <PresonalDetails />
+                <PersonalDetails />
             </TabPanel>
             <TabPanel value={value} index={2}>
                 <MyAccount />

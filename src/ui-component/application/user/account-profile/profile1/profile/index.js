@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import ProfileCard from './profileCard';
+import ProfileCard from './ProfileCard';
 import About from './about';
 import Education from './education';
 import Employment from './employment';
