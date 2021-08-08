@@ -241,7 +241,6 @@ export default function Profile2() {
                                 </TabPanel>
                             </Grid>
                         </Grid>
-                        <hr className={classes.tagHr} />
                     </div>
                 </div>
             </div>

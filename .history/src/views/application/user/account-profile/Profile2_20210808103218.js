@@ -130,6 +130,7 @@ const useStyles = makeStyles((theme) => ({
     },
     borderLeft: {
         borderLeft: `1px solid ${theme.palette.divider}`,
+        borderBottom: `1px solid ${theme.palette.divider}`,
         paddingLeft: '28px'
     }
 }));
@@ -241,7 +242,6 @@ export default function Profile2() {
                                 </TabPanel>
                             </Grid>
                         </Grid>
-                        <hr className={classes.tagHr} />
                     </div>
                 </div>
             </div>

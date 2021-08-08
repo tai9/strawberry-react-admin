@@ -242,6 +242,7 @@ export default function Profile2() {
                             </Grid>
                         </Grid>
                         <hr className={classes.tagHr} />
+                        <br />.
                     </div>
                 </div>
             </div>

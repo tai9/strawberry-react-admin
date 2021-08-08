@@ -125,12 +125,14 @@ const useStyles = makeStyles((theme) => ({
             borderRight: 'none'
         }
     },
+    tabContent: {
+        padding: '24px'
+    },
     contentTab: {
         width: '100%'
     },
     borderLeft: {
-        borderLeft: `1px solid ${theme.palette.divider}`,
-        paddingLeft: '28px'
+        borderLeft: `1px solid ${theme.palette.divider}`
     }
 }));
 
@@ -226,7 +228,7 @@ export default function Profile2() {
                                     </Tabs>
                                 </div>
                             </Grid>
-                            <Grid item xs={12} md={12} lg={8}>
+                            <Grid className={classes.tabContent} item xs={12} md={12} lg={8}>
                                 <TabPanel className={classes.borderLeft} value={value} index={0}>
                                     <UserProfile className={classes.contentTab} />
                                 </TabPanel>
@@ -241,7 +243,6 @@ export default function Profile2() {
                                 </TabPanel>
                             </Grid>
                         </Grid>
-                        <hr className={classes.tagHr} />
                     </div>
                 </div>
             </div>
