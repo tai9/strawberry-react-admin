@@ -5,9 +5,9 @@ import { makeStyles } from '@material-ui/styles';
 import { Button, Grid, InputAdornment, OutlinedInput } from '@material-ui/core';
 
 // project imports
-import { gridSpacing } from './../../../store/constant';
-import MainCard from './../../../ui-component/cards/MainCard';
-import ContactInfo from './ContactInfo';
+import { gridSpacing } from '../../../store/constant';
+import MainCard from '../../../ui-component/cards/MainCard';
+import ContactInfoList from './ContactInfoList';
 import ContactForm from './ContactForm';
 import ContactInfoForm from './ContactInfoForm';
 import DividerBlock from './DividerBlock';
@@ -28,31 +28,28 @@ const useStyles = makeStyles((theme) => ({
 
 //==============================|| CONTACT CARD ||==============================//
 
-const Card = () => {
+const List = () => {
     const classes = useStyles();
 
     const [showContactForm, setShowContactForm] = useState(false);
     const [showContactInfoForm, setShowContactInfoForm] = useState(false);
     const [data, setData] = useState();
 
-    const formatDataByName = useCallback(
-        (contactData) => {
-            let dataFormated = { ...data };
-            contactData.forEach((contact) => {
-                const key = contact.name.charAt(0);
-                if (key in dataFormated) {
-                    dataFormated[key].push(contact);
-                } else {
-                    dataFormated[key] = [{ ...contact }];
-                }
-            });
-            setData(dataFormated);
-        },
-        [data]
-    );
+    const formatDataByName = useCallback(() => {
+        let dataFormated = { ...data };
+        contactData.forEach((contact) => {
+            const key = contact.name.charAt(0);
+            if (key in dataFormated) {
+                dataFormated[key].push(contact);
+            } else {
+                dataFormated[key] = [{ ...contact }];
+            }
+        });
+        setData(dataFormated);
+    }, [data]);
 
     useEffect(() => {
-        formatDataByName(contactData);
+        formatDataByName();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
@@ -65,8 +62,8 @@ const Card = () => {
                         <DividerBlock label={key} />
                     </Grid>
                     {data[key].map((item) => (
-                        <Grid key={item.id} item xs={12} md={6}>
-                            <ContactInfo data={item} handleShowInfo={handleShowInfoForm} />
+                        <Grid key={item.id} item xs={12} sm={12}>
+                            <ContactInfoList data={item} handleShowInfo={handleShowInfoForm} />
                         </Grid>
                     ))}
                 </>
@@ -92,7 +89,7 @@ const Card = () => {
     };
 
     return (
-        <MainCard title="Contact Cards">
+        <MainCard title="Contact List">
             <Grid container spacing={gridSpacing}>
                 <Grid item xs>
                     <Grid container spacing={gridSpacing} alignItems="baseline">
@@ -142,4 +139,4 @@ const Card = () => {
     );
 };
 
-export default Card;
+export default List;

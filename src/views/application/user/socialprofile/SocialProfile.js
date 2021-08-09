@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
-import imageCover from '../../../../assets/images/Application/User/SocialProfile/img-profile-bg.2b15e931.png';
-import avatar from '../../../../assets/images/Application/User/SocialProfile/img-user.41a8c066.png';
+import React, { useEffect } from 'react';
+import imageCover from '../../../../assets/images/application/user/social-profile/img-profile-bg.2b15e931.png';
+import avatar from '../../../../assets/images/application/user/social-profile/img-user.41a8c066.png';
 
 // material-ui
 import { makeStyles } from '@material-ui/styles';
@@ -18,6 +18,7 @@ import Box from '@material-ui/core/Box';
 
 // material-ui ions for tabs
 import { IconInbox, IconUsers, IconFriends, IconPhoto, IconUserPlus } from '@tabler/icons';
+import { NavLink } from 'react-router-dom';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -28,9 +29,6 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '12px',
         paddingRight: '12px',
         paddingLeft: '12px'
-    },
-    headerTopProfile: {
-        // width: "100%"
     },
     imgcover: {
         width: '100%',
@@ -100,8 +98,8 @@ const useStyles = makeStyles((theme) => ({
     },
     boxshadow: {
         boxShadow: 'none !important ',
-        paddingLeft: '80px',
-        [theme.breakpoints.down('md')]: {
+        paddingLeft: '30px',
+        [theme.breakpoints.down('960px')]: {
             paddingLeft: '0px'
         }
     },
@@ -124,7 +122,6 @@ const useStyles = makeStyles((theme) => ({
         padding: '12px 8px',
         minWidth: 10,
         minHeight: 'auto',
-        marginRight: 18,
         '& > span': {
             display: 'flex',
             alignItems: 'center',
@@ -138,6 +135,48 @@ const useStyles = makeStyles((theme) => ({
     },
     fontSizeTabs: {
         fontSize: '14px'
+    },
+    tabNavLink: {
+        color: '#616161',
+        minWidth: 10,
+        minHeight: 'auto',
+        marginRight: 18,
+        textDecoration: 'none',
+        '& > span': {
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'center'
+        },
+        '& > span > svg': {
+            marginRight: 10,
+            marginBottom: '4px !important'
+        }
+    },
+    totalFriend: {
+        fontSize: '0.8125rem',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '24px',
+        borderRadius: '16px',
+        whiteSpace: 'nowrap',
+        transition: 'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+        cursor: 'default',
+        outline: '0px',
+        padding: '0px',
+        verticalAlign: 'middle',
+        boxSizing: 'border-box',
+        color: 'rgb(103, 58, 183)',
+        backgroundColor: 'rgb(237, 231, 246)',
+        marginLeft: '12px'
+    },
+    numberFriend: {
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        paddingLeft: '8px',
+        paddingRight: '8px',
+        whiteSpace: 'nowrap'
     }
 }));
 
@@ -184,10 +223,24 @@ const SocialProfile = () => {
         setValue(newValue);
     };
 
+    useEffect(() => {
+        if (window.location.href.includes('posts')) {
+            setValue(0);
+        } else if (window.location.href.includes('follower')) {
+            setValue(1);
+        } else if (window.location.href.includes('friends')) {
+            setValue(2);
+        } else if (window.location.href.includes('gallery')) {
+            setValue(3);
+        } else if (window.location.href.includes('request')) {
+            setValue(4);
+        }
+    }, []);
+
     return (
         <React.Fragment>
             <div className={classes.header}>
-                <div className={classes.headerTopProfile}>
+                <div>
                     <img className={classes.imgcover} src={imageCover}></img>
                 </div>
                 <div className={classes.headerBottomProfile}>
@@ -228,10 +281,12 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconInbox fontSize="small" />
-                                                    PROFILE
-                                                </span>
+                                                <NavLink to="/user/social-profile/posts" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconInbox fontSize="small" />
+                                                        PROFILE
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(0)}
@@ -239,10 +294,12 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconUsers className={classes.iconTabs} />
-                                                    FOLLOWERS
-                                                </span>
+                                                <NavLink to="/user/social-profile/follower" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconUsers className={classes.iconTabs} />
+                                                        FOLLOWERS
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(1)}
@@ -250,10 +307,15 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconFriends className={classes.iconTabs} />
-                                                    FRIENDS
-                                                </span>
+                                                <NavLink to="/user/social-profile/friends" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconFriends className={classes.iconTabs} />
+                                                        FRIENDS
+                                                        <div className={classes.totalFriend}>
+                                                            <span className={classes.numberFriend}>100</span>
+                                                        </div>
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(2)}
@@ -261,10 +323,12 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconPhoto className={classes.iconTabs} />
-                                                    GALLERY
-                                                </span>
+                                                <NavLink to="/user/social-profile/gallery" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconPhoto className={classes.iconTabs} />
+                                                        GALLERY
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(3)}
@@ -272,19 +336,18 @@ const SocialProfile = () => {
                                         <Tab
                                             className={classes.tab}
                                             icon={
-                                                <span className={classes.fontSizeTabs}>
-                                                    <IconUserPlus className={classes.iconTabs} />
-                                                    FRIEND REQUEST
-                                                </span>
+                                                <NavLink to="/user/social-profile/friend-request" className={classes.tabNavLink}>
+                                                    <span className={classes.fontSizeTabs}>
+                                                        <IconUserPlus className={classes.iconTabs} />
+                                                        FRIEND REQUEST
+                                                    </span>
+                                                </NavLink>
                                             }
                                             wrapped
                                             {...a11yProps(4)}
                                         />
                                     </Tabs>
                                 </AppBar>
-                                {/* <TabPanel value={value} index={0}>
-                                    Item One
-                                </TabPanel> */}
                             </div>
                         </Grid>
                     </Grid>
