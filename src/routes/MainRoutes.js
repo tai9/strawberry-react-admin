@@ -22,6 +22,7 @@ const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
 
 // application routing
 const ApplicationContactCard = Loadable(lazy(() => import('../views/application/contact/Card')));
+const ApplicationContactList = Loadable(lazy(() => import('../views/application/contact/List')));
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
@@ -114,7 +115,7 @@ const MainRoutes = () => {
                     <Route path="/customer/product" component={ProductList} />
                     <Route path="/customer/product-review" component={ProductReview} />
                     <Route path="/application/contact/cards" component={ApplicationContactCard} />
-                    <Route path="/application/contact/list" component={DashboardDefault} />
+                    <Route path="/application/contact/list" component={ApplicationContactList} />
 
                     <Route path="/widget/statistics" component={Statistics} />
 
