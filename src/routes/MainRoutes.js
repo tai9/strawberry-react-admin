@@ -50,8 +50,9 @@ const CollapseTable = Loadable(lazy(() => import('../views/forms/table/collapseT
 const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedTable')));
 const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
 
-// application routing // eltr
+// application routing
 const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
+const Profile3 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile3')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -145,7 +146,7 @@ const MainRoutes = () => {
 
                     <Route path="/user/account-profile/profile1" component={Profile1} />
                     <Route path="/user/account-profile/profile2" component={Profile1} />
-                    <Route path="/user/account-profile/profile3" component={Profile1} />
+                    <Route path="/user/account-profile/profile3" component={Profile3} />
                     {/* Change your path */}
                     <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
                     <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
