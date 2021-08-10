@@ -6,7 +6,7 @@ import { Grid } from '@material-ui/core';
 import FriendAndFollow from '../profile/FriendAndFollow';
 import About from '../profile/About';
 import FormPost from '../profile/FormPost';
-import Post from '../posts/Post';
+import Post from '../posts';
 
 const ProFile = () => {
     return (
