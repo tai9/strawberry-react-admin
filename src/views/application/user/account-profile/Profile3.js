@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Profile from '../../../../ui-component/application/user/account-profile/profile3/profile';
+import Billing from '../../../../ui-component/application/user/account-profile/profile3/billing';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -138,7 +139,7 @@ const Profile3 = () => {
                 <Profile />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                2{' '}
+                <Billing />
             </TabPanel>
             <TabPanel value={value} index={2}>
                 3{' '}
