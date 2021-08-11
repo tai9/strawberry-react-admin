@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Profile from '../../../../ui-component/application/user/account-profile/profile3/profile';
 import Billing from '../../../../ui-component/application/user/account-profile/profile3/billing';
 import Security from '../../../../ui-component/application/user/account-profile/profile3/security';
+import Notification from '../../../../ui-component/application/user/account-profile/profile3/notification';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -146,7 +147,7 @@ const Profile3 = () => {
                 <Security />
             </TabPanel>
             <TabPanel value={value} index={3}>
-                4{' '}
+                <Notification />
             </TabPanel>
         </Paper>
     );
