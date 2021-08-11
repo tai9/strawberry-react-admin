@@ -6,17 +6,20 @@ import { Divider, Typography } from '@material-ui/core';
 
 //==============================|| DIVIDER BLOCK||==============================//
 
-const DividerBlock = ({ label }) => {
+const DividerBlock = ({ label, borderd }) => {
     const theme = useTheme();
     return (
         <>
-            <Divider
-                sx={{
-                    margin: '5px 0px 15px',
-                    opacity: 1,
-                    borderColor: theme.palette.primary.light
-                }}
-            />
+            {borderd && (
+                <Divider
+                    sx={{
+                        margin: '5px 0px 15px',
+                        opacity: 1,
+                        borderColor: theme.palette.primary.light
+                    }}
+                />
+            )}
+
             <Typography
                 sx={{
                     color: theme.palette.primary.main
@@ -25,13 +28,15 @@ const DividerBlock = ({ label }) => {
             >
                 {label}
             </Typography>
-            <Divider
-                sx={{
-                    margin: '15px 0px 5px',
-                    opacity: 1,
-                    borderColor: theme.palette.primary.light
-                }}
-            />
+            {borderd && (
+                <Divider
+                    sx={{
+                        margin: '15px 0px 5px',
+                        opacity: 1,
+                        borderColor: theme.palette.primary.light
+                    }}
+                />
+            )}
         </>
     );
 };

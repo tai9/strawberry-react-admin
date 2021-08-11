@@ -1,5 +1,5 @@
 import React from 'react';
-import SocialProfile from '../social-profile/profile/SocialProfile';
+import SocialProfile from '../social-profile/profile';
 import { Route } from 'react-router-dom';
 
 const TemplateSocialProfile = (props) => {

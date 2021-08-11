@@ -22,6 +22,7 @@ const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
 
 // application routing
 const ApplicationContactCard = Loadable(lazy(() => import('../views/application/contact/Card')));
+const ApplicationContactList = Loadable(lazy(() => import('../views/application/contact/List')));
 
 // utilities routing
 const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
@@ -52,6 +53,7 @@ const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader
 // application routing
 const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
 const Profile2 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile2')));
+const Profile3 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile3')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -115,7 +117,7 @@ const MainRoutes = () => {
                     <Route path="/customer/product" component={ProductList} />
                     <Route path="/customer/product-review" component={ProductReview} />
                     <Route path="/application/contact/cards" component={ApplicationContactCard} />
-                    <Route path="/application/contact/list" component={DashboardDefault} />
+                    <Route path="/application/contact/list" component={ApplicationContactList} />
 
                     <Route path="/widget/statistics" component={Statistics} />
 
@@ -143,9 +145,9 @@ const MainRoutes = () => {
 
                     {/* <Route path="/user/social-profile/posts" component={AppUserSocialProfile} /> */}
 
-                    <Route path="/user/account-profile/profile1" component={Profile1} />
                     <Route path="/user/account-profile/profile2" component={Profile2} />
-                    <Route path="/user/account-profile/profile3" component={Profile1} />
+                    <Route path="/user/account-profile/profile2" component={Profile1} />
+                    <Route path="/user/account-profile/profile3" component={Profile3} />
                     {/* Change your path */}
                     <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
                     <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
