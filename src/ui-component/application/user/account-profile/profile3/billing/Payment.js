@@ -1,7 +1,11 @@
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
+
+//image import
 import visa from '../../../../../../assets/images/application/user/account-profile/payment/visa.png';
 import discover from '../../../../../../assets/images/application/user/account-profile/payment/discover.png';
 import mastercard from '../../../../../../assets/images/application/user/account-profile/payment/mastercard.png';

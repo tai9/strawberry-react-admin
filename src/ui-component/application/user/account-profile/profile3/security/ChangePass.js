@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
@@ -57,7 +59,7 @@ const Change = () => {
                     <Grid className={classes.inputItem} xs={12} md={6}>
                         <TextField required id="outlined-required" label="Re-enter New Password" variant="outlined" />
                     </Grid>
-                </Grid>{' '}
+                </Grid>
                 <div className={classes.btnSubmit}>
                     <Button variant="contained" color="primary">
                         Change Password

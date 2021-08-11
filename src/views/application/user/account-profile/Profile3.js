@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material ui
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,6 +9,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
+
+//project import
 import Profile from '../../../../ui-component/application/user/account-profile/profile3/profile';
 import Billing from '../../../../ui-component/application/user/account-profile/profile3/billing';
 import Security from '../../../../ui-component/application/user/account-profile/profile3/security';
@@ -126,7 +130,7 @@ const Profile3 = () => {
                     aria-label="scrollable force tabs example"
                     className={classes.tabs}
                 >
-                    <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>PROFILE</span>} wrapped {...a11yProps(0)} />{' '}
+                    <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>PROFILE</span>} wrapped {...a11yProps(0)} />
                     <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>BILLING</span>} wrapped {...a11yProps(0)} />
                     <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>SECURITY</span>} wrapped {...a11yProps(0)} />
                     <Tab

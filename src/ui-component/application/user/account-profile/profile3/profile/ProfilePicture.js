@@ -1,6 +1,10 @@
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
+
+//image import
 import man2 from '../../../../../../assets/images/avatars/man2.png';
 
 const useStyles = makeStyles((theme) => ({

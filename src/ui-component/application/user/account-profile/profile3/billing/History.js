@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Table from '@material-ui/core/Table';
 import Chip from '@material-ui/core/Chip';
@@ -8,7 +10,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+
+//data import
 import { dataHistory } from '../../../../../../_mockApis/application/users/account-profile/dataHistory.js';
+
 const useStyles = makeStyles((theme) => ({
     header: {
         display: 'flex',

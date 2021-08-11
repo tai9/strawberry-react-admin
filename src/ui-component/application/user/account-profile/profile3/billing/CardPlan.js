@@ -1,7 +1,6 @@
 import React from 'react';
 
 //material-ui
-
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -61,9 +60,7 @@ const CardPlan = () => {
 
     return (
         <div className={classes.root}>
-            {' '}
             <div className={classes.content}>
-                {' '}
                 <div className={classes.title}>Plan</div>
                 <div className={classes.data}>Basic</div>
                 <a className={classes.link} href="/#">

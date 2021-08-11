@@ -1,8 +1,12 @@
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import ProfilePicture from './ProfilePicture';
+
+//project import
 import Edit from './Edit';
 
 const useStyles = makeStyles((theme) => ({

@@ -1,7 +1,6 @@
 import React from 'react';
 
 //material-ui
-
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -61,9 +60,7 @@ const CardBillDue = () => {
 
     return (
         <div className={classes.root}>
-            {' '}
             <div className={classes.content}>
-                {' '}
                 <div className={classes.title}>Bill Due</div>
                 <div className={classes.data}>$150.00</div>
                 <a className={classes.link} href="/#">
