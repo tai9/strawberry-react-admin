@@ -124,8 +124,8 @@ const Profile3 = () => {
                     aria-label="scrollable force tabs example"
                     className={classes.tabs}
                 >
-                    <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}> PROFILE</span>} wrapped {...a11yProps(0)} />{' '}
-                    <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>BLLING</span>} wrapped {...a11yProps(0)} />
+                    <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>PROFILE</span>} wrapped {...a11yProps(0)} />{' '}
+                    <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>BILLING</span>} wrapped {...a11yProps(0)} />
                     <Tab className={classes.tab} icon={<span className={classes.fontSizeTabs}>SECURITY</span>} wrapped {...a11yProps(0)} />
                     <Tab
                         className={classes.tab}

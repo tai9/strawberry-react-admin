@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
+import visa from '../../../../../../assets/images/application/user/account-profile/payment/visa.png';
+import discover from '../../../../../../assets/images/application/user/account-profile/payment/discover.png';
+import mastercard from '../../../../../../assets/images/application/user/account-profile/payment/mastercard.png';
 
 const useStyles = makeStyles((theme) => ({
     header: {
@@ -100,6 +103,7 @@ const Payment = () => {
                 <Grid item xs={12}>
                     <div className={classes.paymentItem}>
                         <div className={classes.infor}>
+                            <img className={classes.avt} src={visa} alt="visa" />
                             <div className={classes.info}>
                                 <div className={classes.name}>Visa card</div>
                                 <div className={classes.number}>Ending in 5269 07XX XXXX 8110</div>
@@ -122,6 +126,7 @@ const Payment = () => {
                 <Grid item xs={12}>
                     <div className={classes.paymentItem}>
                         <div className={classes.infor}>
+                            <img className={classes.avt} src={discover} alt="discover" />
                             <div className={classes.info}>
                                 <div className={classes.name}>Discover</div>
                                 <div className={classes.number}>Ending in 6109 07XX XXXX 8020</div>
@@ -144,8 +149,9 @@ const Payment = () => {
                 <Grid item xs={12}>
                     <div className={classes.paymentItem}>
                         <div className={classes.infor}>
+                            <img className={classes.avt} src={mastercard} alt="mastercard" />
                             <div className={classes.info}>
-                                <div className={classes.name}>Mastercard</div>
+                                <div className={classes.name}>Master card</div>
                                 <div className={classes.number}>Ending in 7278 07XX XXXX 4290</div>
                             </div>
                         </div>
