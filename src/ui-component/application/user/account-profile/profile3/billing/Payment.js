@@ -134,7 +134,7 @@ const Payment = () => {
                         </div>
                         <div className={classes.func}>
                             <a href="/#" className={classes.editStatus}>
-                                Make Defalt
+                                Make Default
                             </a>
                             &#10072;
                             <a href="/#" className={classes.edit}>
@@ -157,7 +157,7 @@ const Payment = () => {
                         </div>
                         <div className={classes.func}>
                             <a href="/#" className={classes.editStatus}>
-                                Make Defalt
+                                Make Default
                             </a>
                             &#10072;
                             <a href="/#" className={classes.edit}>
