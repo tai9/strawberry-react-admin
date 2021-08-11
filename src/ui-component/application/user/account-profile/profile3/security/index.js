@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import ProfilePicture from './ProfilePicture';
-import Edit from './Edit';
+import Change from './ChangePass';
+import Delete from './Delete';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -16,22 +16,22 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px'
     }
 }));
-const Profile = () => {
+const Security = () => {
     const classes = useStyles();
 
     return (
         <Grid container>
-            <Grid item xs={12} md={4}>
-                <Paper className={classes.paper}>
-                    <ProfilePicture />
-                </Paper>
-            </Grid>
             <Grid item xs={12} md={8}>
                 <Paper className={classes.paper}>
-                    <Edit />
+                    <Change />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Paper className={classes.paper}>
+                    <Delete />
                 </Paper>
             </Grid>
         </Grid>
     );
 };
-export default Profile;
+export default Security;
