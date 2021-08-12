@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -7,16 +9,19 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
-
 import AccountCircleTwoToneIcon from '@material-ui/icons/AccountCircleTwoTone';
 import DescriptionTwoToneIcon from '@material-ui/icons/DescriptionTwoTone';
 import LibraryBooksTwoToneIcon from '@material-ui/icons/LibraryBooksTwoTone';
 import HttpsTwoToneIcon from '@material-ui/icons/HttpsTwoTone';
 import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
+
+//project import
 import Profile from '../../../../ui-component/application/user/account-profile/profile1/profile/index';
-import PresonalDetails from '../../../../ui-component/application/user/account-profile/profile1/presonal';
+import PersonalDetails from '../../../../ui-component/application/user/account-profile/profile1/personal';
 import MyAccount from '../../../../ui-component/application/user/account-profile/profile1/my-account';
 import ChangePass from '../../../../ui-component/application/user/account-profile/profile1/change-pass';
+import Setting from '../../../../ui-component/application/user/account-profile/profile1/setting/index';
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -169,7 +174,7 @@ export default function Profile1() {
                 <Profile />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                <PresonalDetails />
+                <PersonalDetails />
             </TabPanel>
             <TabPanel value={value} index={2}>
                 <MyAccount />
@@ -178,13 +183,7 @@ export default function Profile1() {
                 <ChangePass />
             </TabPanel>
             <TabPanel value={value} index={4}>
-                Item Five
-            </TabPanel>
-            <TabPanel value={value} index={5}>
-                Item Six
-            </TabPanel>
-            <TabPanel value={value} index={6}>
-                Item Seven
+                <Setting />
             </TabPanel>
         </Paper>
     );

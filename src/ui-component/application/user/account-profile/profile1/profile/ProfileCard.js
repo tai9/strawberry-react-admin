@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import women1 from '../../../../../../assets/images/avatars/women1.png';
 import Grid from '@material-ui/core/Grid';
@@ -10,10 +12,12 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import MailTwoToneIcon from '@material-ui/icons/MailTwoTone';
 import PhonelinkRingTwoToneIcon from '@material-ui/icons/PhonelinkRingTwoTone';
 import PinDropTwoToneIcon from '@material-ui/icons/PinDropTwoTone';
+
 const useStyles = makeStyles((theme) => ({
     infor: {
         padding: '20px',
-        display: 'flex'
+        display: 'flex',
+        justifyContent: 'space-between'
     },
     tagHr: {
         margin: '0px',
@@ -27,7 +31,20 @@ const useStyles = makeStyles((theme) => ({
     avt: {
         width: '40px'
     },
-    info: { marginLeft: '15px' },
+    tag: {
+        fontFamily: 'Roboto, sans-serif',
+        fontSize: ' 0.8125rem',
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '24px',
+        width: '33px',
+        color: 'rgb(255, 255, 255)',
+        backgroundColor: 'rgb(33, 150, 243)',
+        borderRadius: '16px'
+    },
+    info: { display: 'flex' },
+    display: { marginLeft: '15px' },
     name: { color: 'black !important', fontSize: '15px', fontWeight: '500', marginBottom: '5px' },
     job: { fontSize: '12px' },
     list: { padding: '8px 0px', position: 'relative' },
@@ -60,11 +77,15 @@ export default function ProfileCard() {
     return (
         <div className={classes.root}>
             <div className={classes.infor}>
-                <img className={classes.avt} src={women1} alt="avt" />
                 <div className={classes.info}>
-                    <div className={classes.name}>Suzan</div>
-                    <div className={classes.job}>UI/UX Designer</div>
+                    {' '}
+                    <img className={classes.avt} src={women1} alt="avt" />
+                    <div className={classes.display}>
+                        <div className={classes.name}>Suzan</div>
+                        <div className={classes.job}>UI/UX Designer</div>
+                    </div>
                 </div>
+                <div className={classes.tag}>Pro</div>
             </div>
             <hr className={classes.tagHr} />
             <div className={classes.content}>

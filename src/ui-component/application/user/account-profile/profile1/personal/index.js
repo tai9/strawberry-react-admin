@@ -1,10 +1,13 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import PresonalInfo from './presonalInfo';
-import SocialInfo from './socialInfo';
-import ContactInfo from './contactInfo';
+import PresonalInfo from './PersonalInfo';
+import SocialInfo from './SocialInfo';
+import ContactInfo from './ContactInfo';
+
 const useStyles = makeStyles((theme) => ({
     paper: {
         backgroundColor: 'rgb(255, 255, 255)',
@@ -16,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px'
     }
 }));
-export default function PresonalDetails() {
+export default function PersonalDetails() {
     const classes = useStyles();
 
     return (
