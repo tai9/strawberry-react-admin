@@ -14,10 +14,18 @@ import { makeStyles } from '@material-ui/styles';
 import { basicData } from '../../../_mockApis/forms/table/data';
 
 const useStyles = makeStyles((theme) => ({
-    header: { padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }
+    header: {
+        padding: '20px 15px',
+        fontSize: '1.125rem',
+        borderBottom: '1px solid rgba(224, 224, 224, 1)',
+        color: 'black',
+        fontWeight: '500',
+        fontFamily: 'Roboto, sans-serif'
+    },
+    headerRow: { padding: '15px', fontSize: '0.875rem', color: 'rgb(33, 33, 33)', fontWeight: '500' }
 }));
 
-export default function Dence() {
+const Dence = () => {
     const classes = useStyles();
 
     return (
@@ -26,16 +34,24 @@ export default function Dence() {
             <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell align="right">Calories</TableCell>
-                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                        <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                        <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                        <TableCell className={classes.headerRow}>Dessert (100g serving)</TableCell>
+                        <TableCell className={classes.headerRow} align="right">
+                            Calories
+                        </TableCell>
+                        <TableCell className={classes.headerRow} align="right">
+                            Fat&nbsp;(g)
+                        </TableCell>
+                        <TableCell className={classes.headerRow} align="right">
+                            Carbs&nbsp;(g)
+                        </TableCell>
+                        <TableCell className={classes.headerRow} align="right">
+                            Protein&nbsp;(g)
+                        </TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {basicData.map((row) => (
-                        <TableRow key={row.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+                        <TableRow key={row.id} hover sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                             <TableCell component="th" scope="row">
                                 {row.name}
                             </TableCell>
@@ -49,4 +65,5 @@ export default function Dence() {
             </Table>
         </TableContainer>
     );
-}
+};
+export default Dence;
