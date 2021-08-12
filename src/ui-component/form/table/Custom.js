@@ -15,7 +15,14 @@ import { makeStyles } from '@material-ui/styles';
 import { rowEnhanced } from '../../../_mockApis/forms/table/data';
 
 const useStyles = makeStyles((theme) => ({
-    header: { padding: '20px 15px', fontSize: '25px', borderBottom: '1px solid rgba(224, 224, 224, 1)', color: 'black' }
+    header: {
+        padding: '20px 15px',
+        fontSize: '1.125rem',
+        borderBottom: '1px solid rgba(224, 224, 224, 1)',
+        color: 'black',
+        fontWeight: '500',
+        fontFamily: 'Roboto, sans-serif'
+    }
 }));
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -38,7 +45,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     }
 }));
 
-export default function Custom() {
+const Custom = () => {
     const classes = useStyles();
 
     return (
@@ -56,7 +63,7 @@ export default function Custom() {
                 </TableHead>
                 <TableBody>
                     {rowEnhanced.map((row) => (
-                        <StyledTableRow key={row.name}>
+                        <StyledTableRow hover key={row.name}>
                             <StyledTableCell component="th" scope="row">
                                 {row.name}
                             </StyledTableCell>
@@ -70,4 +77,5 @@ export default function Custom() {
             </Table>
         </TableContainer>
     );
-}
+};
+export default Custom;
