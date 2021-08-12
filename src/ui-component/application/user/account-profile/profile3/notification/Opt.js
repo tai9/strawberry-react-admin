@@ -3,9 +3,8 @@ import React from 'react';
 //material ui
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
-
-//image import
-import man2 from '../../../../../../assets/images/avatars/man2.png';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const useStyles = makeStyles((theme) => ({
     header: {
@@ -27,37 +26,40 @@ const useStyles = makeStyles((theme) => ({
         opacity: 1,
         borderColor: ' rgb(227, 242, 253)'
     },
-    content: { padding: '20px', textAlign: 'center' },
-    avt: {
-        width: '90px'
+
+    content: {
+        padding: '20px'
     },
-    tutorial: {
-        fontSize: '0.75rem',
-        fontWeight: '400',
-        color: 'rgb(158, 158, 158)',
-        fontFamily: 'Roboto, sans-serif',
-        margin: '10px 0'
-    },
-    btn: { padding: '4px 6px ' }
+    btn: {
+        padding: '3px 9px',
+        margin: '20px 0'
+    }
 }));
 
-const ProfilePicture = () => {
+const Opt = () => {
     const classes = useStyles();
-
+    const [state, setState] = React.useState({
+        checkedA: false
+    });
+    const handleChange = (event) => {
+        setState({ ...state, [event.target.name]: event.target.checked });
+    };
     return (
         <div>
             <div className={classes.header}>
-                <div className={classes.title}>Profile Picture</div>
+                <div className={classes.title}>Opt me out instead</div>
             </div>
             <hr className={classes.tagHr} />
             <div className={classes.content}>
-                <img className={classes.avt} src={man2} alt="avt" />
-                <div className={classes.tutorial}>Upload/Change Your Profile Image</div>
-                <Button className={classes.btn} variant="contained" color="primary">
-                    Upload Avatar
+                <FormControlLabel
+                    control={<Checkbox checked={state.checkedA} onChange={handleChange} name="checkedA" />}
+                    label="Unsubscribe me from all of the above"
+                />
+                <Button className={classes.btn} variant="contained">
+                    Update my preferences
                 </Button>
             </div>
         </div>
     );
 };
-export default ProfilePicture;
+export default Opt;

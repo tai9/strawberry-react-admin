@@ -4,10 +4,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import ProfilePicture from './ProfilePicture';
 
 //project import
-import Edit from './Edit';
+import Subscription from './Subscription';
+import Opt from './Opt';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -20,22 +20,22 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px'
     }
 }));
-const Profile = () => {
+const Notification = () => {
     const classes = useStyles();
 
     return (
         <Grid container>
-            <Grid item xs={12} md={4}>
-                <Paper className={classes.paper}>
-                    <ProfilePicture />
-                </Paper>
-            </Grid>
             <Grid item xs={12} md={8}>
                 <Paper className={classes.paper}>
-                    <Edit />
+                    <Subscription />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Paper className={classes.paper}>
+                    <Opt />
                 </Paper>
             </Grid>
         </Grid>
     );
 };
-export default Profile;
+export default Notification;
