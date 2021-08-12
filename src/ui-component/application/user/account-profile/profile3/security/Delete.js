@@ -4,9 +4,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 
-//image import
-import man2 from '../../../../../../assets/images/avatars/man2.png';
-
 const useStyles = makeStyles((theme) => ({
     header: {
         display: 'flex',
@@ -27,37 +24,41 @@ const useStyles = makeStyles((theme) => ({
         opacity: 1,
         borderColor: ' rgb(227, 242, 253)'
     },
-    content: { padding: '20px', textAlign: 'center' },
-    avt: {
-        width: '90px'
+
+    content: {
+        padding: '20px'
     },
-    tutorial: {
-        fontSize: '0.75rem',
-        fontWeight: '400',
-        color: 'rgb(158, 158, 158)',
-        fontFamily: 'Roboto, sans-serif',
-        margin: '10px 0'
-    },
-    btn: { padding: '4px 6px ' }
+    btn: {
+        border: '1px solid rgba(244, 67, 54, 0.5)',
+        color: 'rgb(244, 67, 54)',
+        padding: '3px 9px',
+        margin: '20px 0',
+        '&:hover': {
+            background: 'rgba(244, 67, 54, 0.1)',
+            border: '1px solid rgba(244, 67, 54, 0.5)'
+        }
+    }
 }));
 
-const ProfilePicture = () => {
+const Delete = () => {
     const classes = useStyles();
 
     return (
         <div>
             <div className={classes.header}>
-                <div className={classes.title}>Profile Picture</div>
+                <div className={classes.title}>Delete Account</div>
             </div>
             <hr className={classes.tagHr} />
             <div className={classes.content}>
-                <img className={classes.avt} src={man2} alt="avt" />
-                <div className={classes.tutorial}>Upload/Change Your Profile Image</div>
-                <Button className={classes.btn} variant="contained" color="primary">
-                    Upload Avatar
+                <div>
+                    To deactivate your account, first delete its resources. If you are the only owner of any teams, either assign another
+                    owner or deactivate the team.
+                </div>
+                <Button className={classes.btn} variant="outlined">
+                    Deactivate Account
                 </Button>
             </div>
         </div>
     );
 };
-export default ProfilePicture;
+export default Delete;

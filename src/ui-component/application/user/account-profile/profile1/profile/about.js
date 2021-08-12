@@ -1,4 +1,6 @@
 import React from 'react';
+
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import IconButton from '@material-ui/core/IconButton';
 import EditTwoToneIcon from '@material-ui/icons/EditTwoTone';
@@ -15,9 +17,10 @@ const useStyles = makeStyles((theme) => ({
         padding: '20px'
     },
     title: {
-        fontSize: '15px',
+        fontSize: '0.875rem',
+        color: 'rgb(33, 33, 33)',
         fontWeight: '500',
-        color: 'black',
+        fontFamily: ' Roboto, sans-serif',
         flex: '1 1 auto'
     },
     tagHr: {

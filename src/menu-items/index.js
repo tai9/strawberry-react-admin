@@ -9,7 +9,7 @@ import { widget } from './widget';
 //-----------------------|| MENU ITEMS ||-----------------------//
 
 const menuItems = {
-    items: [dashboard, pages, forms, widget, application, utilities, other]
+    items: [dashboard, widget, application, forms, pages, utilities, other]
 };
 
 export default menuItems;

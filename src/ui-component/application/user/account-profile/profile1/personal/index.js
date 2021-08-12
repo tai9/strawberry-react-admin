@@ -1,13 +1,12 @@
 import React from 'react';
 
-//material ui
+//material-ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import ProfilePicture from './ProfilePicture';
-
-//project import
-import Edit from './Edit';
+import PresonalInfo from './PersonalInfo';
+import SocialInfo from './SocialInfo';
+import ContactInfo from './ContactInfo';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -20,22 +19,29 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px'
     }
 }));
-const Profile = () => {
+export default function PersonalDetails() {
     const classes = useStyles();
 
     return (
         <Grid container>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6}>
+                {' '}
                 <Paper className={classes.paper}>
-                    <ProfilePicture />
+                    <PresonalInfo />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={6}>
+                {' '}
                 <Paper className={classes.paper}>
-                    <Edit />
+                    <ContactInfo />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                {' '}
+                <Paper className={classes.paper}>
+                    <SocialInfo />
                 </Paper>
             </Grid>
         </Grid>
     );
-};
-export default Profile;
+}

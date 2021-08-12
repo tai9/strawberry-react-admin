@@ -1,11 +1,16 @@
 import React from 'react';
 
-//material-ui
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import GerenalSetting from './gerenal';
-import AdvanceSetting from './advance';
+
+//project import
+import CardBillDue from './CardBillDue';
+import CardTotal from './CardTotal';
+import CardPlan from './CardPlan';
+import Payment from './Payment';
+import History from './History';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -18,20 +23,34 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px'
     }
 }));
-export default function MyAccount() {
+export default function Billing() {
     const classes = useStyles();
 
     return (
         <Grid container>
-            <Grid item xs={12}>
+            <Grid item xs={12} md={4} sm={6}>
                 <Paper className={classes.paper}>
-                    <GerenalSetting />
+                    <CardBillDue />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} sm={6}>
+                <Paper className={classes.paper}>
+                    <CardTotal />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} sm={6}>
+                <Paper className={classes.paper}>
+                    <CardPlan />
                 </Paper>
             </Grid>
             <Grid item xs={12}>
-                {' '}
                 <Paper className={classes.paper}>
-                    <AdvanceSetting />{' '}
+                    <Payment />
+                </Paper>
+            </Grid>
+            <Grid item xs={12}>
+                <Paper className={classes.paper}>
+                    <History />
                 </Paper>
             </Grid>
         </Grid>

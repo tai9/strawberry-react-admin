@@ -1,10 +1,14 @@
 import React from 'react';
+
+//material ui
 import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import PresonalInfo from './presonalInfo';
-import SocialInfo from './socialInfo';
-import ContactInfo from './contactInfo';
+
+//project import
+import Subscription from './Subscription';
+import Opt from './Opt';
+
 const useStyles = makeStyles((theme) => ({
     paper: {
         backgroundColor: 'rgb(255, 255, 255)',
@@ -16,29 +20,22 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px'
     }
 }));
-export default function PresonalDetails() {
+const Notification = () => {
     const classes = useStyles();
 
     return (
         <Grid container>
-            <Grid item xs={12} md={6}>
-                {' '}
+            <Grid item xs={12} md={8}>
                 <Paper className={classes.paper}>
-                    <PresonalInfo />
+                    <Subscription />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6}>
-                {' '}
+            <Grid item xs={12} md={4}>
                 <Paper className={classes.paper}>
-                    <ContactInfo />
-                </Paper>
-            </Grid>
-            <Grid item xs={12} md={6}>
-                {' '}
-                <Paper className={classes.paper}>
-                    <SocialInfo />
+                    <Opt />
                 </Paper>
             </Grid>
         </Grid>
     );
-}
+};
+export default Notification;

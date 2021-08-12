@@ -42,17 +42,21 @@ const Gallery = Loadable(lazy(() => import('../views/application/user/social-pro
 const FriendRequest = Loadable(lazy(() => import('../views/application/user/social-profile/friend-request')));
 
 // forms routing
-const BacisTable = Loadable(lazy(() => import('../views/forms/table/bacisTable')));
-const DenceTable = Loadable(lazy(() => import('../views/forms/table/denceTable')));
-const DataTable = Loadable(lazy(() => import('../views/forms/table/dataTable')));
-const CustomTable = Loadable(lazy(() => import('../views/forms/table/customTable')));
-const CollapseTable = Loadable(lazy(() => import('../views/forms/table/collapseTable')));
-const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedTable')));
-const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
+const BacisTable = Loadable(lazy(() => import('../views/forms/table/BacisTable')));
+const DenceTable = Loadable(lazy(() => import('../views/forms/table/DenceTable')));
+const DataTable = Loadable(lazy(() => import('../views/forms/table/DataTable')));
+const CustomTable = Loadable(lazy(() => import('../views/forms/table/CustomTable')));
+const CollapseTable = Loadable(lazy(() => import('../views/forms/table/CollapseTable')));
+const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/EnhancedTable')));
+const FixedHeader = Loadable(lazy(() => import('../views/forms/table/FixedHeader')));
 
 // application routing
+<<<<<<< HEAD
 const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
 const Profile2 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile2')));
+=======
+const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile1')));
+>>>>>>> master-fake
 const Profile3 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile3')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
