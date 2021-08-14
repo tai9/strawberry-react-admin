@@ -1,9 +1,10 @@
 // assets
-import { IconChartArcs, IconDeviceAnalytics } from '@tabler/icons';
+import { IconChartArcs, IconDeviceAnalytics, IconChartInfographic } from '@tabler/icons';
 
 // constant
 const icons = {
     IconChartArcs: IconChartArcs,
+    IconChartInfographic: IconChartInfographic,
     IconDeviceAnalytics
 };
 
@@ -20,6 +21,14 @@ export const widget = {
             type: 'item',
             url: '/widget/statistics',
             icon: icons['IconChartArcs'],
+            breadcrumbs: false
+        },
+        {
+            id: 'chart',
+            title: 'Chart',
+            type: 'item',
+            url: '/widget/chart',
+            icon: icons['IconChartInfographic'],
             breadcrumbs: false
         }
     ]
