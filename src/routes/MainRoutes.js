@@ -51,12 +51,8 @@ const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/EnhancedT
 const FixedHeader = Loadable(lazy(() => import('../views/forms/table/FixedHeader')));
 
 // application routing
-<<<<<<< HEAD
-const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
-const Profile2 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile2')));
-=======
 const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile1')));
->>>>>>> master-fake
+const Profile2 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile2')));
 const Profile3 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile3')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
@@ -149,8 +145,8 @@ const MainRoutes = () => {
 
                     {/* <Route path="/user/social-profile/posts" component={AppUserSocialProfile} /> */}
 
+                    <Route path="/user/account-profile/profile1" component={Profile1} />
                     <Route path="/user/account-profile/profile2" component={Profile2} />
-                    <Route path="/user/account-profile/profile2" component={Profile1} />
                     <Route path="/user/account-profile/profile3" component={Profile3} />
                     {/* Change your path */}
                     <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
