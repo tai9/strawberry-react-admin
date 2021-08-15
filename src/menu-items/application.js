@@ -65,7 +65,7 @@ export const application = {
             icon: icons['IconUserCheck'],
             children: [
                 {
-                    id: 'socialprofile',
+                    id: 'social-profile',
                     title: 'Social Profile',
                     type: 'item',
                     url: '/user/social-profile/posts',
@@ -100,13 +100,6 @@ export const application = {
                         }
                     ]
                 }
-                // {
-                //     id: 'register3',
-                //     title: 'Register',
-                //     type: 'item',
-                //     url: '/pages/register/register3',
-                //     target: true
-                // }
             ]
         },
         {
