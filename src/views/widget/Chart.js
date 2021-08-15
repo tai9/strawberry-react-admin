@@ -14,6 +14,8 @@ import View from '../../ui-component/chart/Views';
 import Session from '../../ui-component/chart/Session';
 import Avg from '../../ui-component/chart/Avg';
 import Bounce from '../../ui-component/chart/Bounce';
+import SalePerDate from '../../ui-component/chart/SalePerDate';
+import OrderPerMonth from '../../ui-component/chart/OrderPerMonth';
 
 const Chart = () => {
     return (
@@ -76,6 +78,16 @@ const Chart = () => {
             <Grid item xs={12} md={6} lg={2}>
                 <Paper>
                     <Bounce />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Paper>
+                    <SalePerDate />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={4}>
+                <Paper>
+                    <OrderPerMonth />
                 </Paper>
             </Grid>
         </Grid>
