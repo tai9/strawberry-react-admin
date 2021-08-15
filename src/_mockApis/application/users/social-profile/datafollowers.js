@@ -14,7 +14,7 @@ export const datafollowers = [
     {
         id: 1,
         name: 'Barney',
-        adress: 'Handburgh',
+        adress: 'Handburgesh',
         status: 'true',
         avatar: follower1
     },

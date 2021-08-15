@@ -97,3 +97,8 @@ $grey900: #212121;
     grey700: $grey700;
     grey900: $grey900;
 }
+
+// delete vertical tabs
+.css-1hdympz-MuiTabs-indicator{
+    height: 0px !important;
+}
