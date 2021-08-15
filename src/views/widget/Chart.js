@@ -1,5 +1,4 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -9,15 +8,14 @@ import Status from '../../ui-component/chart/Status';
 import Visitors from '../../ui-component/chart/Visitors';
 import MarketShare from '../dashboard/analytics/MarketShare';
 import Revenue from '../../ui-component/chart/Revenue';
+import User from '../../ui-component/chart/User';
+import Timeout from '../../ui-component/chart/Timeout';
+import View from '../../ui-component/chart/Views';
+import Session from '../../ui-component/chart/Session';
+import Avg from '../../ui-component/chart/Avg';
+import Bounce from '../../ui-component/chart/Bounce';
 
-// const useStyles = makeStyles((theme) => ({
-//     paper: {
-//         padding: theme.spacing(3)
-//     }
-// }));
 const Chart = () => {
-    // const classes = useStyles();
-
     return (
         <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={3}>
@@ -48,6 +46,36 @@ const Chart = () => {
             <Grid item xs={12} md={5}>
                 <Paper>
                     <Revenue />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={2}>
+                <Paper>
+                    <User />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={2}>
+                <Paper>
+                    <Timeout />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={2}>
+                <Paper>
+                    <View />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={2}>
+                <Paper>
+                    <Session />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={2}>
+                <Paper>
+                    <Avg />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6} lg={2}>
+                <Paper>
+                    <Bounce />
                 </Paper>
             </Grid>
         </Grid>
