@@ -17,6 +17,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import UserProfile from '../../../../ui-component/application/user/account-profile/profile2/user-profile/UserProfile';
+import { Button } from '@material-ui/core';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -131,6 +132,12 @@ const useStyles = makeStyles((theme) => ({
     borderLeft: {
         borderLeft: `1px solid ${theme.palette.divider}`,
         paddingLeft: '24px'
+    },
+    formBtnNextAndPre: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: '0 auto',
+        padding: '20px'
     }
 }));
 
@@ -141,6 +148,17 @@ export default function Profile2() {
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+    };
+
+    const nextTab = () => {
+        if (value < 3) {
+            setValue(value + 1);
+        }
+    };
+    const preTab = () => {
+        if (value > 0) {
+            setValue(value - 1);
+        }
     };
 
     return (
@@ -242,6 +260,26 @@ export default function Profile2() {
                             </Grid>
                         </Grid>
                         <hr className={classes.tagHr} />
+                    </div>
+                </div>
+                <div className={classes.formBtnNextAndPre}>
+                    <div className={classes.btnPre}>
+                        {value !== 0 ? (
+                            <Button onClick={preTab} variant="outlined">
+                                Back
+                            </Button>
+                        ) : (
+                            ''
+                        )}
+                    </div>
+                    <div className={classes.btnNext}>
+                        {value !== 3 ? (
+                            <Button onClick={nextTab} variant="contained">
+                                Continue
+                            </Button>
+                        ) : (
+                            ''
+                        )}
                     </div>
                 </div>
             </div>
