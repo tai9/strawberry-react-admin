@@ -20,6 +20,8 @@ import PageView from '../../ui-component/chart/PageView';
 import Visits from '../../ui-component/chart/Visits';
 import Product from '../../ui-component/chart/Products';
 import BounceRate from '../../ui-component/chart/BounceRate';
+import NewStock from '../../ui-component/chart/NewStock';
+import Customer from '../../ui-component/chart/Customer';
 
 const Chart = () => {
     return (
@@ -112,6 +114,16 @@ const Chart = () => {
             <Grid item xs={12} md={4}>
                 <Paper>
                     <Product />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <Paper>
+                    <NewStock />
+                </Paper>
+            </Grid>
+            <Grid item xs={12} md={6}>
+                <Paper>
+                    <Customer />
                 </Paper>
             </Grid>
         </Grid>

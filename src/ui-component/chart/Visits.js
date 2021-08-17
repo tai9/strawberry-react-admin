@@ -111,7 +111,7 @@ const Visits = () => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <Typography variant="subtitle4" sx={{ color: 'black' }}>
+                        <Typography variant="subtitle4" sx={{ color: 'gray' }}>
                             Visits <ArrowDropDownIcon className={classes.icon} />
                         </Typography>
                     </Grid>
