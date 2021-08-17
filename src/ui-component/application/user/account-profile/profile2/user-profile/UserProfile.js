@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
         flexFlow: 'row wrap',
         marginTop: '0px',
         width: 'calc(100% + 16px)',
-        marginLeft: '-16px',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '20px'
     },
     infoImage: {
         marginLeft: '20px'
@@ -53,9 +53,10 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '8px'
     },
     textInfo: {
-        marginLeft: '-16px',
-        marginTop: '25px',
         width: '100%'
+    },
+    userProfile: {
+        paddingLeft: '0px'
     }
 }));
 
@@ -63,7 +64,7 @@ const UserProfile = () => {
     const classes = useStyles();
     return (
         <>
-            <div>
+            <div className={classes.userProfile}>
                 <div className={classes.headerProfile}>
                     <div className={classes.borderAvatar}>
                         <Avatar className={classes.avatar} alt="man1" src={man1} />
@@ -78,65 +79,63 @@ const UserProfile = () => {
                         </span>
                     </div>
                 </div>
-                <div>
-                    <Grid container spacing={3}>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                className={classes.textInfo}
-                                id="outlined-basic"
-                                defaultValue="Schorl"
-                                label="Last Name"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                className={classes.textInfo}
-                                id="outlined-basic"
-                                defaultValue="Delaney"
-                                label="First Name"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                className={classes.textInfo}
-                                id="outlined-basic"
-                                defaultValue="demo@company.com"
-                                label="Email Address"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                className={classes.textInfo}
-                                id="outlined-basic"
-                                defaultValue="000-00-00000"
-                                label="Phone Number"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                className={classes.textInfo}
-                                id="outlined-basic"
-                                defaultValue="company.ltd"
-                                label="Company Name"
-                                variant="outlined"
-                            />
-                        </Grid>
-
-                        <Grid item xs={12} sm={6}>
-                            <TextField
-                                className={classes.textInfo}
-                                id="outlined-basic"
-                                defaultValue="www.company.com"
-                                label="Site Infomation"
-                                variant="outlined"
-                            />
-                        </Grid>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            className={classes.textInfo}
+                            id="outlined-basic"
+                            defaultValue="Schorl"
+                            label="Last Name"
+                            variant="outlined"
+                        />
                     </Grid>
-                </div>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            className={classes.textInfo}
+                            id="outlined-basic"
+                            defaultValue="Delaney"
+                            label="First Name"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            className={classes.textInfo}
+                            id="outlined-basic"
+                            defaultValue="demo@company.com"
+                            label="Email Address"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            className={classes.textInfo}
+                            id="outlined-basic"
+                            defaultValue="000-00-00000"
+                            label="Phone Number"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            className={classes.textInfo}
+                            id="outlined-basic"
+                            defaultValue="company.ltd"
+                            label="Company Name"
+                            variant="outlined"
+                        />
+                    </Grid>
+
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            className={classes.textInfo}
+                            id="outlined-basic"
+                            defaultValue="www.company.com"
+                            label="Site Infomation"
+                            variant="outlined"
+                        />
+                    </Grid>
+                </Grid>
             </div>
         </>
     );

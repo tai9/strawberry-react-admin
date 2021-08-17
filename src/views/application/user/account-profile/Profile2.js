@@ -18,6 +18,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import UserProfile from '../../../../ui-component/application/user/account-profile/profile2/user-profile/UserProfile';
 import { Button } from '@material-ui/core';
+import Builling from '../../../../ui-component/application/user/account-profile/profile2/billing/Builling';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -130,8 +131,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%'
     },
     borderLeft: {
-        borderLeft: `1px solid ${theme.palette.divider}`,
-        paddingLeft: '24px'
+        borderLeft: `1px solid ${theme.palette.divider}`
     },
     formBtnNextAndPre: {
         display: 'flex',
@@ -248,8 +248,8 @@ export default function Profile2() {
                                 <TabPanel className={classes.borderLeft} value={value} index={0}>
                                     <UserProfile className={classes.contentTab} />
                                 </TabPanel>
-                                <TabPanel value={value} index={1}>
-                                    Item Two
+                                <TabPanel className={classes.borderLeft} value={value} index={1}>
+                                    <Builling />
                                 </TabPanel>
                                 <TabPanel value={value} index={2}>
                                     Item Three
