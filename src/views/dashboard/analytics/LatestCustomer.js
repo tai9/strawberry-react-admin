@@ -88,11 +88,6 @@ export default function BasicTable() {
                 </PerfectScrollbar>
             </TableContainer>
             <Divider />
-            <CardActions>
-                <Button color="primary">
-                    <span className={classes.button}>View all Latest Customers</span>
-                </Button>
-            </CardActions>
         </Paper>
     );
 }
