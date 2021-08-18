@@ -1,9 +1,9 @@
 // assets
-import { IconTableOff, IconDeviceAnalytics } from '@tabler/icons';
+import { IconTable, IconDeviceAnalytics } from '@tabler/icons';
 
 // constant
 const icons = {
-    IconTableOff: IconTableOff,
+    IconTable: IconTable,
     IconDeviceAnalytics
 };
 
@@ -18,7 +18,7 @@ export const forms = {
             id: 'table',
             title: 'Table',
             type: 'collapse',
-            icon: icons['IconTableOff'],
+            icon: icons['IconTable'],
             children: [
                 {
                     id: 'basicTable',
