@@ -19,6 +19,7 @@ import Box from '@material-ui/core/Box';
 import UserProfile from '../../../../ui-component/application/user/account-profile/profile2/user-profile/UserProfile';
 import { Button } from '@material-ui/core';
 import Builling from '../../../../ui-component/application/user/account-profile/profile2/billing/Builling';
+import PayMent from '../../../../ui-component/application/user/account-profile/profile2/payment/PayMent';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -169,7 +170,7 @@ export default function Profile2() {
                 </div>
                 <hr className={classes.tagHr} />
                 <div>
-                    <div className={classes.root}>
+                    <div>
                         <Grid container spacing={3}>
                             <Grid item xs={12} md={12} lg={4}>
                                 <div className={classes.tabTitle}>
@@ -251,10 +252,10 @@ export default function Profile2() {
                                 <TabPanel className={classes.borderLeft} value={value} index={1}>
                                     <Builling />
                                 </TabPanel>
-                                <TabPanel value={value} index={2}>
-                                    Item Three
+                                <TabPanel className={classes.borderLeft} value={value} index={2}>
+                                    <PayMent />
                                 </TabPanel>
-                                <TabPanel value={value} index={3}>
+                                <TabPanel className={classes.borderLeft} value={value} index={3}>
                                     Item Four
                                 </TabPanel>
                             </Grid>

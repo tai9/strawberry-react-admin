@@ -12,9 +12,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 const useStyles = makeStyles((theme) => ({
-    billing: {
-        // borderLeft: `1px solid ${theme.palette.divider}`
-    },
     textInfo: {
         width: '100%'
     },
@@ -42,7 +39,7 @@ const Builling = () => {
 
     return (
         <>
-            <div className={classes.billing}>
+            <div>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
                         <TextField
