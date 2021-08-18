@@ -8,9 +8,6 @@ import { Card, CardContent, Grid, Typography } from '@material-ui/core';
 import ApexCharts from 'apexcharts';
 import Chart from 'react-apexcharts';
 
-// project imports
-//-----------------------|| DASHBOARD - BAJAJ AREA CHART ||-----------------------//
-
 const chartData = {
     type: 'area',
     height: 120,

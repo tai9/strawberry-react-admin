@@ -3,9 +3,9 @@ import React from 'react';
 // material-ui
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
-import Chart from 'react-apexcharts';
 
-// project imports
+// third-party
+import Chart from 'react-apexcharts';
 
 const dataChart = {
     series: [66, 50, 40, 30],

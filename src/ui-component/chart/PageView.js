@@ -13,10 +13,9 @@ import PhonelinkLockIcon from '@material-ui/icons/PhonelinkLock';
 import TabletAndroidIcon from '@material-ui/icons/TabletAndroid';
 import LaptopIcon from '@material-ui/icons/Laptop';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+
 // third-party
 import Chart from 'react-apexcharts';
-
-//-----------------------|| DASHBOARD - BAJAJ AREA CHART ||-----------------------//
 
 const chartData = {
     series: [

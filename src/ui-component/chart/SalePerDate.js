@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     contentData: { padding: '25px' },
     contentDataItem: { textAlign: 'center' }
 }));
+
 const chartData = {
     type: 'line',
     height: 130,
@@ -83,8 +84,6 @@ const chartData = {
         }
     ]
 };
-
-//-----------------------|| DASHBOARD - TOTAL ORDER LINE CHART CARD ||-----------------------//
 
 const SalePerDate = () => {
     const classes = useStyles();

@@ -8,8 +8,6 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 // third-party
 import Chart from 'react-apexcharts';
 
-// project imports
-
 const chartData = {
     type: 'line',
     height: 50,

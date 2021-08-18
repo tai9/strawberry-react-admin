@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography } from '@material-ui/core';
 
 // assets
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 //-----------------------|| ORDER RECEIVE ||-----------------------//
 
@@ -36,30 +36,30 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const OderReceive = (theme) => {
+const Revenue = (theme) => {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Grid container spacing={1} className={classes.orderReceive} alignItems="center">
+            <Grid container spacing={1} className={classes.revenue} alignItems="center">
                 <Grid item xs={6}>
                     <Grid item>
                         <Typography variant="h4" className={classes.text}>
-                            Orders Received
+                            Revenue
                         </Typography>
                         <Typography variant="h3" className={classes.text}>
-                            486
+                            $42,369
                         </Typography>
                         <Typography variant="subtitle1" className={classes.text}>
-                            20% Increase
+                            $50,732 Last Month
                         </Typography>
                     </Grid>
                 </Grid>
                 <Grid item xs={6}>
-                    <AccountCircleIcon className={classes.icon} />
+                    <MonetizationOnIcon className={classes.icon} />
                 </Grid>
             </Grid>
         </div>
     );
 };
 
-export default OderReceive;
+export default Revenue;

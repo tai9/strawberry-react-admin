@@ -4,10 +4,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+
 // third-party
 import Chart from 'react-apexcharts';
-
-// project imports
 
 const chartData = {
     series: [

@@ -7,7 +7,6 @@ import { Card, CardContent, Grid, Typography } from '@material-ui/core';
 // third-party
 import Chart from 'react-apexcharts';
 
-// project imports
 //-----------------------|| DASHBOARD - BAJAJ AREA CHART ||-----------------------//
 
 const chartData = {

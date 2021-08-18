@@ -1,7 +1,10 @@
 import React from 'react';
+
+//material ui
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+//project import
 import TotalSale from '../../ui-component/chart/Sale';
 import Comment from '../../ui-component/chart/Comment';
 import Status from '../../ui-component/chart/Status';
@@ -46,72 +49,72 @@ const Chart = () => {
                     <Visitors />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={6} lg={7}>
                 <Paper>
                     <MarketShare />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={6} lg={5}>
                 <Paper>
                     <Revenue />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={2}>
+            <Grid item xs={12} md={4} lg={2}>
                 <Paper>
                     <User />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={2}>
+            <Grid item xs={12} md={4} lg={2}>
                 <Paper>
                     <Timeout />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={2}>
+            <Grid item xs={12} md={4} lg={2}>
                 <Paper>
                     <View />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={2}>
+            <Grid item xs={12} md={4} lg={2}>
                 <Paper>
                     <Session />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={2}>
+            <Grid item xs={12} md={4} lg={2}>
                 <Paper>
                     <Avg />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={6} lg={2}>
+            <Grid item xs={12} md={4} lg={2}>
                 <Paper>
                     <Bounce />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6} lg={4}>
                 <Paper>
                     <SalePerDate />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6} lg={4}>
                 <Paper>
                     <OrderPerMonth />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={12} lg={4}>
                 <Paper>
                     <PageView />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6} lg={4}>
                 <Paper>
                     <Visits />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={6} lg={4}>
                 <Paper>
                     <BounceRate />
                 </Paper>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={12} lg={4}>
                 <Paper>
                     <Product />
                 </Paper>

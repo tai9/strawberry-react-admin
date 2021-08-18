@@ -3,10 +3,10 @@ import React from 'react';
 // material-ui
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography } from '@material-ui/core';
-import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward'; // third-party
-import Chart from 'react-apexcharts';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
-// project imports
+// third-party
+import Chart from 'react-apexcharts';
 
 const chartData = {
     series: [

@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     ScrollHeight: {
         height: '400px',
         paddingLeft: '16px',
-        paddingRight: '16px',
+        paddingRight: '16px'
     },
     root: {
         position: 'relative'
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     header: {
         fontWeight: 'bold'
     },
-    button:{
+    button: {
         display: 'flex',
         webkitBoxAlign: 'center',
         alignItems: 'center',
