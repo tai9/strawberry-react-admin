@@ -15,9 +15,6 @@ import { Button } from '@material-ui/core';
 import CreditCardTwoToneIcon from '@material-ui/icons/CreditCardTwoTone';
 
 const useStyles = makeStyles((theme) => ({
-    billing: {
-        // borderLeft: `1px solid ${theme.palette.divider}`
-    },
     textInfo: {
         width: '100%'
     },

@@ -20,6 +20,7 @@ import UserProfile from '../../../../ui-component/application/user/account-profi
 import { Button } from '@material-ui/core';
 import Builling from '../../../../ui-component/application/user/account-profile/profile2/billing/Builling';
 import PayMent from '../../../../ui-component/application/user/account-profile/profile2/payment/PayMent';
+import ChangPassword from '../../../../ui-component/application/user/account-profile/profile2/change-password/ChangPassword';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -256,7 +257,7 @@ export default function Profile2() {
                                     <PayMent />
                                 </TabPanel>
                                 <TabPanel className={classes.borderLeft} value={value} index={3}>
-                                    Item Four
+                                    <ChangPassword />
                                 </TabPanel>
                             </Grid>
                         </Grid>
