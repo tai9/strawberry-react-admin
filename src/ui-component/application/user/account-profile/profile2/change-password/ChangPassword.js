@@ -42,7 +42,7 @@ const ChangPassword = () => {
                         type="password"
                         required
                         id="outlined-required"
-                        label="Current Password"
+                        label="New Password"
                         variant="outlined"
                     />
                 </Grid>
@@ -53,7 +53,7 @@ const ChangPassword = () => {
                         type="password"
                         required
                         id="outlined-required"
-                        label="Current Password"
+                        label="Confirm Password"
                         variant="outlined"
                     />
                 </Grid>
