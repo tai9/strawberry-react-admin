@@ -18,7 +18,8 @@ const ProductReview = Loadable(lazy(() => import('../views/application/customer/
 const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/analytics')));
 
 // widget routing
-const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
+const Statistics = Loadable(lazy(() => import('../views/widget/Statistics')));
+const Chart = Loadable(lazy(() => import('../views/widget/Chart')));
 
 // application routing
 const ApplicationContactCard = Loadable(lazy(() => import('../views/application/contact/Card')));
@@ -74,6 +75,7 @@ const MainRoutes = () => {
                 '/application/contact/list',
 
                 '/widget/statistics',
+                '/widget/chart',
 
                 '/utils/util-typography',
                 '/utils/util-color',
@@ -120,6 +122,7 @@ const MainRoutes = () => {
                     <Route path="/application/contact/list" component={ApplicationContactList} />
 
                     <Route path="/widget/statistics" component={Statistics} />
+                    <Route path="/widget/chart" component={Chart} />
 
                     <Route path="/utils/util-typography" component={UtilsTypography} />
                     <Route path="/utils/util-color" component={UtilsColor} />
