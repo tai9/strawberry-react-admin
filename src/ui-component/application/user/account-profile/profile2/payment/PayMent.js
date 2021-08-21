@@ -6,7 +6,6 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Collapse from '@material-ui/core/Collapse';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Slide from '@material-ui/core/Slide';
 import Radio from '@material-ui/core/Radio';
 
 // asset
@@ -156,7 +155,7 @@ const PayMent = () => {
                     </Collapse>
                 </div>
                 <div>
-                    <Slide direction="up" in={checked2} mountOnEnter unmountOnExit>
+                    <Collapse in={checked2}>
                         <div className={classes.formText}>
                             <TextField
                                 className={classes.textInfo}
@@ -166,7 +165,7 @@ const PayMent = () => {
                                 variant="outlined"
                             />
                         </div>
-                    </Slide>
+                    </Collapse>
                 </div>
             </div>
         </>
