@@ -92,7 +92,10 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'flex-start',
         flexDirection: 'row',
         justifyContent: ' flex-start',
-        borderRadius: '12px'
+        borderRadius: '12px',
+        ':&active': {
+            background: "#fafafa !important",
+        }
     },
     nameTag: {
         margin: '0px',
