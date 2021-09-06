@@ -17,6 +17,10 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import UserProfile from '../../../../ui-component/application/user/account-profile/profile2/user-profile/UserProfile';
+import { Button } from '@material-ui/core';
+import Builling from '../../../../ui-component/application/user/account-profile/profile2/billing/Builling';
+import PayMent from '../../../../ui-component/application/user/account-profile/profile2/payment/PayMent';
+import ChangPassword from '../../../../ui-component/application/user/account-profile/profile2/change-password/ChangPassword';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -88,7 +92,10 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'flex-start',
         flexDirection: 'row',
         justifyContent: ' flex-start',
-        borderRadius: '12px'
+        borderRadius: '12px',
+        ':&active': {
+            background: "#fafafa !important",
+        }
     },
     nameTag: {
         margin: '0px',
@@ -129,8 +136,13 @@ const useStyles = makeStyles((theme) => ({
         width: '100%'
     },
     borderLeft: {
-        borderLeft: `1px solid ${theme.palette.divider}`,
-        paddingLeft: '24px'
+        borderLeft: `1px solid ${theme.palette.divider}`
+    },
+    formBtnNextAndPre: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: '0 auto',
+        padding: '20px'
     }
 }));
 
@@ -143,6 +155,17 @@ export default function Profile2() {
         setValue(newValue);
     };
 
+    const nextTab = () => {
+        if (value < 3) {
+            setValue(value + 1);
+        }
+    };
+    const preTab = () => {
+        if (value > 0) {
+            setValue(value - 1);
+        }
+    };
+
     return (
         <>
             <div className={classes.profile2}>
@@ -151,7 +174,7 @@ export default function Profile2() {
                 </div>
                 <hr className={classes.tagHr} />
                 <div>
-                    <div className={classes.root}>
+                    <div>
                         <Grid container spacing={3}>
                             <Grid item xs={12} md={12} lg={4}>
                                 <div className={classes.tabTitle}>
@@ -230,18 +253,38 @@ export default function Profile2() {
                                 <TabPanel className={classes.borderLeft} value={value} index={0}>
                                     <UserProfile className={classes.contentTab} />
                                 </TabPanel>
-                                <TabPanel value={value} index={1}>
-                                    Item Two
+                                <TabPanel className={classes.borderLeft} value={value} index={1}>
+                                    <Builling />
                                 </TabPanel>
-                                <TabPanel value={value} index={2}>
-                                    Item Three
+                                <TabPanel className={classes.borderLeft} value={value} index={2}>
+                                    <PayMent />
                                 </TabPanel>
-                                <TabPanel value={value} index={3}>
-                                    Item Four
+                                <TabPanel className={classes.borderLeft} value={value} index={3}>
+                                    <ChangPassword />
                                 </TabPanel>
                             </Grid>
                         </Grid>
                         <hr className={classes.tagHr} />
+                    </div>
+                </div>
+                <div className={classes.formBtnNextAndPre}>
+                    <div className={classes.btnPre}>
+                        {value !== 0 ? (
+                            <Button onClick={preTab} variant="outlined">
+                                Back
+                            </Button>
+                        ) : (
+                            ''
+                        )}
+                    </div>
+                    <div className={classes.btnNext}>
+                        {value !== 3 ? (
+                            <Button onClick={nextTab} variant="contained">
+                                Continue
+                            </Button>
+                        ) : (
+                            ''
+                        )}
                     </div>
                 </div>
             </div>
