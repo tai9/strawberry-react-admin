@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import { CardActions, Paper, CardHeader, Table, Divider, Button } from '@material-ui/core';
+import { Paper, CardHeader, Table, Divider } from '@material-ui/core';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     ScrollHeight: {
         height: '400px',
         paddingLeft: '16px',
-        paddingRight: '16px',
+        paddingRight: '16px'
     },
     root: {
         position: 'relative'
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     header: {
         fontWeight: 'bold'
     },
-    button:{
+    button: {
         display: 'flex',
         webkitBoxAlign: 'center',
         alignItems: 'center',
@@ -88,11 +88,6 @@ export default function BasicTable() {
                 </PerfectScrollbar>
             </TableContainer>
             <Divider />
-            <CardActions>
-                <Button color="primary">
-                    <span className={classes.button}>View all Latest Customers</span>
-                </Button>
-            </CardActions>
         </Paper>
     );
 }

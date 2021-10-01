@@ -6,7 +6,7 @@ import MainLayout from './../layout/MainLayout';
 import Loadable from '../ui-component/Loadable';
 
 // template application
-import TemplateSocialProfile from '../views/application/user/socialprofile/TemplateSocialProfile';
+import TemplateSocialProfile from '../views/application/user/social-profile';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
@@ -18,7 +18,8 @@ const ProductReview = Loadable(lazy(() => import('../views/application/customer/
 const DashBoardAnalytics = Loadable(lazy(() => import('../views/dashboard/analytics')));
 
 // widget routing
-const Statistics = Loadable(lazy(() => import('../views/widget/statistics')));
+const Statistics = Loadable(lazy(() => import('../views/widget/Statistics')));
+const Chart = Loadable(lazy(() => import('../views/widget/Chart')));
 
 // application routing
 const ApplicationContactCard = Loadable(lazy(() => import('../views/application/contact/Card')));
@@ -35,23 +36,25 @@ const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIc
 const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
 
 // application routing
-const ProFile = Loadable(lazy(() => import('../views/application/user/socialprofile/ProFile')));
-const Follower = Loadable(lazy(() => import('../views/application/user/socialprofile/followers/Follower')));
-const Friend = Loadable(lazy(() => import('../views/application/user/socialprofile/friends/Friend')));
-const Gallery = Loadable(lazy(() => import('../views/application/user/socialprofile/gallery/Gallery')));
-const FriendRequest = Loadable(lazy(() => import('../views/application/user/socialprofile/friendrequest/FriendRequest')));
+const ProFile = Loadable(lazy(() => import('../views/application/user/social-profile/profile/ProFile')));
+const Follower = Loadable(lazy(() => import('../views/application/user/social-profile/followers')));
+const Friend = Loadable(lazy(() => import('../views/application/user/social-profile/friends')));
+const Gallery = Loadable(lazy(() => import('../views/application/user/social-profile/gallery')));
+const FriendRequest = Loadable(lazy(() => import('../views/application/user/social-profile/friend-request')));
 
 // forms routing
-const BacisTable = Loadable(lazy(() => import('../views/forms/table/bacisTable')));
-const DenceTable = Loadable(lazy(() => import('../views/forms/table/denceTable')));
-const DataTable = Loadable(lazy(() => import('../views/forms/table/dataTable')));
-const CustomTable = Loadable(lazy(() => import('../views/forms/table/customTable')));
-const CollapseTable = Loadable(lazy(() => import('../views/forms/table/collapseTable')));
-const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/enhancedTable')));
-const FixedHeader = Loadable(lazy(() => import('../views/forms/table/fixedHeader')));
+const BacisTable = Loadable(lazy(() => import('../views/forms/table/BacisTable')));
+const DenceTable = Loadable(lazy(() => import('../views/forms/table/DenceTable')));
+const DataTable = Loadable(lazy(() => import('../views/forms/table/DataTable')));
+const CustomTable = Loadable(lazy(() => import('../views/forms/table/CustomTable')));
+const CollapseTable = Loadable(lazy(() => import('../views/forms/table/CollapseTable')));
+const EnhancedTable = Loadable(lazy(() => import('../views/forms/table/EnhancedTable')));
+const FixedHeader = Loadable(lazy(() => import('../views/forms/table/FixedHeader')));
 
-// application routing // eltr
-const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/profile1')));
+// application routing
+const Profile1 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile1')));
+const Profile2 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile2')));
+const Profile3 = Loadable(lazy(() => import('../views/application/user/account-profile/Profile3')));
 
 //-----------------------|| MAIN ROUTING ||-----------------------//
 
@@ -72,6 +75,7 @@ const MainRoutes = () => {
                 '/application/contact/list',
 
                 '/widget/statistics',
+                '/widget/chart',
 
                 '/utils/util-typography',
                 '/utils/util-color',
@@ -118,6 +122,7 @@ const MainRoutes = () => {
                     <Route path="/application/contact/list" component={ApplicationContactList} />
 
                     <Route path="/widget/statistics" component={Statistics} />
+                    <Route path="/widget/chart" component={Chart} />
 
                     <Route path="/utils/util-typography" component={UtilsTypography} />
                     <Route path="/utils/util-color" component={UtilsColor} />
@@ -144,8 +149,8 @@ const MainRoutes = () => {
                     {/* <Route path="/user/social-profile/posts" component={AppUserSocialProfile} /> */}
 
                     <Route path="/user/account-profile/profile1" component={Profile1} />
-                    <Route path="/user/account-profile/profile2" component={Profile1} />
-                    <Route path="/user/account-profile/profile3" component={Profile1} />
+                    <Route path="/user/account-profile/profile2" component={Profile2} />
+                    <Route path="/user/account-profile/profile3" component={Profile3} />
                     {/* Change your path */}
                     <TemplateSocialProfile path="/user/social-profile/posts" Component={ProFile} />
                     <TemplateSocialProfile path="/user/social-profile/follower" Component={Follower} />
