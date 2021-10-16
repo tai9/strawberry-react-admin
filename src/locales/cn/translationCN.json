@@ -1,0 +1,57 @@
+{
+    "menu": {
+        "menu1": "应用程序",
+        "menu1__title_1": "用户",
+        "menu1__title_1--children1": "社交资料",
+        "menu1__title_1--children2": "帐户资料",
+        "menu1__title_1--children2__title1": "配置文件 1",
+        "menu1__title_1--children2__title2": "配置文件 2",
+        "menu1__title_1--children2__title3": "配置文件 3",
+
+        "menu1__title_2": "客户",
+        "menu1__title_2--children1": "客户列表",
+        "menu1__title_2--children2": "订单列表",
+        "menu1__title_2--children3": "产品",
+        "menu1__title_2--children4": "产品评论",
+
+        "menu1__title_3": "联系人",
+        "menu1__title_3--children1": "卡片",
+        "menu1__title_3--children2": "列表",
+
+        "menu2": "仪表板",
+        "menu2__title_1": "仪表板",
+        "menu2__title_2": "分析",
+
+        "menu3": "表格",
+        "menu3__title_1": "表格",
+        "menu3__title_1--children1": "基本表",
+        "menu3__title_1--children2": "登斯表",
+        "menu3__title_1--children3": "增强型表格",
+        "menu3__title_1--children4": "数据表",
+        "menu3__title_1--children5": "自定义表",
+        "menu3__title_1--children6": "固定标题",
+        "menu3__title_1--children7": "折叠表格",
+
+        "menu4": "",
+        "menu4__title_1": "示例页面",
+        "menu4__title_2": "文档",
+
+        "menu5": "页面",
+        "menu5_cation": "页面标题",
+        "menu5__title_1": "身份验证",
+        "menu5__title_1--children1": "登录",
+        "menu5__title_1--children2": "注册",
+
+        "menu6": "实用程序",
+        "menu6__title_1": "排版",
+        "menu6__title_2": "颜色",
+        "menu6__title_3": "阴影",
+        "menu6__title_4": "图标",
+        "menu6__title_4--children1": "图标",
+        "menu6__title_4--children2": "材质图标",
+
+        "menu7": "小工具",
+        "menu7__title_1": "统计",
+        "menu7__title_2": "图表"
+    }
+}

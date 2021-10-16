@@ -1,0 +1,57 @@
+{
+    "menu": {
+        "menu1": "Application",
+        "menu1__title_1": "Users",
+        "menu1__title_1--children1": "Social Profile",
+        "menu1__title_1--children2": "Account Profile",
+        "menu1__title_1--children2__title1": "Profile 1",
+        "menu1__title_1--children2__title2": "Profile 2",
+        "menu1__title_1--children2__title3": "Profile 3",
+
+        "menu1__title_2": "Customer",
+        "menu1__title_2--children1": "Customer List",
+        "menu1__title_2--children2": "Order List",
+        "menu1__title_2--children3": "Product",
+        "menu1__title_2--children4": "Product Review",
+
+        "menu1__title_3": "Contact",
+        "menu1__title_3--children1": "Cards",
+        "menu1__title_3--children2": "List",
+
+        "menu2": "Dashboard",
+        "menu2__title_1": "Dashboard",
+        "menu2__title_2": "Analytics",
+
+        "menu3": "Forms",
+        "menu3__title_1": "Table",
+        "menu3__title_1--children1": "Basic Table",
+        "menu3__title_1--children2": "Dence Table",
+        "menu3__title_1--children3": "Enhanced Table",
+        "menu3__title_1--children4": "Data Table",
+        "menu3__title_1--children5": "Custom Table",
+        "menu3__title_1--children6": "Fixed Header",
+        "menu3__title_1--children7": "Collapse Table",
+
+        "menu4": "",
+        "menu4__title_1": "Sample Page",
+        "menu4__title_2": "Documentation",
+
+        "menu5": "Pages",
+        "menu5_cation": "Pages Caption",
+        "menu5__title_1": "Authentication",
+        "menu5__title_1--children1": "Login",
+        "menu5__title_1--children2": "Register",
+
+        "menu6": "Utilities",
+        "menu6__title_1": "Typography",
+        "menu6__title_2": "Color",
+        "menu6__title_3": "Shadow",
+        "menu6__title_4": "Icons",
+        "menu6__title_4--children1": "Tabler Icons",
+        "menu6__title_4--children2": "Material Icons",
+
+        "menu7": "Widget",
+        "menu7__title_1": "Statistics",
+        "menu7__title_2": "Charts"
+    }
+}

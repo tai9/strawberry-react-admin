@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
+
+import './i18n';
 
 // third party
 import { BrowserRouter } from 'react-router-dom';
@@ -19,11 +21,14 @@ import './assets/scss/style.scss';
 // const store = createStore(rootReducer, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
-    <Provider store={store}>
-        <BrowserRouter basename={config.basename}>
-            <App />
-        </BrowserRouter>
-    </Provider>,
+    <Suspense fallback={<div>loading..</div>}>
+        <Provider store={store}>
+            <BrowserRouter basename={config.basename}>
+                <App />
+            </BrowserRouter>
+        </Provider>
+        ,
+    </Suspense>,
     document.getElementById('root')
 );
 

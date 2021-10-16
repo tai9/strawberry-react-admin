@@ -1,0 +1,57 @@
+{
+    "menu": {
+        "menu1": "Ứng dụng",
+        "menu1__title_1": "Người dùng",
+        "menu1__title_1--children1": "Hồ sơ xã hội",
+        "menu1__title_1--children2": "Thông tin tài khoản cá nhân",
+        "menu1__title_1--children2__title1": "Hồ sơ 1",
+        "menu1__title_1--children2__title2": "Hồ sơ 2",
+        "menu1__title_1--children2__title3": "Hồ sơ 3",
+
+        "menu1__title_2": "Khách hàng",
+        "menu1__title_2--children1": "Danh sách khách hàng",
+        "menu1__title_2--children2": "Danh sách đặt hàng",
+        "menu1__title_2--children3": "Sản phẩm",
+        "menu1__title_2--children4": "Đánh giá sản phẩm",
+
+        "menu1__title_3": "Tiếp xúc",
+        "menu1__title_3--children1": "Thẻ",
+        "menu1__title_3--children2": "Danh sách",
+
+        "menu2": "Bảng điều khiển",
+        "menu2__title_1": "Bảng điều khiển",
+        "menu2__title_2": "Phân tích",
+
+        "menu3": "Forms",
+        "menu3__title_1": "Table",
+        "menu3__title_1--children1": "Basic Bảng",
+        "menu3__title_1--children2": "Dence Bảng",
+        "menu3__title_1--children3": "Enhanced Bảng",
+        "menu3__title_1--children4": "Data Bảng",
+        "menu3__title_1--children5": "Custom Bảng",
+        "menu3__title_1--children6": "Fixed Header",
+        "menu3__title_1--children7": "Collapse Bảng",
+
+        "menu4": "",
+        "menu4__title_1": "Trang mẫu",
+        "menu4__title_2": "Tài liệu",
+
+        "menu5": "Pages",
+        "menu5_cation": "Chú thích trang",
+        "menu5__title_1": "Sự xác thực",
+        "menu5__title_1--children1": "Đăng nhập",
+        "menu5__title_1--children2": "Đăng kí",
+
+        "menu6": "Tiện ích",
+        "menu6__title_1": "Kiểu chữ",
+        "menu6__title_2": "Màu sắc",
+        "menu6__title_3": "Bóng",
+        "menu6__title_4": "Icons",
+        "menu6__title_4--children1": "Tabler Icons",
+        "menu6__title_4--children2": "Material Icons",
+
+        "menu7": "Widget",
+        "menu7__title_1": "Số liệu thống kê",
+        "menu7__title_2": "Đồ thị"
+    }
+}
