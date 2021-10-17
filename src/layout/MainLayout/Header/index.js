@@ -13,6 +13,7 @@ import NotificationSection from './NotificationSection';
 
 // assets
 import { IconMenu2 } from '@tabler/icons';
+import Translate from './Translate';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -57,11 +58,13 @@ const Header = ({ handleLeftDrawerToggle }) => {
                     </Avatar>
                 </ButtonBase>
             </div>
-
             {/* header search */}
             <SearchSection theme="light" />
             <div className={classes.grow} />
             <div className={classes.grow} />
+
+            {/* translate */}
+            <Translate />
 
             {/* notification & profile */}
             <NotificationSection />

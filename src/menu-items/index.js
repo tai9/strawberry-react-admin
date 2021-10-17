@@ -1,15 +1,26 @@
-import { dashboard } from './dashboard';
-import { application } from './application';
-import { pages } from './pages';
-import { utilities } from './utilities';
-import { other } from './other';
-import { forms } from './forms';
-import { widget } from './widget';
+import useDashboard from './useDashboard';
+import useApplication from './useApplication';
+import usePages from './usePages';
+import useUtilities from './useUtilities';
+import useOther from './useOther';
+import useForms from './useForms';
+import useWidget from './useWidget';
 
 //-----------------------|| MENU ITEMS ||-----------------------//
 
-const menuItems = {
-    items: [dashboard, widget, application, forms, pages, utilities, other]
+const useIndex = () => {
+    const { dashboard } = useDashboard();
+    const { widget } = useWidget();
+    const { application } = useApplication();
+    const { forms } = useForms();
+    const { pages } = usePages();
+    const { utilities } = useUtilities();
+    const { other } = useOther();
+
+    const menuItems = {
+        items: [dashboard, widget, application, forms, pages, utilities, other]
+    };
+    return { menuItems };
 };
 
-export default menuItems;
+export default useIndex;

@@ -14,7 +14,7 @@ import Breadcrumbs from './../../ui-component/extended/Breadcrumbs';
 import Header from './Header';
 import Sidebar from './Sidebar';
 import Customization from './../Customization';
-import navigation from './../../menu-items';
+import useIndex from './../../menu-items';
 import { drawerWidth } from '../../store/constant';
 import { SET_MENU } from './../../store/actions';
 
@@ -93,6 +93,7 @@ const MainLayout = ({ children }) => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [matchDownMd]);
 
+    const { menuItems } = useIndex();
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -123,7 +124,7 @@ const MainLayout = ({ children }) => {
             >
                 {/* <Main open={leftDrawerOpened}> */}
                 {/* breadcrumb */}
-                <Breadcrumbs separator={IconChevronRight} navigation={navigation} icon title rightAlign />
+                <Breadcrumbs separator={IconChevronRight} navigation={menuItems} icon title rightAlign />
                 <div>{children}</div>
                 {/* </Main> */}
             </main>
